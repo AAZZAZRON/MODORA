@@ -1,0 +1,28 @@
+// code for creating the extension
+{
+    "manifest_version": 2,
+    "name": "Test",
+    "description": "This is a test",
+    "version": "1.0",
+
+    "content_scripts": [ // when a site is loaded
+        {
+            "matches": ["<all_urls>"],
+            "js": ["block_sites.js"]
+        }
+    ],
+
+    "browser_action": { // when the popup is clicked
+    "default_icon": "Aaron.jpg",
+    "default_popup": "popup.html",
+    "default_title": "Hackathon"
+    },
+    "permissions": [
+        "alarms", 
+        "cookies", 
+        "debugger", 
+        "webRequestBlocking", 
+        "notifications", 
+        "tts"
+    ]
+}
