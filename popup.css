@@ -400,7 +400,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 81%;
+  top: 80.5%;
   left: 50%;
   width: 82%;
   transform: translate(-50%, -50%);
@@ -427,7 +427,7 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   color: white;
   top: 81%;
-  left: 430px;
+  left: 432px;
   /*width: 20%;*/
   transform: translate(-50%, -50%);
   max-width: 80px;
