@@ -12,7 +12,7 @@ button:hover {
 
 #title {
   position: absolute;
-  top: 25%;
+  top: 38%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
@@ -28,11 +28,11 @@ button:hover {
   border: 3px solid white;
 } 
 #PomodoroButton {
-  top: 55%;
+  top: 35%;
 }
 
 #ToDoListButton {
-  top: 75%;
+  top: 35%;
 }
 
 .main-menu-button {
