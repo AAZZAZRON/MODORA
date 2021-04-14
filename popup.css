@@ -144,7 +144,6 @@ font-size: 15px;
   width: 45%;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
-
 border: 3px solid rgb(234,201,215);
 }
 
@@ -208,7 +207,10 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-height: 120px;
-  
+}
+
+.timer-buttons1:hover{
+  border: 1px solid rgb(234,201,215);
 }
 
 #SelectAll {
