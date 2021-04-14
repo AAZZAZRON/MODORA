@@ -1,13 +1,13 @@
-timer = setInterval(increment, 1000, time);
+// timer = setInterval(increment, 1000, time);
   
-}
-const timer = document.getElementById('name');
+// }
+const timer = document.getElementById('timers');
 
 var hour = 0;
 var min = 0;
 var sec = 0;
 bool start = false;
-
+bool isDone = true;
 function startTimer() {
   if (start == false) {
     start = true;
@@ -32,7 +32,7 @@ function timing() {
       sec = 0;
     }
     if (min == 60) {
-      hr = hr + 1;
+      hr += 1;
       min = 0;
       sec = 0;
     }
@@ -51,6 +51,17 @@ function timing() {
 
     setTimeout("timing()", 1000);
   }
+  function resetTimer() {
+    timer.innerHTML = '00:00:00';
+    start = false;
+    hr = 0;
+    sec = 0;
+    min = 0;
+  }
+  // or use below
+  // if(isDone == true) {
+  //     timer.innerHTML = '00:00:00';
+  // }
 }
 
 
