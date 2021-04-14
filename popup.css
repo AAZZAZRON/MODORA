@@ -370,7 +370,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 0%;
+  top: 65%;
   left: 50%;
   width: 85%;
   transform: translate(-50%, -50%);
@@ -389,7 +389,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 77%;
+  top: 82%;
   left: 50%;
   width: 85%;
   transform: translate(-50%, -50%);
@@ -413,15 +413,15 @@ border: 3px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 77%;
-  left: 80%;
-  width: 10%;
+  left: 85%;
+  width: 20%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 40px;
   min-width: 40px;
   max-height: 40px;
   min-height: 40px;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .websites-submit-hover:hover{

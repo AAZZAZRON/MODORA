@@ -21,7 +21,10 @@ function display(){
   var p = arr.toString().replaceAll(",", "<br>");
   document.getElementById("output").innerHTML = p;
   addCookie("todolist", p);
-  
+  var i;
+  for(i = 0; i < arr.length; i++) {
+    addToToDoList(arr[i]);
+  }
 }
 
 function addToToDoList(task) { // add known blocked website to the blocked website list (in HTML)
