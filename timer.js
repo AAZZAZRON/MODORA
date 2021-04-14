@@ -11,8 +11,10 @@ var stopwatch;
 
 
 function startTimer() {
-  start = true;
-  stopwatch = setInterval(timing, 1000);
+  if (!start) {
+    start = true;
+    stopwatch = setInterval(timing, 1000);
+  }
 }
 
 function stoptTimer() {

@@ -145,7 +145,7 @@ font-size: 15px;
   font-size: 35px;
   top: 89%;
   left: 75%;
-  width: 4%;
+  width: 44%;
   text-align: center;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -168,7 +168,7 @@ border: 3px solid rgb(234,201,215);
   font-family: 'Work Sans', sans-serif;
   background-color: white;
   position: absolute;
-  top: 27%;
+  top: 28.5%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
   /*
@@ -269,7 +269,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 59%;
+  top: 60.5%;
   left: 28%;
   width: 45%; /*
   padding-top: 2.5%;
@@ -284,6 +284,20 @@ border: 3px solid rgb(234,201,215);
   max-height: 270px;
   min-height: 270px;
   overflow: auto;
+}
+
+/*FOR THE FINAL SCREENS (ABORT/COMPLETE) -------------------------------------------------- */
+.final-screens{
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: 'Work Sans', sans-serif;
+  left: 50%;
+  color: rgb(234,201,215);
+}
+#aborted-text{
+  top: 50%;
+  font-size: 55px;
 }
 
 /* SCROLL BAR CSS */
@@ -305,4 +319,13 @@ border: 3px solid rgb(234,201,215);
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* To Do section format */
+#todopart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }

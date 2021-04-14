@@ -10,9 +10,14 @@ function setToDoList() {
   document.getElementById("SetupTimer").hidden = true;
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("ToDoList").hidden = false;
+  for(int i = 0; i < arr.length; i++) {
+    
+  }
 }
 
 var btn2 = document.getElementById("todobutton");
 btn2.addEventListener("click", function() {
 	arr.push(document.getElementById("name").value);
+  deleteCookie("listtodo");
+  addCookie("listtodo", arr);
 })

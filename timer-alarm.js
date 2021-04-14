@@ -1,28 +1,28 @@
-document.getElementById('timers');
-
-var hour = 0;
+var hr = 0;
 var min = 0;
 var sec = 0;
 var start = true;
 var isDone = true;
+var stopwatch;
+
+
 function startTimer() {
-  if (start == false) {
-    start = true;
-    timing();
-  }
+  start = true;
+  stopwatch = setInterval(timing, 1000);
 }
+
 function stoptTimer() {
-  if (start == true) {
-    start = false;
-  }
+  start = false;
 }
+
 function timing() {
-  if(start == true) {
+  if(start) {
     sec = parseInt(sec);
     min = parseInt(min);
     hr = parseInt(hr);
 
-    sec -= 1;
+
+sec -= 1;
 
     if (sec == 00) {
       min -= 1;
@@ -44,16 +44,20 @@ function timing() {
       hr = '0' + hr;
     }
 
-    timer.innerHTML = hr + ':' + min + ':' + sec;
+    document.getElementById("timer").innerText = hr + ':' + min + ':' + sec;
 
-    setTimeout(timing, 1000);
+  } else {
+    clearInterval(stopwatch);
   }
+}
 
-}
 function resetTimer() {
-    timer.innerHTML = '00:05:00';
-    start = false;
-    hr = 0;
-    sec = 0;
-    min = 5;
+  document.getElementById("timer").innerText = '00:05:00';
+  start = false;
+  hr = 0;
+  sec = 0;
+  min = 5;
 }
+
+
+

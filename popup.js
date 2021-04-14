@@ -8,10 +8,20 @@ window.onload = function() { // add all the default "bads"
         addCookie(defaultBad[i], "==banned");
     }
     console.log(document.cookie);
-    mainMenu();
+    var goTo = getCookie("tracker");
+    if (goTo == "") {
+        addCookie("tracker", "mainMenu");
+        goTo = "mainMenu";
+    }
+    if (goTo == "mainMenu") {
+        mainMenu();
+    } else if (goTo == "timerOn") {
+        timerSetup();
+    }
 }
 
 function mainMenu() { // show main menu screen
+    addCookie("tracker", "mainMenu");
     document.getElementById("back-button").onclick = () => mainMenu();
     document.getElementById("MainMenu").hidden = false;
     document.getElementById("SetupTimer").hidden = true;
@@ -38,15 +48,19 @@ function setPomodoro() { // show pomodoro setup screen
             addToBlockedList(values[0]); // add website to blocked list
         }
     }
+    resetTimer();
 }
 
 
 function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
+    addCookie("tracker", "timerOn")
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
     console.log(checkboxes);
-    resetTimer();
+    document.getElementById("abort").onclick = () => {
+        mainMenu();
+    }
     startTimer();
 }
 
