@@ -1,27 +1,87 @@
 var hr = 0;
 var min = 0;
 var sec = 0;
-var start = true;
-var isDone = true;
-var stopwatch;
+var stopwatchStart = false;
+var timerStart = false;
+var stopwatch, timer;
 var isTimerDone = false;
 aborted = false;
-
+var cycle = 1;
 chrome.runtime.onMessage.addListener(
-    function (request, sender, sendResponse) {
-        console.log(request, sender, sendResponse);
+    function (request) {
+        if (request == "begin") {
+            cycle = 1;
+        }
         if (request.message == "start stopwatch") {
-            start = true;
+            hr = 0;
+            min = 0;
+            sec = 0;
+            stopwatchStart = true;
+            aborted = false;
             stopwatch = setInterval(stopwatchFunction, 1000);
         } else if (request.message == "abort") {
-            start = false;
+            stopwatchStart = false;
+            timerStart = false;
             aborted = true;
         }
     }
 );
 
+function timerFunction() {
+    if (timerStart) {
+        sec = parseInt(sec);
+        min = parseInt(min);
+        hr = parseInt(hr);
+        sec -= 1;
+        if (sec == -1) {
+            sec = 59;
+            min -= 1;
+        }
+        if (min == -1) {
+            min = 59;
+            hr -= 1;
+        }
+        if (hr == -1) {
+            hr = 0;
+        }
+        if (sec < 10 || sec == 0) {
+            sec = '0' + sec;
+        }
+        if (min < 10 || min == 0) {
+            min = '0' + min;
+        }
+        if (hr < 10 || hr == 0) {
+            hr = '0' + hr;
+        }
+        console.log(hr, min, sec);
+        if (chrome.extension.getViews({type: "popup"}).length == 1) {
+            chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
+        }
+    } else {
+        console.log(hr, min, sec, aborted);
+        clearInterval(timer);
+    }
+    if (hr == "00" && min == "00" && sec == "00") {
+        timerStart = false;
+        alert("Back to Work!");
+        chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
+
+        // start stopwatch
+        clearInterval(timer);
+        stopwatchStart = true;
+        aborted = false;
+        hr = 0;
+        min = 0;
+        sec = 0;
+        stopwatch = setInterval(stopwatchFunction, 1000)
+    } else {
+    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
+    }
+}
+
+
 function stopwatchFunction() {
-  if (start) {
+  if (stopwatchStart) {
     sec = parseInt(sec);
     min = parseInt(min);
     hr = parseInt(hr);
@@ -48,25 +108,40 @@ function stopwatchFunction() {
       hr = '0' + hr;
     }
     console.log(hr, min, sec);
-    chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
+    if (chrome.extension.getViews({type: "popup"}).length == 1) {
+        chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
+    }
 
   } else {
-    if (!aborted) {
-        chrome.runtime.sendMessage({message: "done"})
-    }
-    aborted = false;
-    resetTimer();
-    clearInterval(stopwatch);
+        console.log(hr, min, sec, aborted);
+        clearInterval(stopwatch);
+        if (!aborted && cycle == 4) {
+            chrome.runtime.sendMessage({message: "done"})
+        }
   }
-  if (hr == "00" && min == "25" && sec == "00") {
-    start = false;
-  }
-}
+  if (hr == "00" && min == "00" && sec == "11") {
+    stopwatchStart = false;
+    if (cycle == 4) {
+        alert("You are done!");
 
-function resetTimer() {
-  start = false;
-  hr = 0;
-  sec = 0;
-  min = 0;
+    } else {
+        alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
+        cycle += 1;
+        chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
+
+        clearInterval(stopwatch);
+        // start timer
+        timerStart = true;
+        aborted = false;
+        hr = 0;
+        min = 0;
+        sec = 15;
+
+        
+        timer = setInterval(timerFunction, 1000)
+    }
+  } else {
+    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
+  }
 }
 

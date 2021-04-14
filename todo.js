@@ -6,6 +6,7 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
+  getToDoList();
 }
 
 function getToDoList() {
