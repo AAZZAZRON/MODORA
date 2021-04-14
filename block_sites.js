@@ -2,28 +2,12 @@
 
 
 var url = "";
-function findUrl() {
-  url = window.location.href.toString() + ;
-}
-
-const webRequestFlags = [
-  'blocking',
-];
-window.chrome.webRequest.onBeforeRequest.addListener(
-  page => {
-    console.log('page blocked - ' + page.url);
-
-    return {
-      cancel: true,
-    };
-  },
-  filter,
-  webRequestFlags,
-);
-
 function checkUrl() {
-  if(url.substring() == "http://www.discord.com") {
+  url = window.location.host.toString();
+  for(int i = 0; i < addToBlockedList.length(); i++) {
+    if(url == addToBlockedList[i]) {
     alert("It is Work Time Right Now Get Off!");
+  }
   }
 }
 }
