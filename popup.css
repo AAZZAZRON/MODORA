@@ -381,11 +381,16 @@ border: 3px solid rgb(234,201,215);
   width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 440px;
-  min-width: 440px;
+  max-width: 444px;
+  min-width: 444px;
   max-height: 185px;
   min-height: 185px;
   overflow: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
 }
 
 #websites-add{
@@ -405,6 +410,8 @@ border: 3px solid rgb(234,201,215);
   max-height: 40px;
   min-height: 40px;
   overflow: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .websites-add-focus:focus{
@@ -417,16 +424,16 @@ border: 3px solid rgb(234,201,215);
   font-size: 15px;
   text-align: center; 
   background-color: rgb(234,201,215);
-  border: 2px solid white;
+  border: 3px solid white;
   color: white;
   top: 81%;
-  left: 440px;
+  left: 430px;
   /*width: 20%;*/
   transform: translate(-50%, -50%);
   max-width: 80px;
   min-width: 80px;
-  max-height: 50px;
-  min-height: 50px;
+  max-height: 45px;
+  min-height: 45px;
   /*overflow: auto;*/
 }
 

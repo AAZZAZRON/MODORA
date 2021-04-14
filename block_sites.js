@@ -5,6 +5,7 @@ chrome.runtime.sendMessage({
 function(request, sender, sendResponse) {
   if(request.url === "") {
     alert("GET OFF NOW, WORK!!! :)");
+    chrome.storage.local.set({ blocked });
   }
 }
 
