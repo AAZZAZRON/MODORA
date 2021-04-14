@@ -389,16 +389,15 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 80%;
+  top: 70%;
   left: 50%;
-  width: 80%;
+  width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 430px;
   min-width: 430px;
   max-height: 40px;
   min-height: 40px;
-  margin: 30px;
   overflow: auto;
 }
 
@@ -413,7 +412,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 80%;
+  top: 70%;
   left: 80%;
   width: 10%;
   transform: translate(-50%, -50%);
@@ -456,3 +455,21 @@ border: 3px solid rgb(234,201,215);
 	text-align: center;
 }
 
+#todo-list{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 430px;
+  min-width: 430px;
+  max-height: 185px;
+  min-height: 185px;
+  overflow: auto;
+}
