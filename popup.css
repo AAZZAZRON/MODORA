@@ -411,7 +411,7 @@ border: 3px solid rgb(234,201,215);
   background-color: white;
   top: 58%;
   left: 50%;
-  width: 82%;
+  /*width: 82%;*/
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 414px;
