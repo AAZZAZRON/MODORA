@@ -4,7 +4,7 @@ var sec = 0;
 var start = true;
 var isDone = true;
 var stopwatch;
-
+var isDone = false;
 
 function startTimer() {
   start = true;
@@ -48,6 +48,9 @@ sec -= 1;
 
   } else {
     clearInterval(stopwatch);
+  }
+  if(hr == 0 && min == 0 && sec == 0) {
+    isDone = true;
   }
 }
 

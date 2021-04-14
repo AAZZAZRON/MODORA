@@ -201,6 +201,26 @@ border: 3px solid rgb(234,201,215);
   max-height: 100px;
 }
 
+.back-button{
+  color: rgb(234,201,215);
+  border-color:white;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-height: 30px;
+  min-height: 30px;
+  left: 60px;
+  font-size: 22px;
+  top: 91%;
+  width: 70px;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
+  padding-right: 0.25%;
+}
 .timer-buttons {
   color: rgb(234,201,215);
   border-color:white;
@@ -232,17 +252,6 @@ border: 3px solid rgb(234,201,215);
   font-size: 18px;
   top: 91%;
   width: 141px;
-  padding-top: 0.25%;
-  padding-bottom: 0.25%;
-  padding-left: 0.25%;
-  padding-right: 0.25%;
-}
-
-#back-button{
-  left: 60px;
-  font-size: 22px;
-  top: 91%;
-  width: 70px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
   padding-left: 0.25%;
@@ -299,6 +308,14 @@ border: 3px solid rgb(234,201,215);
   top: 50%;
   font-size: 55px;
 }
+#completed-text{
+  top: 40%;
+  font-size: 50px;
+}
+#completed-subtext{
+  top: 60%;
+  font-size: 30px;
+}
 
 /* SCROLL BAR CSS */
 /* width */
@@ -323,9 +340,11 @@ border: 3px solid rgb(234,201,215);
 
 /* To Do section format */
 #todopart {
+  background: pink;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
 }
+

@@ -1,5 +1,5 @@
 // runs everytime the pop up is clicked
-var check = false;
+var check;
 var chooseBlocked;
 var defaultBad = ["twitter", "youtube", "reddit", "netflix", "disneyplus", "instagram", "facebook", "discord"]
 
@@ -21,11 +21,12 @@ window.onload = function() { // add all the default "bads"
 }
 
 function mainMenu() { // show main menu screen
+    check = false;
     addCookie("tracker", "mainMenu");
-    document.getElementById("back-button").onclick = () => mainMenu();
     document.getElementById("MainMenu").hidden = false;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
+    document.getElementById("abortedScreen").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
 }
 
@@ -33,7 +34,9 @@ function setPomodoro() { // show pomodoro setup screen
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = false;
     document.getElementById("TimerOn").hidden = true;
+    document.getElementById("abortedScreen").hidden = true;
     document.getElementById("SelectAll").onclick = () => toggle();
+    document.getElementById("bb1").onclick = () => mainMenu();
     document.getElementById("start-button").onclick = () => timerSetup(document.getElementsByName("x"));
 
 
@@ -57,12 +60,23 @@ function timerSetup(checkboxes) { // set up the timer screen, start and reset ti
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
+    document.getElementById("abortedScreen").hidden = true;
     console.log(checkboxes);
     document.getElementById("abort").onclick = () => {
-        mainMenu();
+        showAbortScreen();
     }
     startTimer();
 }
+
+function showAbortScreen() {
+    document.getElementById("MainMenu").hidden = true;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = true;
+    document.getElementById("abortedScreen").hidden = false;
+    document.getElementById("bb2").onclick = () => mainMenu();
+    addCookie("tracker", "mainMenu");
+}
+
 
 function toggle() { // check and uncheck all items
     var checkboxes = document.getElementsByName("x");
