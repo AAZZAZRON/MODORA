@@ -7,7 +7,7 @@ function findUrl() {
   url = window.location.href;
 }
 function checkUrl() {
-  if
+  if(url == )
 }
 }
 

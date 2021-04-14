@@ -88,6 +88,10 @@ button:hover {
   top: 30%;
   font-size: 18px;
   width: 69%;
+  max-width: 376px;
+  min-width: 376px;
+  max-height: 52.5px;
+  min-height: 52.5px;
 }
 
 #timer{ /* the big time thing */
@@ -106,6 +110,10 @@ button:hover {
   font-size: 60px;
   font-family: 'Work Sans', sans-serif;
   border: 3px solid white;
+  max-width: 376px;
+  min-width: 376px;
+  max-height: 197px;
+  min-height: 197px;
 }
 
 #abort{ /*the abort button */
@@ -289,6 +297,8 @@ border: 3px solid rgb(234,201,215);
   overflow: auto;
 }
 
+
+
 /*FOR THE FINAL SCREENS (ABORT/COMPLETE) -------------------------------------------------- */
 .final-screens{
   text-align: center;
@@ -367,6 +377,29 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   max-width: 420px;
   min-width: 420px;
+}
+#WebsiteBlocked {
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 80%;
+  left: 28%;
+  width: 45%; /*
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%; */
+  /*margin: 3%;*/
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 221.5px;
+  min-width: 221.5px;
+  max-height: 270px;
+  min-height: 270px;
+  overflow: auto;
 }
 
 #websites-list{
@@ -448,10 +481,10 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   max-height: 30px;
   min-height: 30px;
-  left: 430px;
+  left: 440px;
   font-size: 18px;
   top: 91%;
-  width: 90px;
+  width: 70px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
   padding-left: 0.25%;
