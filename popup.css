@@ -298,9 +298,9 @@ border: 3px solid rgb(234,201,215);
   left: 50%;
   color: rgb(234,201,215);
   max-width: 350px;
-  min-width: 350px; /*
-  max-height: 200px;
-  min-height: 200px; */
+  min-width: 350px; 
+  max-height: 125px;
+  min-height: 125px; 
   background-color: white;
 
 }
@@ -308,6 +308,7 @@ border: 3px solid rgb(234,201,215);
   top: 50%;
   vertical-align: middle;
   font-size: 55px;
+  
 }
 #completed-text{
   top: 40%;

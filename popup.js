@@ -4,6 +4,7 @@ var chooseBlocked;
 var defaultBad = ["twitter", "youtube", "reddit", "netflix", "disneyplus", "instagram", "facebook", "discord"]
 
 window.onload = function() { // add all the default "bads"
+    getToDoList();
     for (let i = 0; i < defaultBad.length; i += 1) {
         addCookie(defaultBad[i], "==banned");
     }
