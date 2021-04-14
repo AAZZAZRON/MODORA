@@ -135,7 +135,7 @@ button:hover {
 top: 50%;
 left: 75%;
 width: 45%;
-font-size: 20px; 
+font-size: 15px; 
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;

@@ -6,8 +6,8 @@ const timer = document.getElementById('timers');
 var hour = 0;
 var min = 0;
 var sec = 0;
-bool start = false;
-bool isDone = true;
+var start = true;
+var isDone = true;
 function startTimer() {
   if (start == false) {
     start = true;
