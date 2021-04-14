@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Test",
-    "description": "This is a test",
+    "name": "Modoro",
+    "description": "Procrastinate No More",
     "version": "1.0",
 
     "content_scripts": [
@@ -10,13 +10,16 @@
             "js": ["./block_sites.js"]
         }
     ],
+    "background": {
+        "scripts": ["background.js"]
+    },
 
     "browser_action": { 
     "default_popup": "popup.html",
     "default_title": "Hackathon"
     },
     "permissions": [
-        "tabs", 
+        "tabs",
         "alarms", 
         "cookies", 
         "debugger", 
