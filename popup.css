@@ -90,8 +90,8 @@ button:hover {
   width: 69%;
   max-width: 376px;
   min-width: 376px;
-  max-height: 30px;
-  min-height: 30px;
+  max-height: 20px;
+  min-height: 20px;
 }
 
 #timer{ /* the big time thing */
@@ -112,8 +112,8 @@ button:hover {
   border: 3px solid white;
   max-width: 376px;
   min-width: 376px;
-  max-height: 85px;
-  min-height: 85px;
+  max-height: 75px;
+  min-height: 75px;
 }
 
 #abort{ /*the abort button */
@@ -460,7 +460,7 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   color: white;
   top: 81%;
-  left: 430px;
+  left: 435px;
   /*width: 20%;*/
   transform: translate(-50%, -50%);
   max-width: 80px;
