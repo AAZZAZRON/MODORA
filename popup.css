@@ -143,7 +143,7 @@ font-size: 15px;
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;
-  top: 88%;
+  top: 90%;
   left: 75%;
   width: 45%;
 }
@@ -227,10 +227,10 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 15px;
   */
-  left: 198px; /*(130)*/ 
+  left: 183px; /*(130)*/ 
   font-size: 18px;
-  top: 88%;
-  width: 111px;
+  top: 90%;
+  width: 141px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
   padding-left: 0.25%;
@@ -239,8 +239,8 @@ border: 3px solid rgb(234,201,215);
 
 #back-button{
   left: 60px;
-  font-size: 18px;
-  top: 88%;
+  font-size: 22px;
+  top: 90%;
   width: 70px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
