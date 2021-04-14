@@ -10,9 +10,10 @@ function setToDoList() {
   document.getElementById("SetupTimer").hidden = true;
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-<<<<<<< HEAD
-  
->>>>>>> origin/master
+  for(let i = 0; i < arr.length; i += 1) {
+    
+  }
+}
 
 var btn2 = document.getElementById("todobutton");
 btn2.addEventListener("click", function() {

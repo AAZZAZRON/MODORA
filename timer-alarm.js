@@ -50,7 +50,7 @@ sec -= 1;
     clearInterval(stopwatch);
   }
   if(hr == 0 && min == 0 && sec == 0) {
-    isDone = true;
+      start = false;
   }
 }
 

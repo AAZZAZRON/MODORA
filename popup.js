@@ -51,12 +51,10 @@ function setPomodoro() { // show pomodoro setup screen
             addToBlockedList(values[0]); // add website to blocked list
         }
     }
-    resetTimer();
 }
 
 
 function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
-    addCookie("tracker", "timerOn")
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
@@ -65,7 +63,10 @@ function timerSetup(checkboxes) { // set up the timer screen, start and reset ti
     document.getElementById("abort").onclick = () => {
         showAbortScreen();
     }
-    startTimer();
+    if (getCookie("tracker") != "timerOn") {
+        createTimer();
+    }
+    addCookie("tracker", "timerOn")
 }
 
 function showAbortScreen() {
@@ -75,6 +76,7 @@ function showAbortScreen() {
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
+    abortTimer();
 }
 
 
