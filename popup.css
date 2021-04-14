@@ -181,7 +181,7 @@ border: 3px solid rgb(234,201,215);
 
 #setup-title{ /*for the title for everything :?*/
   position: absolute;
-  top: 8%;
+  top: 11%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
@@ -227,7 +227,7 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 15px;
   */
-  left: 211%;
+  left: 361.5px;
   font-size: 18px;
   top: 88%;
   width: 301px;
@@ -238,7 +238,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 #back-button{
-  left: 52px;
+  left: 119px;
   font-size: 18px;
   top: 88%;
   width: 134px;
@@ -248,7 +248,7 @@ border: 3px solid rgb(234,201,215);
   padding-right: 0.25%;
 }
 
-#select-all-box{ /*just the box*/
+#select-all-box{ /*just the checkbox*/
   left: 20%;
   top: 85%;
   width: 20%;
@@ -258,7 +258,6 @@ border: 3px solid rgb(234,201,215);
   font-size: 15px;
   text-align: left;
   font-family: 'Work Sans', sans-serif;
-
 }
 
 
