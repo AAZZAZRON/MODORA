@@ -1,4 +1,5 @@
 // runs everytime the pop up is clicked
+var check = false;
 window.onload = function() {
     document.getElementById("MainMenu").hidden = false;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
@@ -10,11 +11,8 @@ function setPomodoro() {
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = false;
     document.getElementById("TimerOn").hidden = true;
-    document.getElementById("SelectAll").onclick = () => toggle(document.getElementById("SelectAll").checked);
-    document.getElementById("start-button").onclick = () => {
-        console.log("CLICKED")
-        timerSetup(document.getElementsByName("x"));
-    }
+    document.getElementById("SelectAll").onclick = () => toggle();
+    document.getElementById("start-button").onclick = () => timerSetup(document.getElementsByName("x"));
 }
 
 function timerSetup(checkboxes) {
@@ -26,10 +24,15 @@ function timerSetup(checkboxes) {
     startTimer();
 }
 
-function toggle(source) { // check and uncheck all items
+function toggle() { // check and uncheck all items
     var checkboxes = document.getElementsByName("x");
     console.log(checkboxes);
+    if (check) {
+        check = false;
+    } else {
+        check = true;
+    }
     for (let i = 0; i < checkboxes.length; i += 1) {
-        checkboxes[i].checked = source;
+        checkboxes[i].checked = check;
     }
 }
