@@ -42,8 +42,14 @@ function setPomodoro() { // show pomodoro setup screen
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = true;
     document.getElementById("SelectAll").onclick = () => toggle();
-    document.getElementById("bb1").onclick = () => mainMenu();
-    document.getElementById("start-button").onclick = () => timerSetup(document.getElementsByName("x"));
+    document.getElementById("bb1").onclick = () => {
+        chooseBlocked.remove();
+        mainMenu();
+    };
+    document.getElementById("start-button").onclick = () => {
+        chooseBlocked.remove();
+        timerSetup(document.getElementsByName("x"));
+    }
 
 
     // build list based on "banned" list of user
@@ -65,7 +71,21 @@ function setWebsites() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = false;
-    document.getElementById("bb4").onclick = () => mainMenu();
+    document.getElementById("bb1").onclick = () => {
+        chooseBlocked.remove();
+        mainMenu();
+    };
+    
+    chooseBlocked = document.createElement("div");
+    chooseBlocked.id = "ChooseBlocked";
+    document.getElementById("websites-list").appendChild(chooseBlocked);
+    const things = decodeURIComponent(document.cookie).split("; ");
+    for (let i = 0; i < things.length; i += 1) {
+        const values = things[i].split("===");
+        if (values[1] == "banned") {
+            addToBlockedList(values[0]); // add website to blocked list
+        }
+    }
 }
 
 
@@ -117,13 +137,17 @@ function toggle() { // check and uncheck all items
     }
 }
 
-function addToBlockedList(inner) { // add known blocked website to the blocked website list (in HTML)
+function addToBlockedList(inner, hasWebClass=false) { // add known blocked website to the blocked website list (in HTML)
     let check = document.createElement("INPUT");
     check.setAttribute("type", "checkbox");
     check.name = "x";
     let label = document.createElement("LABEL");
     label.innerText = inner + "\n";
     label.className = "boxes";
+    if (hasWebClass) {
+        check.classList.add("websites-list");
+        label.classList.add("websites-list");
+    }
     console.log(check);
     console.log(label);
     chooseBlocked.appendChild(check);

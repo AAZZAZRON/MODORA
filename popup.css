@@ -376,7 +376,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 57%;
+  top: 58%;
   left: 50%;
   width: 82%;
   transform: translate(-50%, -50%);
@@ -427,7 +427,7 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   color: white;
   top: 81%;
-  left: 432px;
+  left: 430px;
   /*width: 20%;*/
   transform: translate(-50%, -50%);
   max-width: 80px;
@@ -435,6 +435,28 @@ border: 3px solid rgb(234,201,215);
   max-height: 45px;
   min-height: 45px;
   /*overflow: auto;*/
+}
+
+#discard-button{
+  color: rgb(234,201,215);
+  border-color:white;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-height: 30px;
+  min-height: 30px;
+  left: 440px;
+  font-size: 18px;
+  top: 91%;
+  width: 70px;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
+  padding-right: 0.25%;
+  vertical-align: middle;  
 }
 
 .websites-submit-hover:hover{
