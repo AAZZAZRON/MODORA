@@ -73,3 +73,46 @@ button:hover {
   font-family: 'Work Sans', sans-serif;
   background-color: white;
 }*/
+
+
+.timer {
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 25%;
+  font-size: 10px;
+  width: 33%;
+  /*border: none;*/
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  top: 45%;
+  transform: translate(-25%, -50%);
+  border: 3px solid white;
+}
+
+#subtitle{
+  top: 75%
+}
+
+#time{ /* the big time thing */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 69%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(234,201,215);
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Work Sans', sans-serif;
+  border: 3px solid white;
+}
