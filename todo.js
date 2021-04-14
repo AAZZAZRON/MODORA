@@ -1,6 +1,6 @@
 var arr = [];
 
-var btn = document.querySelector("ToDoListButton");
+var btn = document.getElementById("ToDoListButton");
 btn.addEventListener("click", function() {
 	
 })
