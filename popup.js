@@ -22,6 +22,7 @@ function timerSetup(checkboxes) {
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
     console.log(checkboxes);
+    resetTimer();
     startTimer();
 }
 

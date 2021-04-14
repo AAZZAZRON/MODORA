@@ -179,7 +179,7 @@ border: 3px solid rgb(234,201,215);
 
 #setup-title{ /*for the title for everything :?*/
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
@@ -190,11 +190,13 @@ border: 3px solid rgb(234,201,215);
   padding-left: 2.5%;
   padding-right: 2.5%;
   text-align: center;
-  font-size: 20px;
+  font-size: 45px;
   font-family: 'Work Sans', sans-serif;
-  border: 3px solid white;
-  max-width: 450px;
-  min-width: 450px;}
+  border: 3px solid rgb(249, 236, 239);
+  max-width: 430px;
+  min-width: 430px;
+  max-height: 200px
+  }
 
 .timer-buttons {
   color: rgb(234,201,215);

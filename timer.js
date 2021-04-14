@@ -2,7 +2,7 @@
   
 // }
 
-var hour = 0;
+var hr = 0;
 var min = 0;
 var sec = 0;
 var start = true;
@@ -14,6 +14,7 @@ function startTimer() {
   start = true;
   stopwatch = setInterval(timing, 1000);
 }
+
 function stoptTimer() {
   start = false;
 }
@@ -46,7 +47,7 @@ function timing() {
       hr = '0' + hr;
     }
 
-    document.getElementById("timer").innerHTML = hr + ':' + min + ':' + sec;
+    document.getElementById("timer").innerText = hr + ':' + min + ':' + sec;
 
   } else {
     clearInterval(stopwatch);
@@ -54,7 +55,7 @@ function timing() {
 }
 
 function resetTimer() {
-  document.getElementById("timer").innerHTML = '00:00:00';
+  document.getElementById("timer").innerText = '00:00:00';
   start = false;
   hr = 0;
   sec = 0;
