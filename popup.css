@@ -94,10 +94,9 @@ button:hover {
 }
 
 #subtitle{
-  top: 30%
+  top: 50%
   font-size: 18px;
   width: 69%;
-
 }
 
 #time{ /* the big time thing */
