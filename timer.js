@@ -1,4 +1,4 @@
-// timer = setInterval(increment, 1000, time);
+// timer = setInterval(increment, 1000);
   
 // }
 const timer = document.getElementById('timers');
@@ -49,7 +49,7 @@ function timing() {
 
     timer.innerHTML = hr + ':' + min + ':' + sec;
 
-    setTimeout("timing()", 1000);
+    setTimeout(timing, 1000);
   }
   function resetTimer() {
     timer.innerHTML = '00:00:00';

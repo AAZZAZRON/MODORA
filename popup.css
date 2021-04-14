@@ -133,7 +133,7 @@ button:hover {
 }
 #pomodoro-setup { /*FOR THE POMODORO SET UP SCREEN: says 25 min and 5 min and cycles; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
 top: 50%;
-left: 75%;
+left: 80%;
 width: 45%;
 font-size: 15px; 
 }
@@ -155,9 +155,9 @@ background-color: rgb(234,201,215);
   padding-bottom: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  left: 30%;
+  left: 28%;
   font-size: 20px;
-  width: 45%;
+  width: 40%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
@@ -193,6 +193,20 @@ background-color: rgb(234,201,215);
   border: 3px solid white;
 }
 */
+#form-labels { /*for the form for blocking websites thing*/
+  color: rgb(234,201,215);
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: left; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  /*border: 3px solid white; */
+}
 .timer-buttons {
   color: rgb(234,201,215);
   border-color:white;
@@ -217,14 +231,14 @@ background-color: rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 15px;
   */
-  left: 15%;
+  left: 40%;
   font-size: 18px;
   top: 85%;
   width: 20%;
 }
 
 .boxes {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
@@ -236,7 +250,7 @@ background-color: rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 55%;
-  left: 15%;
+  left: 25%;
   width: 45%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
@@ -247,7 +261,7 @@ background-color: rgb(234,201,215);
   border: 3px solid white;
   max-width: 200px;
   min-width: 200px;
-  max-height: 300px;
+  max-height: 250px;
   overflow: auto;
 }
 
