@@ -11,19 +11,7 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("ToDoList").hidden = false;
 <<<<<<< HEAD
-  for(int i = 0; i < arr.length; i += 1) {
-    console.log(arr[0]); //here i want to print this :D
-  }  //doesnt this just print in the console thing 
-// i dunno how would i make it print using html part
-} // https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp 
-//woah
-//idk idt thats right but /shrug 
-//thonk me no understand do i like make another div
-=======
-  for(int i = 0; i < arr.length; i++) {
-    console.log(arr[0]);
-  }
-}
+  
 >>>>>>> origin/master
 
 var btn2 = document.getElementById("todobutton");
@@ -33,3 +21,18 @@ btn2.addEventListener("click", function() {
   addCookie("listtodo", arr);
   setToDoList();
 }) 
+/*
+max
+do something like this:
+
+chooseBlocked = document.createElement("div");
+chooseBlocked.id = "ChooseBlocked";
+document.getElementById("choose-blocked-form").appendChild(chooseBlocked);
+const things = decodeURIComponent(document.cookie).split("; ");
+for (let i = 0; i < things.length; i += 1) {
+    const values = things[i].split("===");
+    if (values[1] == "banned") {
+        addToBlockedList(values[0]); // add website to blocked list
+    }
+}
+    */
