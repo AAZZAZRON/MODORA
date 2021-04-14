@@ -112,16 +112,35 @@ button:hover {
 
 
 /* FOR POMODORO SET UP SCREEN VV */
-#pomodoro-setup{ /*FOR THE POMODORO SET UP SCREEN: says 25 min and 5 min and cycles; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
+.timer-setup-display {
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 50%;
+  font-size: 20px;
+  width: 73%;
+  /*border: none;*/
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+}
+#pomodoro-setup { /*FOR THE POMODORO SET UP SCREEN: says 25 min and 5 min and cycles; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
 top: 50%;
-right: 75%;
+left: 75%;
 width: 45%;
 font-size: 20px; 
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;
   top: 80%;
-  right: 75%;
+  left: 75%;
   width: 45%;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -130,6 +149,23 @@ background-color: rgb(234,201,215);
 
 /*SETUP TIMER*/
 #setup-timer-title {
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 30%;
+  font-size: 20px;
+  width: 45%;
+  /*border: none;*/
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
   /*
   position: absolute;
   left: 25%;
@@ -137,7 +173,9 @@ background-color: rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 20px;
   text-align: center;*/
-
+}
+/*
+#-{ /*for the title for everything :?
   position: absolute;
   top: 10%;
   left: 50%;
@@ -154,12 +192,35 @@ background-color: rgb(234,201,215);
   font-family: 'Work Sans', sans-serif;
   border: 3px solid white;
 }
+*/
+.timer-buttons {
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  /*border: none;*/
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+}
+
 #SelectAll {
+  /*
   position: absolute;
   top: 80%;
   left: 40%;
   transform: translate(-50%, -50%);
   font-size: 15px;
+  */
+  left: 15%;
+  font-size: 18px;
+  top: 85%;
+  width: 20%;
 }
 
 .boxes {
@@ -169,13 +230,24 @@ background-color: rgb(234,201,215);
 
 #ChooseBlocked {
   position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  text-align: center; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 50%;
+  left: 30%;
+  width: 45%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
   max-width: 240px;
   min-width: 240px;
   max-height: 300px;
   overflow: auto;
-  top: 50%;
-  left: 25%;
-  transform: translate(-50%, -50%);
 }
 
 /* SCROLL BAR CSS */
