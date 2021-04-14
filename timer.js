@@ -1,7 +1,7 @@
 // timer = setInterval(increment, 1000);
   
 // }
-const timer = document.getElementById('timers');
+document.getElementById('timers');
 
 var hour = 0;
 var min = 0;
@@ -51,18 +51,15 @@ function timing() {
 
     setTimeout(timing, 1000);
   }
-  function resetTimer() {
+  
+}
+function resetTimer() {
     timer.innerHTML = '00:00:00';
     start = false;
     hr = 0;
     sec = 0;
     min = 0;
   }
-  // or use below
-  // if(isDone == true) {
-  //     timer.innerHTML = '00:00:00';
-  // }
-}
 
 
 

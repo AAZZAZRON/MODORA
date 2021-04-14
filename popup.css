@@ -139,8 +139,8 @@ font-size: 15px;
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;
-  top: 80%;
-  left: 75%;
+  top: 90%;
+  left: 77%;
   width: 45%;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -239,7 +239,7 @@ border: 3px solid rgb(234,201,215);
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
-  text-align: center; 
+  text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
   top: 55%;
@@ -249,7 +249,7 @@ border: 3px solid rgb(234,201,215);
   padding-bottom: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  margin: 3%;
+  /*margin: 3%;*/
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 200px;
