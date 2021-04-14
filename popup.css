@@ -90,8 +90,8 @@ button:hover {
   width: 69%;
   max-width: 376px;
   min-width: 376px;
-  max-height: 48px;
-  min-height: 48px;
+  max-height: 30px;
+  min-height: 30px;
 }
 
 #timer{ /* the big time thing */
@@ -112,8 +112,8 @@ button:hover {
   border: 3px solid white;
   max-width: 376px;
   min-width: 376px;
-  max-height: 120px;
-  min-height: 120px;
+  max-height: 85px;
+  min-height: 85px;
 }
 
 #abort{ /*the abort button */
