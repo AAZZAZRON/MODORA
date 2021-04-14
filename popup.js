@@ -1,7 +1,7 @@
 // runs everytime the pop up is clicked
 var check;
 var chooseBlocked;
-var defaultBad = ["twitter", "youtube", "reddit", "netflix", "disneyplus", "instagram", "facebook", "discord"]
+var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
 window.onload = function() { // add all the default "bads"
     getToDoList();
@@ -71,10 +71,13 @@ function setWebsites() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = false;
-    document.getElementById("bb1").onclick = () => {
+    document.getElementById("bb4").onclick = () => {
         chooseBlocked.remove();
         mainMenu();
     };
+    document.getElementById("websites-submit").onclick = () => {
+        addNewSite(document.getElementById("websites-add").value);
+    }
     document.getElementById("discard-button").onclick = () => document.getElementById("WebsiteBlocked").children = discardSites(document.getElementById("WebsiteBlocked").children);
     
     chooseBlocked = document.createElement("div");
@@ -89,6 +92,19 @@ function setWebsites() {
         }
     }
 }
+
+function addNewSite(link) {
+    console.log(link.substring(0, 5))
+    if (link == "") {
+        return;
+    } else if (link.substring(0, 5) != "https") {
+        return;
+    } else {
+        addCookie(link, "==banned");
+        addToBlockedList(link, true);
+    }
+}
+
 
 function discardSites(instances) {
     var ind = instances.length - 2;

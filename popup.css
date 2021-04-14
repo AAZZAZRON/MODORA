@@ -190,7 +190,7 @@ border: 3px solid rgb(234,201,215);
 
 #setup-title{ /*for the title for everything :?*/
   position: absolute;
-  top: 11%;
+  top: 12.5%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
