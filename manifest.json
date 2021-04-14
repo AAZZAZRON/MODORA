@@ -16,6 +16,7 @@
     "default_title": "Hackathon"
     },
     "permissions": [
+        "tabs", 
         "alarms", 
         "cookies", 
         "debugger", 

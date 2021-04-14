@@ -1,4 +1,49 @@
 body {
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 550px;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(249, 236, 239);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#title {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(234,201,215);
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Work Sans', sans-serif;
+  border: 3px solid white;
+} 
+#PomodoroButton {
+  top: 55%;
+}
+
+#ToDoListButton {
+  top: 75%;
+}
+
+.main-menu-button {
+  position: absolute;
+  color: rgb(234,201,215);
+  border-color:white;
+  padding: 3%;
+  left: 50%;
+  font-size: 20px;
+  width: 200px;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
 }
