@@ -28,11 +28,11 @@ button:hover {
   border: 3px solid white;
 } 
 #PomodoroButton {
-  top: 35%;
+  top: 50%;
 }
 
 #ToDoListButton {
-  top: 35%;
+  top: 70%;
 }
 
 .main-menu-button {
