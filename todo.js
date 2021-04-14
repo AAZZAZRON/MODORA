@@ -1,4 +1,5 @@
 var arr = [];
+var outerDiv;
 
 function setToDoList() {
   document.getElementById("MainMenu").hidden = true;
@@ -21,6 +22,8 @@ function display() {
   var p = arr.toString().replaceAll(",", "<br>");
   addCookie("todolist", p);
   var i;
+  outerDiv = document.createElement("div");
+  document.getElementById("websites-list").appendChild(outerDiv);
   for(i = 0; i < arr.length; i++) {
     document.getElementById("output").innerText = arr[i];
     addToToDoList(arr[i]);
@@ -28,14 +31,14 @@ function display() {
 }
 
 function addToToDoList(task) { // add known blocked website to the blocked website list (in HTML)
-    let check = document.createElement("INPUT");
+    let check = document.createElement("input");
     check.setAttribute("type", "checkbox");
     check.name = "x";
-    let label = document.createElement("LABEL");
+    let label = document.createElement("label");
     label.innerText = task + "\n";
     label.className = "boxes";
     console.log(check);
     console.log(label);
-    chooseBlocked.appendChild(check);
-    chooseBlocked.appendChild(label);
+    outerDiv.appendChild(check);
+    outerDiv.appendChild(label);
 }

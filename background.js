@@ -20,9 +20,11 @@ chrome.runtime.onMessage.addListener(
             aborted = false;
             stopwatch = setInterval(stopwatchFunction, 1000);
         } else if (request.message == "abort") {
-            stopwatchStart = false;
-            timerStart = false;
+            clearInterval(stopwatch);
+            clearInterval(timer);
             aborted = true;
+        } else if (request.message == "completed") {
+            clearInterval(stopwatch);
         }
     }
 );
@@ -41,9 +43,6 @@ function timerFunction() {
             min = 59;
             hr -= 1;
         }
-        if (hr == -1) {
-            hr = 0;
-        }
         if (sec < 10 || sec == 0) {
             sec = '0' + sec;
         }
@@ -61,7 +60,7 @@ function timerFunction() {
         console.log(hr, min, sec, aborted);
         clearInterval(timer);
     }
-    if (hr == "00" && min == "00" && sec == "00") {
+    if (hr == "0-1") {
         timerStart = false;
         alert("Back to Work!");
         chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
@@ -114,9 +113,10 @@ function stopwatchFunction() {
 
   } else {
         console.log(hr, min, sec, aborted);
-        clearInterval(stopwatch);
         if (!aborted && cycle == 4) {
             chrome.runtime.sendMessage({message: "done"})
+        } else {
+            clearInterval(stopwatch);
         }
   }
   if (hr == "00" && min == "00" && sec == "11") {
@@ -135,7 +135,7 @@ function stopwatchFunction() {
         aborted = false;
         hr = 0;
         min = 0;
-        sec = 15;
+        sec = 5;
 
         
         timer = setInterval(timerFunction, 1000)

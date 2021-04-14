@@ -36,9 +36,11 @@
       <div class = "ToDo">
 		    <h1>Modora</h1>
         <h3>Tasks:</h3>
-        <form id = "todo-list" method="get"></form>
-        <input type="checkbox" name="x" value = "HI">
-        <label for="x" class="boxes"><p id = "output"></p></label> <br>
+        <form id = "todo-list" method="get">
+          
+        </form>
+          <input type="checkbox" name="x" value = "HI">
+          <label for="x" class="boxes"><p id = "output"></p></label> <br>
 		    <label>Add task: </label><input type="text" id="userName">
 		    <button id = "addtask">Enter</button>
 	    </div>
@@ -58,10 +60,10 @@
       <div id="websites-title">manage websites!</div>
       <div id="websites-text">add and remove sites you want to add to your blocked websites list.</div>
       <form id = "websites-list" method="get"></form>
-        <input type="checkbox" name="x" value = "HI">
-        <label for="x" class="boxes">facepalm</label> <br>
+        <input type="checkbox" name="x" value="HI" id="websites-list">
+        <label for="x" class="boxes" id="websites-list">facepalm</label> <br>
       <input type="url" id="websites-add" class="websites-add-focus">
-      <input type="submit" value="Submit" id="websites-submit" class="website-submit-hover">
+      <button type="submit" value="Submit" id="websites-submit" class="website-submit-hover"></button>
       <button id = "bb4" class ="back-button timer-buttons1">&lt&lt</button>
     </div>
 

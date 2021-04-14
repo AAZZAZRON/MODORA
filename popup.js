@@ -29,6 +29,7 @@ function mainMenu() { // show main menu screen
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = true;
+    document.getElementById("completedScreen").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
     document.getElementById("ToDoListButton").onclick = () => setToDoList();
     document.getElementById("ManageWebsitesButton").onclick = () => setWebsites();
@@ -89,6 +90,16 @@ function showAbortScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
+    addCookie("tracker", "mainMenu");
+    abortTimer();
+}
+
+function showCompletedScreen() {
+    document.getElementById("MainMenu").hidden = true;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = true;
+    document.getElementById("completedScreen").hidden = false;
+    document.getElementById("bb3").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
 }
 
