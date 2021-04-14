@@ -82,9 +82,9 @@ button:hover {
   padding-bottom: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  left: 25%;
-  font-size: 10px;
-  width: 33%;
+  left: 50%;
+  font-size: 17px;
+  width: 73%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
@@ -96,7 +96,7 @@ button:hover {
 }
 
 #subtitle{
-  top: 75%
+  top: 70%
 }
 
 #time{ /* the big time thing */
