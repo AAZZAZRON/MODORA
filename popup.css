@@ -381,15 +381,15 @@ border: 3px solid rgb(234,201,215);
   width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 444px;
-  min-width: 444px;
-  max-height: 185px;
-  min-height: 185px;
+  max-width: 414px;
+  min-width: 414px;
+  max-height: 155px;
+  min-height: 155px;
   overflow: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
 
 }
 
@@ -405,13 +405,13 @@ border: 3px solid rgb(234,201,215);
   width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 439.5px;
-  min-width: 439.5px;
+  max-width: 409.5px;
+  min-width: 409.5px;
   max-height: 40px;
   min-height: 40px;
   overflow: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .websites-add-focus:focus{
