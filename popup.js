@@ -9,7 +9,20 @@ function setPomodoro() {
     //hide and unhide
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = false;
+    document.getElementById("TimerOn").hidden = true;
     document.getElementById("SelectAll").onclick = () => toggle(document.getElementById("SelectAll").checked);
+    document.getElementById("start-button").onclick = () => {
+        console.log("CLICKED")
+        timerSetup(document.getElementsByName("x"));
+    }
+}
+
+function timerSetup(checkboxes) {
+    document.getElementById("MainMenu").hidden = true;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = false;
+    console.log(checkboxes);
+    startTimer();
 }
 
 function toggle(source) { // check and uncheck all items

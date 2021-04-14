@@ -139,8 +139,8 @@ font-size: 15px;
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;
-  top: 85%;
-  left: 76%;
+  top: 88%;
+  left: 75%;
   width: 45%;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -224,6 +224,8 @@ border: 3px solid rgb(234,201,215);
   top: 85%;
   width: 20%;
 }
+
+#seel
 
 .boxes {
   font-size: 15px;
