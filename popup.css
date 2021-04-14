@@ -14,7 +14,7 @@ button:hover {
   position: absolute;
   top: 25%;
   left: 50%;
-  width: 70%;
+  width: 69%;
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgb(234,201,215);
@@ -44,13 +44,13 @@ button:hover {
   padding-right: 2.5%;
   left: 50%;
   font-size: 20px;
-  width: 72%;
+  width: 73%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
   position: absolute;
-  top: 25%;
+  top: 15%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
 }
