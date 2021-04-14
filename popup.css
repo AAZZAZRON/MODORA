@@ -86,7 +86,7 @@ button:hover {
   width: 69%;
 }
 
-#time{ /* the big time thing */
+#timer{ /* the big time thing */
   position: absolute;
   top: 55%;
   left: 50%;
@@ -176,8 +176,8 @@ border: 3px solid rgb(234,201,215);
   font-size: 20px;
   text-align: center;*/
 }
-/*
-#-{ /*for the title for everything :?
+
+#setup-title{ /*for the title for everything :?*/
   position: absolute;
   top: 10%;
   left: 50%;
@@ -193,8 +193,9 @@ border: 3px solid rgb(234,201,215);
   font-size: 20px;
   font-family: 'Work Sans', sans-serif;
   border: 3px solid white;
-}
-*/
+  max-width: 450px;
+  min-width: 450px;}
+
 .timer-buttons {
   color: rgb(234,201,215);
   border-color:white;
@@ -219,13 +220,17 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 15px;
   */
-  left: 40%;
+  left: 35%;
   font-size: 18px;
   top: 85%;
   width: 20%;
 }
 
-#seel
+#select-all-box{ /*just the box*/
+  left: 20%;
+  top: 85%;
+  width: 20%;
+}
 
 .boxes {
   font-size: 15px;
@@ -252,8 +257,8 @@ border: 3px solid rgb(234,201,215);
   /*margin: 3%;*/
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 220px;
-  min-width: 220px;
+  max-width: 221px;
+  min-width: 221px;
   max-height: 250px;
   overflow: auto;
 }
@@ -278,4 +283,9 @@ border: 3px solid rgb(234,201,215);
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
+#back-button{
+  left: 15%;
+  font-size: 18px;
+  top: 85%;
+  width: 20%;
+}
