@@ -29,7 +29,24 @@ button:hover {
   font-family: 'Work Sans', sans-serif;
   /*border: 3px solid white;*/
 } 
-#mainmenu-subtitle {
+#mainmenu-subtitle1 {
+  color: white;
+  background-color: rgb(234,201,215);/*
+  padding-top: 2.5%;*/
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 50%;
+  font-size: 18px;
+  width: 69%;
+  /*border: none;*/
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  position: absolute;
+  top: 47%;
+  transform: translate(-50%, -50%);
+}
+ #mainmenu-subtitle2 {
   color: white;
   background-color: rgb(234,201,215);/*
   padding-top: 2.5%;*/
