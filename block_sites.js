@@ -22,7 +22,7 @@ window.chrome.webRequest.onBeforeRequest.addListener(
 );
 
 function checkUrl() {
-  if(url == "http://www.discord.com/*") {
+  if(url.substring() == "http://www.discord.com") {
     alert("It is Work Time Right Now Get Off!");
   }
 }
