@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Modoro",
+    "name": "MODORA",
     "description": "Procrastinate No More",
     "version": "1.0",
     "icons": {
@@ -23,7 +23,7 @@
 
     "browser_action": { 
     "default_popup": "popup.html",
-    "default_title": "Hackathon"
+    "default_title": "MODORA"
     },
     "permissions": [
         "tabs",
