@@ -213,7 +213,7 @@ border: 3px solid rgb(234,201,215);
   max-height: 30px;
   min-height: 30px;
   left: 60px;
-  font-size: 22px;
+  font-size: 18px;
   top: 91%;
   width: 70px;
   padding-top: 0.25%;
@@ -242,13 +242,6 @@ border: 3px solid rgb(234,201,215);
 }
 
 #SelectAll {
-  /*
-  position: absolute;
-  top: 80%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  font-size: 15px;
-  */
   left: 183px; /*(130)*/ 
   font-size: 18px;
   top: 91%;
@@ -309,6 +302,8 @@ border: 3px solid rgb(234,201,215);
   max-height: 200px;
   min-height: 200px;
   background-color: white;
+  vertical-align: middle;
+
 }
 #aborted-text{
   top: 50%;
