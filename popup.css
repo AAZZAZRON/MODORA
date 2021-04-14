@@ -139,8 +139,8 @@ font-size: 15px;
 }
 #start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
   font-size: 35px;
-  top: 90%;
-  left: 77%;
+  top: 93%;
+  left: 80%;
   width: 45%;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -197,7 +197,6 @@ border: 3px solid rgb(234,201,215);
 */
 }
 .timer-buttons {
-  position: absolute;
   color: rgb(234,201,215);
   border-color:white;
   padding-top: 2.5%;
@@ -244,11 +243,11 @@ border: 3px solid rgb(234,201,215);
   background-color: white;
   top: 55%;
   left: 25%;
-  width: 45%;
+  width: 45%; /*
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-right: 2.5%; */
   /*margin: 3%;*/
   transform: translate(-50%, -50%);
   border: 3px solid white;
