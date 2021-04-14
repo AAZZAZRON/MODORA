@@ -10,6 +10,7 @@ function setToDoList() {
   document.getElementById("SetupTimer").hidden = true;
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("ToDoList").hidden = false;
+<<<<<<< HEAD
   for(int i = 0; i < arr.length; i += 1) {
     console.log(arr[0]); //here i want to print this :D
   }  //doesnt this just print in the console thing 
@@ -18,6 +19,12 @@ function setToDoList() {
 //woah
 //idk idt thats right but /shrug 
 //thonk me no understand do i like make another div
+=======
+  for(int i = 0; i < arr.length; i++) {
+    console.log(arr[0]);
+  }
+}
+>>>>>>> origin/master
 
 var btn2 = document.getElementById("todobutton");
 btn2.addEventListener("click", function() {
