@@ -13,8 +13,8 @@ chrome.runtime.onMessage.addListener(
   function (request) {
     console.log(request);
       if (request.message == "done") {// if stopwatch is done
-          chrome.runtime.sendMessage({message: "completed"});
-          showCompletedScreen();
+        showCompletedScreen();
+        chrome.runtime.sendMessage({message: "completed"});
       } else { // if it is not done
       document.getElementById("timer").innerText = request.time;
       document.getElementById("subtitle").innerText = request.subtitle;

@@ -31,7 +31,7 @@ function display() {
   }
 }
 
-function addToToDoList(task) { // add known blocked website to the blocked website list (in HTML)
+function addToToDoList(task) {
     let check = document.createElement("input");
     check.setAttribute("type", "checkbox");
     check.name = "x";

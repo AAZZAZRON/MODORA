@@ -7,6 +7,7 @@ var stopwatch, timer;
 var isTimerDone = false;
 aborted = false;
 var cycle = 1;
+var finish;
 chrome.runtime.onMessage.addListener(
     function (request) {
         if (request == "begin") {
@@ -24,7 +25,7 @@ chrome.runtime.onMessage.addListener(
             clearInterval(timer);
             aborted = true;
         } else if (request.message == "completed") {
-            clearInterval(stopwatch);
+            clearInterval(finish);
         }
     }
 );
@@ -70,8 +71,8 @@ function timerFunction() {
         stopwatchStart = true;
         aborted = false;
         hr = 0;
-        min = 0;
-        sec = 0;
+        min = 25;
+        sec = 1;
         stopwatch = setInterval(stopwatchFunction, 1000)
     } else {
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
@@ -110,21 +111,14 @@ function stopwatchFunction() {
     if (chrome.extension.getViews({type: "popup"}).length == 1) {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
-
-  } else {
-        console.log(hr, min, sec, aborted);
-        if (!aborted && cycle == 4) {
-            chrome.runtime.sendMessage({message: "done"})
-        } else {
-            clearInterval(stopwatch);
-        }
   }
-  if (hr == "00" && min == "00" && sec == "11") {
-    stopwatchStart = false;
-    if (cycle == 4) {
+  if (hr == "00" && min == "25" && sec == "01") {
+    if (!aborted && cycle == 4) {
+        clearInterval(stopwatch);
         alert("You are done!");
-
+        finish = setInterval(callPopup, 1000);
     } else {
+        stopwatchStart = false;
         alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
         cycle += 1;
         chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
@@ -134,14 +128,16 @@ function stopwatchFunction() {
         timerStart = true;
         aborted = false;
         hr = 0;
-        min = 0;
-        sec = 5;
+        min = 5;
+        sec = 0;
 
-        
-        timer = setInterval(timerFunction, 1000)
+        timer = setInterval(timerFunction, 500)
     }
   } else {
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
   }
 }
 
+function callPopup() {
+    chrome.runtime.sendMessage({message: "done"});
+}
