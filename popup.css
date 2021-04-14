@@ -36,6 +36,10 @@ button:hover {
   top: 75%;
 }
 
+#ManageWebsitesButton {
+  top: 90%;
+}
+
 .main-menu-button {
   color: rgb(234,201,215);
   border-color:white;
@@ -183,8 +187,8 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgb(234,201,215);
-  padding-top: 12%;
-  padding-bottom: 12%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   padding-left: 2.5%;
   padding-right: 2.5%;
   text-align: center;
@@ -207,6 +211,8 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-height: 120px;
+  min-height: 120px;
+
 }
 
 .timer-buttons1:hover{

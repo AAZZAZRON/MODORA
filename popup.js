@@ -1,10 +1,15 @@
 // runs everytime the pop up is clicked
 var check = false;
 window.onload = function() {
+    mainMenu();
+}
+function mainMenu() {
+    document.getElementById("back-button").onclick = () => mainMenu();
     document.getElementById("MainMenu").hidden = false;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
 }
-
 
 function setPomodoro() {
     //hide and unhide
