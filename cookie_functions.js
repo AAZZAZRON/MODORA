@@ -17,3 +17,9 @@ function getCookie(name) {
     return "notFound";
 }
 
+function addCookie(name, value) {
+    var expire = "expires=Fri, 31 Dec 3000 23:59:59 GMT";
+    document.cookie += `; ${name}=${value}; ${expire}`;
+    console.log(document.cookie);
+    console.log(decodeURIComponent(document.cookie));
+}
