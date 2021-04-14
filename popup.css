@@ -32,8 +32,35 @@ button:hover {
 
 #ToDoListButton {
   top: 75%;
+  text-align: center
 }
-
+/*
+.main-menu-button {
+  color: rgb(234,201,215);
+  border-color:white;
+  padding: 3%;
+  left: 50%;
+  font-size: 20px;
+  width: 200px;
+  border: none;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+}
+*/
+.main-menu-button {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: 19%;
+  margin-left: 19%;
+  color: rgb(234,201,215);
+  border-color:white;
+  padding: 2.5%;
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+}
+/*
 .main-menu-button {
   position: absolute;
   color: rgb(234,201,215);
@@ -47,4 +74,4 @@ button:hover {
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
-}
+}*/
