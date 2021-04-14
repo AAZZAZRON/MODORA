@@ -55,6 +55,9 @@ button:hover {
   border: 3px solid white;
 }
 
+.main-menu-button1:hover { /*hallo morning ppl, this is just for when it uh hovers, it has a border :D*/
+  border: 1px solid rgb(234,201,215);
+}
 /*
 .main-menu-button {
   position: absolute;
