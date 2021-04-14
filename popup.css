@@ -145,7 +145,7 @@ font-size: 15px;
   font-size: 35px;
   top: 89%;
   left: 75%;
-  width: 45%;
+  width: 4%;
   text-align: center;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -211,8 +211,8 @@ border: 3px solid rgb(234,201,215);
   position: absolute;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-height: 70px;
-  min-height: 70px;
+  max-height: 30px;
+  min-height: 30px;
 
 }
 
@@ -230,7 +230,7 @@ border: 3px solid rgb(234,201,215);
   */
   left: 183px; /*(130)*/ 
   font-size: 18px;
-  top: 89%;
+  top: 91%;
   width: 141px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
@@ -241,7 +241,7 @@ border: 3px solid rgb(234,201,215);
 #back-button{
   left: 60px;
   font-size: 22px;
-  top: 89%;
+  top: 91%;
   width: 70px;
   padding-top: 0.25%;
   padding-bottom: 0.25%;
@@ -269,7 +269,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 57%;
+  top: 59%;
   left: 28%;
   width: 45%; /*
   padding-top: 2.5%;
@@ -281,7 +281,8 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   max-width: 221.5px;
   min-width: 221.5px;
-  max-height: 250px;
+  max-height: 270px;
+  min-height: 270px;
   overflow: auto;
 }
 

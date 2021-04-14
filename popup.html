@@ -19,42 +19,7 @@
     <div id="SetupTimer" hidden>
         <div id="setup-title">Set-Up!</div>
         <div id="setup-timer-title">Websites to Block</div>
-        <form action="timer-started.html" method="get">
-            <div id="ChooseBlocked">
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-                <input type="checkbox" name="x" value = "HI">
-                <label for="x" class="boxes">What's up</label> <br>
-            </div>
-    </form>
+        <form action="timer-started.html" id = "choose-blocked-form" method="get"></form>
         <button id="SelectAll" class="timer-buttons timer-buttons1">Select All</button>
         <button id="start-button" class="timer-setup-display start-button1">START</button>
         <button id="back-button" class ="timer-buttons timer-buttons1">&lt&lt</button>
@@ -63,15 +28,27 @@
 
     <div id="TimerOn" hidden>
         <div id="timer"></div>
-        <div id="subtitle" class="timer-text">test</div> 
+        <div id="subtitle" class="timer-text">task/time to do work/cycle #shrug</div> 
         <button id="abort" class="timer-text main-menu-button1">abort</button> 
+    </div>
+
+    <div id="ToDoList" hidden>
+      <form>
+			  <label>Enter task:
+				  <input type="text" name="name" value ="">
+			  </label>
+		  </form>
+		  <button id="todobutton">Enter</button>
+
     </div>
 
     <script src="popup.js" type="text/javascript"></script>
     <script src="timer.js" type="text/javascript"></script>
     <script src="block_sites.js" type="text/javascript"></script>
     <script src="cookie_functions.js" type="text/javascript"></script>
-    <script src="background.js" type="text/javascript"></script>
+    <script src="tools.js" type="text/javascript"></script>
+    <script src="todo.js"
+    type="text/javascript"></script>
 </body>
 </html>
 
