@@ -75,7 +75,7 @@ button:hover {
 }*/
 
 
-.timer {
+.timer text {
   color: rgb(234,201,215);
   border-color:white;
   padding-top: 2.5%;
@@ -84,13 +84,13 @@ button:hover {
   padding-right: 2.5%;
   left: 50%;
   font-size: 15px;
-  width: 73%;
+  width: 71%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
   position: absolute;
-  top: 15%;
+  top: 20%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
 }
@@ -101,7 +101,7 @@ button:hover {
 
 #time{ /* the big time thing */
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
