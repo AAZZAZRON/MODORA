@@ -28,8 +28,10 @@ function mainMenu() { // show main menu screen
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
+    document.getElementById("websitesScreen").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
     document.getElementById("ToDoListButton").onclick = () => setToDoList();
+    document.getElementById("ManageWebsitesButton").onclick = () => setWebsites();
 }
 
 function setPomodoro() { // show pomodoro setup screen
@@ -37,6 +39,7 @@ function setPomodoro() { // show pomodoro setup screen
     document.getElementById("SetupTimer").hidden = false;
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
+    document.getElementById("websitesScreen").hidden = true;
     document.getElementById("SelectAll").onclick = () => toggle();
     document.getElementById("bb1").onclick = () => mainMenu();
     document.getElementById("start-button").onclick = () => timerSetup(document.getElementsByName("x"));
@@ -53,6 +56,15 @@ function setPomodoro() { // show pomodoro setup screen
             addToBlockedList(values[0]); // add website to blocked list
         }
     }
+}
+
+function setWebsites() {
+    document.getElementById("MainMenu").hidden = true;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = true;
+    document.getElementById("abortedScreen").hidden = true;
+    document.getElementById("websitesScreen").hidden = false;
+    document.getElementById("bb4").onclick = () => mainMenu();
 }
 
 
@@ -78,7 +90,6 @@ function showAbortScreen() {
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
-    abortTimer();
 }
 
 

@@ -21,4 +21,18 @@ function display(){
   var p = arr.toString().replaceAll(",", "<br>");
   document.getElementById("output").innerHTML = p;
   addCookie("todolist", p);
+  
+}
+
+function addToToDoList(task) { // add known blocked website to the blocked website list (in HTML)
+    let check = document.createElement("INPUT");
+    check.setAttribute("type", "checkbox");
+    check.name = "x";
+    let label = document.createElement("LABEL");
+    label.innerText = task + "\n";
+    label.className = "boxes";
+    console.log(check);
+    console.log(label);
+    chooseBlocked.appendChild(check);
+    chooseBlocked.appendChild(label);
 }
