@@ -33,15 +33,13 @@
     </div>
 
     <div id="ToDoList" hidden>
-      <section id="todopart">
-      <form>
-        <p>
-			  <label>Enter task:
-				  <input type="text" name="name" value ="">
-			  </label>
-		  </form>
-		  <button id="todobutton">Enter</button>
-      </section>
+      <div class = "ToDo">
+		    <h1>Modora</h1>
+        <h3>Tasks:</h3>
+		    <p id="output"></p>
+		    <label>Add task: </label><input type="text" id="userName">
+		    <button id = "addtask">Enter</button>
+	    </div>
     </div>
     
     <div id="abortedScreen" hidden>
@@ -58,9 +56,11 @@
     <div id="webistesScreen" hidden>
       <div id="websites-title">manage websites!</div>
       <div id="websites-text">add and remove sites you want to add to your blocked websites list.</div>
-      <form id = "choose-blocked-form" method="get"></form>
-      <input id="i_websites">input a we
-      <!-- the input bar -->
+      <form id = "websites-list" method="get"></form>
+        <input type="checkbox" name="x" value = "HI">
+        <label for="x" class="boxes">hallo</label> <br>
+      <input type="url" id="websites-add" class="websites-add-focus">
+      <input type="submit" value="Submit" id="website-submit" class="website-submit-hover">
       <button class ="tback-button timer-buttons1">&lt&lt</button>
     </div>
 

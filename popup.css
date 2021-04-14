@@ -323,6 +323,113 @@ border: 3px solid rgb(234,201,215);
   font-size: 30px;
 }
 
+/*WEBSITESS ------------------------------------------------------------------------- */
+#websites-title{
+  position: absolute;
+  top: 11%;
+  left: 50%;
+  width: 69%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(234,201,215);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Work Sans', sans-serif;
+  border: 3px solid rgb(249, 236, 239);
+  max-width: 425px;
+  min-width: 425px;
+  max-height: 100px;
+}
+
+#websites-text{
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 50%;
+  font-size: 15px;
+  width: 73%;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  top: 17%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+}
+
+#websites-list{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 60%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 221.5px;
+  min-width: 221.5px;
+  max-height: 180px;
+  min-height: 180px;
+  overflow: auto;
+}
+
+#websites-add{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 80%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 221.5px;
+  min-width: 221.5px;
+  max-height: 40px;
+  min-height: 40px;
+  overflow: auto;
+}
+
+.websites-add-focus:focus{
+  border: 1px solid rgb(234,201,215);
+}
+
+#websites-submit{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 80%;
+  left: 80%;
+  width: 10%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
+  overflow: auto;
+}
+
+.websites-submit-hover:hover{
+  background-color: rgb(234,201,215);
+  color: white;
+}
+
 /* SCROLL BAR CSS */
 /* width */
 ::-webkit-scrollbar {
@@ -345,12 +452,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 /* To Do section format */
-#todopart {
-  background: pink;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
+.div1 {
+	text-align: center;
 }
 
