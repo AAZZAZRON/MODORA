@@ -360,6 +360,8 @@ border: 3px solid rgb(234,201,215);
   top: 17%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
+  max-width: 425px;
+  min-width: 425px;
 }
 
 #websites-list{
@@ -369,13 +371,13 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 60%;
+  top: 40%;
   left: 50%;
   width: 80%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 221.5px;
-  min-width: 221.5px;
+  max-width: 425px;
+  min-width: 425px;
   max-height: 180px;
   min-height: 180px;
   overflow: auto;
@@ -393,8 +395,8 @@ border: 3px solid rgb(234,201,215);
   width: 80%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 221.5px;
-  min-width: 221.5px;
+  max-width: 425px;
+  min-width: 425px;
   max-height: 40px;
   min-height: 40px;
   overflow: auto;
@@ -450,7 +452,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 /* To Do section format */
-.div1 {
+.ToDo {
 	text-align: center;
 }
 
