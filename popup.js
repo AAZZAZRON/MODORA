@@ -29,6 +29,7 @@ function mainMenu() { // show main menu screen
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
+    document.getElementById("ToDoListButton").onclick = () => setToDoList();
 }
 
 function setPomodoro() { // show pomodoro setup screen
