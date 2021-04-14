@@ -117,8 +117,25 @@ button:hover {
   border: 3px solid white;
 }
 
-#abort{
-  top: 80%;
-  font-size: 12px;
+#abort{ /*the abort button */
+  top: 77%;
+  font-size: 15px;
   width: 50%;
 }
+
+#pomodoro-setup{ /*FOR THE POMODORO SET UP SCREEN: says 25 min and 5 min and cycles; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
+top: 50%;
+right: 75%;
+width: 45%;
+font-size: 20px; 
+}
+#start-button{ /*FOR THE POMODORO SET UP SCREEN: says "start" ; NOT TESTED YET, USE WITH THE MAIN-MENU-BUTTON*/
+  font-size: 35px;
+  top: 80%;
+  right: 75%;
+  width: 45%;
+}
+.start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
+background-color: rgb(234,201,215);
+}
+
