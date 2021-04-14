@@ -83,25 +83,25 @@ button:hover {
   padding-left: 2.5%;
   padding-right: 2.5%;
   left: 50%;
-  font-size: 17px;
+  font-size: 15px;
   width: 73%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
   position: absolute;
-  top: 45%;
-  transform: translate(-25%, -50%);
+  top: 15%;
+  transform: translate(-50%, -50%);
   border: 3px solid white;
 }
 
 #subtitle{
-  top: 70%
+  top: 30%
 }
 
 #time{ /* the big time thing */
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
