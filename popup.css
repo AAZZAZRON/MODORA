@@ -193,18 +193,14 @@ border: 3px solid rgb(234,201,215);
   font-size: 45px;
   font-family: 'Work Sans', sans-serif;
   border: 3px solid rgb(249, 236, 239);
-  max-width: 430px;
-  min-width: 430px;
-  max-height: 200px
-  }
+  max-width: 425px;
+  min-width: 425px;
+  max-height: 150px
+}
 
 .timer-buttons {
   color: rgb(234,201,215);
   border-color:white;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
@@ -212,6 +208,7 @@ border: 3px solid rgb(234,201,215);
   position: absolute;
   transform: translate(-50%, -50%);
   border: 3px solid white;
+  max-height: 120px
 }
 
 #SelectAll {
@@ -222,10 +219,25 @@ border: 3px solid rgb(234,201,215);
   transform: translate(-50%, -50%);
   font-size: 15px;
   */
-  left: 35%;
+  left: 40%;
   font-size: 18px;
   top: 85%;
   width: 20%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+#back-button{
+  left: 15%;
+  font-size: 18px;
+  top: 85%;
+  width: 20%;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
+  padding-right: 0.25%;
 }
 
 #select-all-box{ /*just the box*/
@@ -284,10 +296,4 @@ border: 3px solid rgb(234,201,215);
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-#back-button{
-  left: 15%;
-  font-size: 18px;
-  top: 85%;
-  width: 20%;
 }
