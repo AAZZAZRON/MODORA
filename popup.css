@@ -413,12 +413,12 @@ border: 3px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 77%;
-  left: 85%;
-  width: 20%;
+  left: 300px;
+  /*width: 20%;*/
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 40px;
-  min-width: 40px;
+  max-width: 80px;
+  min-width: 80px;
   max-height: 40px;
   min-height: 40px;
   /*overflow: auto;*/

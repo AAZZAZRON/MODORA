@@ -19,7 +19,7 @@ document.getElementById("addtask").onclick = () => display();
 function display(){
 	arr.push(document.getElementById("userName").value);
   var p = arr.toString().replaceAll(",", "<br>");
-  document.getElementById("output").innerHTML = p;
+  document.getElementById("output").innerText = p;
   addCookie("todolist", p);
   var i;
   for(i = 0; i < arr.length; i++) {
