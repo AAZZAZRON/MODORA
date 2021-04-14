@@ -75,10 +75,12 @@ function setWebsites() {
         chooseBlocked.remove();
         mainMenu();
     };
+    document.getElementById("discard-button").onclick = () => document.getElementById("WebsiteBlocked").children = discardSites(document.getElementById("WebsiteBlocked").children);
     
     chooseBlocked = document.createElement("div");
-    chooseBlocked.id = "ChooseBlocked";
+    chooseBlocked.id = "WebsiteBlocked";
     document.getElementById("websites-list").appendChild(chooseBlocked);
+    console.log(document.cookies);
     const things = decodeURIComponent(document.cookie).split("; ");
     for (let i = 0; i < things.length; i += 1) {
         const values = things[i].split("===");
@@ -87,6 +89,21 @@ function setWebsites() {
         }
     }
 }
+
+function discardSites(instances) {
+    var ind = instances.length - 2;
+    while (ind >= 0) {
+        console.log(ind, instances[ind].name, instances[ind].checked);
+        if (instances[ind].checked) {
+            console.log(instances[ind + 1].innerText)
+            instances[ind].remove();
+            instances[ind].remove();
+        }
+        ind -= 2;
+    }
+    return instances;
+}
+
 
 
 function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
@@ -137,17 +154,23 @@ function toggle() { // check and uncheck all items
     }
 }
 
-function addToBlockedList(inner, hasWebClass=false) { // add known blocked website to the blocked website list (in HTML)
+function addToBlockedList(inner, website=false) { // add known blocked website to the blocked website list (in HTML)
     let check = document.createElement("INPUT");
     check.setAttribute("type", "checkbox");
-    check.name = "x";
+    if (!website) {
+        check.name = "x";
+    } else {
+        check.name = inner;
+    }
     let label = document.createElement("LABEL");
     label.innerText = inner + "\n";
     label.className = "boxes";
-    if (hasWebClass) {
-        check.classList.add("websites-list");
-        label.classList.add("websites-list");
+    if (!website) {
+        label.name = "x";
+    } else {
+        label.name = inner;
     }
+
     console.log(check);
     console.log(label);
     chooseBlocked.appendChild(check);
