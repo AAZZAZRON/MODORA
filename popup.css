@@ -30,8 +30,8 @@ button:hover {
   /*border: 3px solid white;*/
 } 
 #mainmenu-subtitle {
-  color: rgb(234,201,215);
-  border-color:white;
+  color: white;
+  background-color: rgb(234,201,215);
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   padding-left: 2.5%;
@@ -42,11 +42,9 @@ button:hover {
   /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
-  background-color: white;
   position: absolute;
   top: 40%;
   transform: translate(-50%, -50%);
-  border: 3px solid white;
 } 
 #PomodoroButton {
   top: 57%;
