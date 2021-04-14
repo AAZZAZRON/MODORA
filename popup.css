@@ -145,6 +145,8 @@ font-size: 15px;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
 background-color: rgb(234,201,215);
+color: white;
+border: 3px solid rgb(234,201,215);
 }
 
 /*SETUP TIMER*/
@@ -193,21 +195,9 @@ background-color: rgb(234,201,215);
   border: 3px solid white;
 }
 */
-#form-labels { /*for the form for blocking websites thing*/
-  color: rgb(234,201,215);
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
-  text-align: left; 
-  font-family: 'Work Sans', sans-serif;
-  background-color: white;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-size: 15px;
-  /*border: 3px solid white; */
 }
 .timer-buttons {
+  position: absolute;
   color: rgb(234,201,215);
   border-color:white;
   padding-top: 2.5%;
@@ -238,7 +228,10 @@ background-color: rgb(234,201,215);
 }
 
 .boxes {
-  font-size: 20px;
+  font-size: 15px;
+  text-align: left;
+  font-family: 'Work Sans', sans-serif;
+
 }
 
 
