@@ -18,6 +18,7 @@ function getToDoList() {
 document.getElementById("addtask").onclick = () => display();
 
 function display() {
+  getToToDoList();
 	arr.push(document.getElementById("userName").value);
   var p = arr.toString().replaceAll(",", "<br>");
   addCookie("todolist", p);

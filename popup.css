@@ -381,8 +381,8 @@ border: 3px solid rgb(234,201,215);
   width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 437px;
-  min-width: 437px;
+  max-width: 440px;
+  min-width: 440px;
   max-height: 185px;
   min-height: 185px;
   overflow: auto;
@@ -400,8 +400,8 @@ border: 3px solid rgb(234,201,215);
   width: 82%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 437px;
-  min-width: 437px;
+  max-width: 439.5px;
+  min-width: 439.5px;
   max-height: 40px;
   min-height: 40px;
   overflow: auto;
@@ -420,10 +420,9 @@ border: 3px solid rgb(234,201,215);
   border: 2px solid white;
   color: white;
   top: 81%;
-  left: 420px;
+  left: 440px;
   /*width: 20%;*/
   transform: translate(-50%, -50%);
-  border: 3px solid white;
   max-width: 80px;
   min-width: 80px;
   max-height: 50px;
@@ -481,3 +480,4 @@ border: 3px solid rgb(234,201,215);
   min-height: 185px;
   overflow: auto;
 }
+
