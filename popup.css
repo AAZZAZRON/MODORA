@@ -429,8 +429,8 @@ border: 3px solid rgb(234,201,215);
   top: 30%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 420px;
-  min-width: 420px;
+  max-width: 444px;
+  min-width: 444px;
 }
 #WebsiteBlocked {
   position: absolute;
@@ -440,13 +440,13 @@ border: 3px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 80%;
-  left: 50%;
-  /*width: 45%; 
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 2.5%;
-  padding-right: 2.5%; */
-  /*margin: 3%;*/
+  left: 50%; /*
+  width: 45%; */
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  padding-right: 6px; /*
+  margin: 3%; */
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 444px;
@@ -582,12 +582,7 @@ border: 3px solid rgb(234,201,215);
   background: #555;
 }
 
-/* To Do section format */
-.ToDo {
-	text-align: center;
-}
-
-#todo-list{
+.div1 {
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
@@ -605,4 +600,3 @@ border: 3px solid rgb(234,201,215);
   min-height: 185px;
   overflow: auto;
 }
-

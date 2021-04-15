@@ -25,6 +25,5 @@ function addCookie(name, value) {
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    // chrome.cookies.remove({"name": ${name}}, function(deleted_cookie) { console.log(deleted_cookie); });
 }
 
