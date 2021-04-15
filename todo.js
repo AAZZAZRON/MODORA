@@ -48,11 +48,11 @@ document.getElementById("ent").addEventListener("click", function() {
   display();
 });
 
-document.getElementById("rem").addEventListener("click", function() {
+document.getElementById("todo-remove-button").addEventListener("click", function() {
   box();
 });
 
-document.getElementById("backfromtodo").addEventListener("click", function() {
+document.getElementById("bb5").addEventListener("click", function() {
   mainMenu();
 });
 

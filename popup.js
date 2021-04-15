@@ -222,6 +222,7 @@ function discardSites(instances) {
   for(let i = 0; i < addToBlockedList.length(); i++) {
     if(url == addToBlockedList[i]) {
       alert("Stop Procrastinating! Close your tab!")
+      myWindow = window.open(urlss, )
         window.close();
     }
   }
