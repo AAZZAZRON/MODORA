@@ -32,7 +32,7 @@ button:hover {
 #title2 { /*ze acc text*/
   position: absolute; /*
   top: 30%;*/
-  top: 23.5%;
+  top: 24.5%;
   left: 50%;
   width: 69%;
   transform: translate(-50%, -50%);
@@ -79,7 +79,7 @@ button:hover {
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
-  top: 38.5%;
+  top: 37.5%;
   transform: translate(-50%, -50%);
 } 
 #PomodoroButton {
