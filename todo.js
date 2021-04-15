@@ -51,6 +51,6 @@ document.getElementById("rem").addEventListener("click", function() {
   box();
 });
 
-document.getElementById("rem").addEventListener("click", function() {
+document.getElementById("backfromtodo").addEventListener("click", function() {
   mainMenu();
 });

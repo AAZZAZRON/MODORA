@@ -601,13 +601,33 @@ border: 3px solid rgb(234,201,215);
   overflow: auto;
 }
 
+#todotitle{
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  width: 69%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(234,201,215);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Work Sans', sans-serif;
+  max-width: 425px;
+  min-width: 425px;
+  max-height: 100px;
+}
+
 #ToDoList {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
   color: purple;
 }
 
-.discard-button-class{
+#backfromtodo{
   color: rgb(234,201,215);
   border-color:white;
   text-align: center; 

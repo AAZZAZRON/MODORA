@@ -170,7 +170,7 @@ function addNewSite(link) {
     if (link == "") {
         return;
     } else if (link.substring(0, 5) != "https") {
-        return;
+        alert("Please enter a valid https link");
     } else {
         arr = getCookie("banned").split(", ")
         arr.push(link);
@@ -185,7 +185,15 @@ function discardSites(instances) {
     while (ind >= 0) {
         console.log(ind, instances[ind].name, instances[ind].checked);
         if (instances[ind].checked) {
-            console.log(instances[ind + 1].innerText)
+            console.log(instances[ind + 1].innerText);
+            var arr = getCookie("banned").split(", ");
+            for (let i = 0; i < arr.length; arr += 1) {
+                if (arr[i] == instances[ind + 1].innerText) {
+                    arr.splice(i, 1);
+                    addCookie("banned", arr.join(", "));
+                    break;
+                }
+            }
             instances[ind].remove();
             instances[ind].remove();
         }
