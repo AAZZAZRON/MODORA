@@ -58,7 +58,7 @@ function getToDoList() {
 
 document.getElementById("ent").addEventListener("click", function() {
   display();
-  document.getElementById("userName")
+  document.getElementById("userName").value = "";
 });
 
 document.getElementById("todo-remove-button").addEventListener("click", function() {
