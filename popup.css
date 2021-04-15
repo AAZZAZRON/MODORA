@@ -648,3 +648,24 @@ border: 3px solid rgb(234,201,215);
   padding-right: 0.25%;
   vertical-align: middle;  
 }
+
+#cboxes{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 81%;
+  left: 50%;
+  width: 82%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 412px;
+  min-width: 412px;
+  max-height: 40px;
+  min-height: 40px;
+  overflow: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
