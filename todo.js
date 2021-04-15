@@ -42,3 +42,7 @@ function getToDoList() {
   var s = getCookie("todolist");
   arr = s.split(",");
 }
+
+document.getElementById("rem").addEventListener("click", function() {
+  
+})
