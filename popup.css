@@ -583,6 +583,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 .div1 {
+  /*
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
@@ -599,6 +600,25 @@ border: 3px solid rgb(234,201,215);
   max-height: 185px;
   min-height: 185px;
   overflow: auto;
+  */
+  color: rgb(234,201,215);
+  border-color:white;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  left: 50%;
+  font-size: 15px;
+  width: 69%;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-width: 420px;
+  min-width: 420px;
 }
 
 #todotitle{
