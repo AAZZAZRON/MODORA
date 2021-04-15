@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="popup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
-    <title>Test Test</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+	<title>Test Test</title>
 </head>
+
 <body>
-    <div id="MainMenu">
-      <div id="title1">.</div>
-      <div id="title2">MODORA</div>
-      <div id="mainmenu-subtitle1">*<br><br></div>
+	<div id="MainMenu">
+		<div id="title1">.</div>
+		<div id="title2">MODORA</div>
+		<div id="mainmenu-subtitle1">*<br><br></div>
       <div id="mainmenu-subtitle2">POMODORO PRODUCTIVITY<br>WEBSITE BLOCKER</div>
       <button id="PomodoroButton" class="main-menu-button main-menu-button1">be productive</button>
       <button id="ToDoListButton" class="main-menu-button main-menu-button1">to do list</button>
@@ -36,18 +38,18 @@
     </div>
 
     <div id="ToDoList" hidden>
-      <div class = "ToDo">
-		    <h1>Modora</h1>
-        <h3>Tasks:</h3>
-        <form id = "todo-list" method="get">
-          
-        </form>
-          <input type="checkbox" name="y" value = "HI">
-          <label for="x" class="boxes"><p id = "output"></p></label> <br>
-		    <label>Add task: </label><input type="text" id="userName">
-		    <button id = "addtask">Enter</button>
-	    </div>
+      <h1>Modora</h1>
+	<div class = "div1">
+
+		<div id="cboxes"></div>
+
+		<button onclick="box()">Remove</button>
+		<br><br>
+	</div>
+	<label>Add task: </label><input type="text" id="userName">
+  <button onclick = "display()">Enter</button>
     </div>
+
     <div id="abortedScreen" hidden>
       <div id="aborted-text" class="final-screens">aborted</div>
       <button id="bb2" class ="back-button timer-buttons1">&lt&lt</button>
@@ -77,4 +79,3 @@
     <script src="todo.js" type="text/javascript"></script>
 </body>
 </html>
-

@@ -1,5 +1,33 @@
 var arr = [];
-var outerDiv;
+
+var myDiv = document.getElementById("cboxes");
+
+function display() {
+	arr.push(document.getElementById("userName").value);
+	var checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.value = arr[arr.length-1];
+    myDiv.appendChild(checkBox);
+    var label = document.createElement("label");
+    myDiv.appendChild(label);
+    label.appendChild(document.createTextNode(arr[arr.length-1]));
+    removeCookie("todolist");
+    addCookie("todolist", arr.toString);
+}
+
+function box() {
+	var subarr = myDiv.getElementsByTagName('input');
+	for(var i = 0; i < subarr.length; i++) {
+		if(subarr[i].checked) {
+			const index = arr.indexOf(subarr[i].value);
+			arr.splice(index, 1);
+			myDiv.removeChild(subarr[i]);
+			myDiv.removeChild(myDiv.getElementsByTagName('label')[i]);
+		}
+	}
+  removeCookie("todolist");
+  addCookie("todolist", arr.toString);
+}
 
 function setToDoList() {
   document.getElementById("MainMenu").hidden = true;
@@ -12,34 +40,5 @@ function setToDoList() {
 
 function getToDoList() {
   var s = getCookie("todolist");
-  arr = s.split("<br>");
-}
-
-document.getElementById("addtask").onclick = () => display();
-
-function display() {
-  addToToDoList();
-	arr.push(document.getElementById("userName").value);
-  var p = arr.toString().replaceAll(",", "<br>");
-  addCookie("todolist", p);
-  var i;
-  outerDiv = document.createElement("div");
-  document.getElementById("websites-list").appendChild(outerDiv);
-  for(i = 0; i < arr.length; i++) {
-    document.getElementById("output").innerText = arr[i];
-    addToToDoList(arr[i]);
-  }
-}
-
-function addToToDoList(task) {
-    let check = document.createElement("input");
-    check.setAttribute("type", "checkbox");
-    check.name = "x";
-    let label = document.createElement("label");
-    label.innerText = task + "\n";
-    label.className = "boxes";
-    console.log(check);
-    console.log(label);
-    outerDiv.appendChild(check);
-    outerDiv.appendChild(label);
+  arr = s.split(",");
 }
