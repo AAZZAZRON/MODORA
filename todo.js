@@ -6,11 +6,11 @@ function display() {
 	arr.push(document.getElementById("userName").value);
 	var checkBox = document.createElement("input");
     checkBox.type = "checkbox";
-    checkBox.value = arr[arr.length-1];
+    checkBox.value = arr[arr.length-1]+"\n";
     myDiv.appendChild(checkBox);
     var label = document.createElement("label");
     myDiv.appendChild(label);
-    label.appendChild(document.createTextNode(arr[arr.length-1]));
+    label.appendChild(document.createTextNode(arr[arr.length-1]+"\n"));
     removeCookie("todolist");
     addCookie("todolist", arr.toString);
 }
