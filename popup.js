@@ -215,3 +215,33 @@ function discardSites(instances) {
     }
     return instances;
 }
+
+if(breakOrWork == true) {
+  var urlss = "";
+  function checkUrl() {
+  urlss = window.location.host.toString();
+  for(let i = 0; i < addToBlockedList.length(); i++) {
+    if(url == addToBlockedList[i] && ) {
+      alert("Stop Procrastinating! Close your tab!")
+        window.close();
+    }
+  }
+}
+}
+
+
+// else {
+//   alert("Good Choice :D");
+// }
+
+// for(;;) {
+//   spammer();
+// }
+
+// function spammer() {
+//   for(let i = 0; i < 3; i++) {
+//     alert("It is Work Time Right Now Get Off!");
+//   }
+  
+//   alert("You have 10 seconds to get off this website!");
+// }

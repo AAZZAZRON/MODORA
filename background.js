@@ -2,6 +2,7 @@ var hr = 0;
 var min = 0;
 var sec = 0;
 var stopwatchStart = false;
+var breakOrWork = false;
 var timerStart = false;
 var stopwatch, timer;
 var isTimerDone = false;
@@ -32,6 +33,7 @@ chrome.runtime.onMessage.addListener(
 
 function timerFunction() {
     if (timerStart) {
+      breakOrWork = false;
         sec = parseInt(sec);
         min = parseInt(min);
         hr = parseInt(hr);
@@ -81,6 +83,7 @@ function timerFunction() {
 
 
 function stopwatchFunction() {
+  breakOrWork = true;
   if (stopwatchStart) {
     sec = parseInt(sec);
     min = parseInt(min);
@@ -139,5 +142,6 @@ function stopwatchFunction() {
 }
 
 function callPopup() {
+  breakOrWork = false;
     chrome.runtime.sendMessage({message: "done"});
 }
