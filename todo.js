@@ -43,6 +43,10 @@ function getToDoList() {
   arr = s.split(",");
 }
 
+document.getElementById("ent").addEventListener("click", function() {
+  display();
+});
+
 document.getElementById("rem").addEventListener("click", function() {
-  
-})
+  box();
+});

@@ -8,6 +8,9 @@ function checkUrl() {
     if(url == addToBlockedList[i]) {
     alert("It is Work Time Right Now Get Off!");
     }
+    else {
+      alert("Good Choice :D");
+    }
   }
 }
 
