@@ -1,14 +1,15 @@
 console.log("New site");
 var badLinks;
 var found = false;
-console.log(window.location.host.toString());
+var 
 
-checkUrls(window.location.host.toString());
+chrome.tabs.onUpdated.addListener((tab) => {
+  checkUrls(tab.url);
+})
 
 
 function checkUrls(link) {
-  alert("testingtesting");
-  link = "https://" + link;
+  console.log(link);
   for (let i = 0; i < badLinks.length; i += 1) {
     found = true;
     console.log(badLinks[i], link)
@@ -21,12 +22,13 @@ function checkUrls(link) {
     }
     if (found) {
       alert("bad boy or girl")
+
     }
   }
 }
 
 
 function updateArray(arr) {
-  badLinks = arr;
+  badLinks = arr.split(", ");
   console.log(badLinks);
 }

@@ -69,7 +69,7 @@ function setPomodoro() { // show pomodoro setup screen
 
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
     badArray = [];
-    updateArray(badArray);
+    chrome.runtime.sendMessage({"message": "update badLinks", "content": `${badArray.join(", ")}`});
     console.log(instances);
     var ind = instances.length - 2;
     while (ind >= 0) {
@@ -78,7 +78,7 @@ function sendBadSites(instances) { // creates a global array of the "bad arrays"
         }
         ind -= 2;
     }
-    updateArray(badArray);
+    chrome.runtime.sendMessage({"message": "update badLinks", "content": `${badArray.join(", ")}`});
 }
 
 
@@ -104,9 +104,8 @@ function showAbortScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
-    addCookie("tracker", "mainMenu");
     badArray = [];
-    updateArray(badArray);
+    chrome.runtime.sendMessage({"message": "update badLinks", "content": `${badArray.join(", ")}`});
     abortTimer();
 }
 
@@ -117,7 +116,7 @@ function showCompletedScreen() {
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
     badArray = [];
-    updateArray(badArray);
+    chrome.runtime.sendMessage({"message": "update badLinks", "content": `${badArray.join(", ")}`});
     addCookie("tracker", "mainMenu");
 }
 

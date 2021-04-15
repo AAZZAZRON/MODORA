@@ -27,6 +27,8 @@ chrome.runtime.onMessage.addListener(
             aborted = true;
         } else if (request.message == "completed") {
             clearInterval(finish);
+        } else if (request.message == "update badLinks") {
+          updateArray(request.content);
         }
     }
 );

@@ -35,8 +35,8 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-  //getToDoList();
-  //startToDo();
+  getToDoList();
+  startToDo();
 }
 
 function getToDoList() {
