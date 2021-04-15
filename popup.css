@@ -529,6 +529,10 @@ border: 3px solid rgb(234,201,215);
   /*overflow: auto;*/
 }
 
+#todo-remove-button{
+  left: 430px;
+}
+
 #discard-button{
   color: rgb(234,201,215);
 }
@@ -639,6 +643,31 @@ border: 3px solid rgb(234,201,215);
   max-width: 425px;
   min-width: 425px;
   max-height: 100px;
+}
+
+#todo-list{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  background-color: white;
+  top: 57%;
+  left: 50%;
+  /*width: 82%;*/
+  transform: translate(-50%, -50%); /*
+  border: 3px solid white; */
+  max-width: 450px;
+  min-width: 450px;
+  max-height: 190px;
+  min-height: 190px;
+  overflow: auto;
+  /*
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  */
 }
 
 #ToDoList {
