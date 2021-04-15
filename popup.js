@@ -223,7 +223,6 @@ function discardSites(instances) {
     if(url == addToBlockedList[i]) {
       alert("Stop Procrastinating! Close your tab!")
       document.getElementsByTagName ('html') [0] .remove ();
-
     }
   }
 }
