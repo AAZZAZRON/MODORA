@@ -1,7 +1,7 @@
 // runs everytime the pop up is clicked
 var check;
 var chooseBlocked;
-var badLinks = [];
+var badArray = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
 window.onload = function() { // runs everytime the popup extension is opened
@@ -68,17 +68,17 @@ function setPomodoro() { // show pomodoro setup screen
 }
 
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
-    badLinks = [];
-    updateArray(badLinks);
+    badArray = [];
+    updateArray(badArray);
     console.log(instances);
     var ind = instances.length - 2;
     while (ind >= 0) {
         if (instances[ind].checked) {
-            badLinks.push(instances[ind + 1].innerText.substring(0, instances[ind + 1].innerText.length - 2));
+            badArray.push(instances[ind + 1].innerText.substring(0, instances[ind + 1].innerText.length - 2));
         }
         ind -= 2;
     }
-    updateArray(badLinks);
+    updateArray(badArray);
 }
 
 
@@ -105,8 +105,8 @@ function showAbortScreen() {
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
-    badLinks = [];
-    updateArray(badLinks);
+    badArray = [];
+    updateArray(badArray);
     abortTimer();
 }
 
@@ -116,8 +116,8 @@ function showCompletedScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
-    badLinks = [];
-    updateArray(badLinks);
+    badArray = [];
+    updateArray(badArray);
     addCookie("tracker", "mainMenu");
 }
 
