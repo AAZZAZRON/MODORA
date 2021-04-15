@@ -734,6 +734,11 @@ border: 3px solid rgb(234,201,215);
   /*overflow: auto;*/
 }
 
+#todo-text {
+  min-width: 100px;
+  max-width: 100px;
+}
+
 #rem{
   color: rgb(234,201,215);
   border-color:white;
