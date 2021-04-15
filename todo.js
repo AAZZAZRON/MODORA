@@ -50,3 +50,7 @@ document.getElementById("ent").addEventListener("click", function() {
 document.getElementById("rem").addEventListener("click", function() {
   box();
 });
+
+document.getElementById("rem").addEventListener("click", function() {
+  mainMenu();
+});

@@ -449,8 +449,8 @@ border: 3px solid rgb(234,201,215);
   margin: 3%; */
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 422px;
-  min-width: 422px; 
+  max-width: 415px;
+  min-width: 415px; 
   max-height: 220px;
   min-height: 220px; 
   overflow: auto;
@@ -605,4 +605,26 @@ border: 3px solid rgb(234,201,215);
   font-family: 'Work Sans', sans-serif;
   text-align: center;
   color: purple;
+}
+
+.discard-button-class{
+  color: rgb(234,201,215);
+  border-color:white;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-height: 30px;
+  min-height: 30px;
+  left: 430px;
+  font-size: 18px;
+  top: 91%;
+  width: 90px;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
+  padding-right: 0.25%;
+  vertical-align: middle;  
 }
