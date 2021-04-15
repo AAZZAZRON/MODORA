@@ -4,16 +4,16 @@ var chooseBlocked;
 var badLinks = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
-window.onload = function() { // add all the default "bads"
+window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
-    if (arr.length == 1) {
+    if (arr.length == 1) { // if no "bad apps", then add the defaultBad
         arr = [];
         for (let i = 0; i < defaultBad.length; i += 1) {
             arr.push(defaultBad[i]);
         }
         addCookie("banned", arr.join(", "));
     }
-    var goTo = getCookie("tracker");
+    var goTo = getCookie("tracker"); // tracker cookie 
     if (goTo == "") {
         addCookie("tracker", "mainMenu");
         goTo = "mainMenu";
@@ -222,7 +222,7 @@ function discardSites(instances) {
   for(let i = 0; i < addToBlockedList.length(); i++) {
     if(url == addToBlockedList[i]) {
       alert("Stop Procrastinating! Close your tab!")
-      document.getElementsByTagName ('html') [0] .remove ();
+      document.getElementsByTagName('html')[0].remove();
     }
   }
 }
