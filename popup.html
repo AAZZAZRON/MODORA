@@ -40,12 +40,12 @@
     <div id="ToDoList" hidden>
       <h1>Modora</h1>
 	    <div class = "div1">
-		    <div id="cboxes"></div>
-		    <button id="rem">Remove</button>
-		    <br><br>
-	    </div>
+		  <div id="cboxes"></div>
+	  	<button id="rem">Remove</button>
+		  <br><br>
+  	  </div>
 	    <label>Add task: </label><input type="text" id="userName">
-      <button id="ent">Enter</button>
+	    <button id="ent">Enter</button>
     </div>
 
     <div id="abortedScreen" hidden>
@@ -65,7 +65,7 @@
       <form id = "websites-list" method="get">
       </form>
       <input type="url" placeholder="https://example.com" pattern="https"  id="websites-add" class="websites-add-focus">
-      <button id="websites-submit" class="websites-submit-class websites-submit-hover">Add Link</button>
+      <button id="websites-submit" class="websites-submit-class websites-submit-hover">Add Link <onclick="document.getElementById('websites-add').value = ''></button>
       <button id = "bb4" class ="back-button timer-buttons1">&lt&lt</button>
       <button id = "discard-button" class = "discard-button-class timer-buttons1">discard</button>      
     </div>
