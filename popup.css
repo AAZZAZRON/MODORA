@@ -207,7 +207,7 @@ font-size: 15px;
   font-size: 35px;
   top: 87.25%;
   left: 75%;
-  width: 44%;
+  width: 210px;
   text-align: center;
 }
 .start-button1:hover{ /*FOR THE POMODORO SET UP SCREEN: says "start" WHEN BUTTON IS HOVER; NOT TESTED YET, USE WITH THE MAIN MENU BUTTON*/
@@ -346,9 +346,13 @@ border: 3px solid rgb(234,201,215);
   border: 3px solid white;
   max-width: 221.5px;
   min-width: 221.5px;
-  max-height: 270px;
-  min-height: 270px;
+  max-height: 260px;
+  min-height: 260px; 
   overflow: auto;
+  padding-top: 5px;
+  padding-bottom:5px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 
