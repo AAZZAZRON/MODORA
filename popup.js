@@ -4,11 +4,16 @@ var chooseBlocked;
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
 window.onload = function() { // add all the default "bads"
-    getToDoList();
-    for (let i = 0; i < defaultBad.length; i += 1) {
-        addCookie(defaultBad[i], "==banned");
+    var arr = getCookie("banned").split(", ");
+    console.log(arr, arr.length);
+    if (arr.length == 1) {
+        arr = [];
+        for (let i = 0; i < defaultBad.length; i += 1) {
+            arr.push(defaultBad[i]);
+        }
+        console.log(arr);
+        addCookie("banned", arr.join(", "));
     }
-    console.log(document.cookie);
     var goTo = getCookie("tracker");
     if (goTo == "") {
         addCookie("tracker", "mainMenu");
@@ -56,13 +61,11 @@ function setPomodoro() { // show pomodoro setup screen
     chooseBlocked = document.createElement("div");
     chooseBlocked.id = "ChooseBlocked";
     document.getElementById("choose-blocked-form").appendChild(chooseBlocked);
-    const things = decodeURIComponent(document.cookie).split("; ");
+    const things = getCookie("banned").split(", ")
     for (let i = 0; i < things.length; i += 1) {
-        const values = things[i].split("===");
-        if (values[1] == "banned") {
-            addToBlockedList(values[0]); // add website to blocked list
-        }
+        addToBlockedList(things[i]); // add website to blocked list
     }
+    
 }
 
 function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
@@ -148,6 +151,7 @@ function setWebsites() {
     };
     document.getElementById("websites-submit").onclick = () => {
         addNewSite(document.getElementById("websites-add").value);
+        document.getElementById("websites-add").value = "";
     }
     document.getElementById("discard-button").onclick = () => document.getElementById("WebsiteBlocked").children = discardSites(document.getElementById("WebsiteBlocked").children);
     
@@ -155,12 +159,9 @@ function setWebsites() {
     chooseBlocked.id = "WebsiteBlocked";
     document.getElementById("websites-list").appendChild(chooseBlocked);
     console.log(document.cookies);
-    const things = decodeURIComponent(document.cookie).split("; ");
+    const things = getCookie("banned").split(", ")
     for (let i = 0; i < things.length; i += 1) {
-        const values = things[i].split("===");
-        if (values[1] == "banned") {
-            addToBlockedList(values[0]); // add website to blocked list
-        }
+        addToBlockedList(things[i]); // add website to blocked list
     }
 }
 
@@ -171,7 +172,9 @@ function addNewSite(link) {
     } else if (link.substring(0, 5) != "https") {
         return;
     } else {
-        addCookie(link, "==banned");
+        arr = getCookie("banned").split(", ")
+        arr.push(link);
+        addCookie("banned", arr.join(", "));
         addToBlockedList(link, true);
     }
 }
