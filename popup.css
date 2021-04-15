@@ -653,22 +653,17 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 150px;
+  top: 156px;
   left: 50%;
   /*width: 82%;*/
   transform: translate(-50%, -50%); /*
   border: 3px solid white; */
-  max-width: 450px;
-  min-width: 450px;
+  max-width: 436px;
+  min-width: 436px;
   max-height: 190px;
   min-height: 190px;
   overflow: auto;
-  /*
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  */
+  padding:7px;
 }
 
 #ToDoList {
