@@ -30,6 +30,7 @@ function mainMenu() { // show main menu screen
     check = false;
     addCookie("tracker", "mainMenu");
     document.getElementById("MainMenu").hidden = false;
+    document.getElementById("ToDoList").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;

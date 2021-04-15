@@ -649,7 +649,7 @@ border: 3px solid rgb(234,201,215);
   vertical-align: middle;  
 }
 
-#cboxes{
+#userName{
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
@@ -668,4 +668,45 @@ border: 3px solid rgb(234,201,215);
   overflow: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+#ent {
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: center; 
+  background-color: rgb(234,201,215);
+  border: 3px solid white;
+  color: white;
+  top: 81%;
+  left: 432.5px;
+  /*width: 20%;*/
+  transform: translate(-50%, -50%);
+  max-width: 80px;
+  min-width: 80px;
+  max-height: 45px;
+  min-height: 45px;
+  /*overflow: auto;*/
+}
+
+#rem{
+  color: rgb(234,201,215);
+  border-color:white;
+  text-align: center; 
+  font-family: 'Work Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  max-height: 30px;
+  min-height: 30px;
+  left: 400px;
+  font-size: 18px;
+  top: 91%;
+  width: 90px;
+  padding-top: 0.25%;
+  padding-bottom: 0.25%;
+  padding-left: 0.25%;
+  padding-right: 0.25%;
+  vertical-align: middle;  
 }
