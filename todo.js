@@ -35,14 +35,16 @@ function box() {
 }
 
 function setToDoList() {
-  beenToToDo = true;
   document.getElementById("MainMenu").hidden = true;
-  document.getElementById("SetupTimer").hidden = true;
-  document.getElementById("TimerOn").hidden = true;
-  document.getElementById("abortedScreen").hidden = true;
+    document.getElementById("SetupTimer").hidden = true;
+    document.getElementById("TimerOn").hidden = true;
+    document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-  getToDoList();
-  startToDo();
+  if(!beenToToDo) {
+    getToDoList();
+    startToDo();
+    beenToToDo = true;
+  }
 }
 
 function getToDoList() {
@@ -67,13 +69,13 @@ document.getElementById("bb5").addEventListener("click", function() {
 
 function startToDo() {
   for(var i = 0; i < arr.length; i++) {
-    var checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-    checkBox.value = arr[i];
-    myDiv.appendChild(checkBox);
-    var label = document.createElement("label");
-    myDiv.appendChild(label);
-    label.appendChild(document.createTextNode(arr[i]));
+    var checkBox2 = document.createElement("input");
+    checkBox2.type = "checkbox";
+    checkBox2.value = arr[i];
+    myDiv.appendChild(checkBox2);
+    var label2 = document.createElement("label");
+    myDiv.appendChild(label2);
+    label2.appendChild(document.createTextNode(arr[i]));
   }
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");

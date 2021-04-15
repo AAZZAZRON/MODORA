@@ -120,7 +120,7 @@ function stopwatchFunction() {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
-  if (hr == "00" && min == "01" && sec == "01") {
+  if (hr == "00" && min == "00" && sec == "11") {
     if (!aborted && cycle == 4) {
         clearInterval(stopwatch);
         alert("You are done!");
@@ -137,10 +137,10 @@ function stopwatchFunction() {
         timerStart = true;
         aborted = false;
         hr = 0;
-        min = 1;
-        sec = 0;
+        min = 0;
+        sec = 10;
 
-        timer = setInterval(timerFunction, 500)
+        timer = setInterval(timerFunction, 1000)
     }
   } else {
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
