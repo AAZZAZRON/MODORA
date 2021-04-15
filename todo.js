@@ -82,6 +82,6 @@ function startToDo() {
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");
     }
-    var a = arr.join("");
+    var a = arr.join(",");
     addCookie("todolist", a);
 }
