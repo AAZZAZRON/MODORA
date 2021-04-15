@@ -15,7 +15,7 @@ function display() {
     if(!getCookie("todolist") === "") {
       removeCookie("todolist");
     }
-    addCookie("todolist", arr.join(""));
+    addCookie("todolist", arr.join(","));
 }
 
 function box() {
@@ -31,7 +31,7 @@ function box() {
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");
     }
-  addCookie("todolist", arr.join(""));
+  addCookie("todolist", arr.join(","));
 }
 
 function setToDoList() {
