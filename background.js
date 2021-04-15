@@ -120,7 +120,7 @@ function stopwatchFunction() {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
-  if (hr == "00" && min == "00" && sec == "11") {
+  if (hr == "00" && min == "25" && sec == "01") {
     if (!aborted && cycle == 4) {
         clearInterval(stopwatch);
         alert("You are done!");
@@ -137,8 +137,8 @@ function stopwatchFunction() {
         timerStart = true;
         aborted = false;
         hr = 0;
-        min = 0;
-        sec = 10;
+        min = 5;
+        sec = 0;
 
         timer = setInterval(timerFunction, 1000)
     }
