@@ -13,7 +13,7 @@ window.onload = function() { // runs everytime the popup extension is opened
         }
         addCookie("banned", arr.join(", "));
     }
-    var goTo = getCookie("tracker"); // tracker cookie 
+    var goTo = getCookie("tracker"); // tracker cookie shows where the user last left off
     if (goTo == "") {
         addCookie("tracker", "mainMenu");
         goTo = "mainMenu";
@@ -51,9 +51,9 @@ function setPomodoro() { // show pomodoro setup screen
         mainMenu();
     };
     document.getElementById("start-button").onclick = () => {
-        sendBadSites(document.getElementById("ChooseBlocked").children);
+        sendBadSites(document.getElementById("ChooseBlocked").children); 
         chooseBlocked.remove();
-        timerSetup(document.getElementsByName("x"));
+        timerSetup();
     }
 
 
@@ -67,7 +67,7 @@ function setPomodoro() { // show pomodoro setup screen
     }   
 }
 
-function sendBadSites(instances) {
+function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
     badLinks = [];
     console.log(instances);
     var ind = instances.length - 2;
@@ -82,16 +82,15 @@ function sendBadSites(instances) {
 
 
 
-function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
+function timerSetup() { // set up the timer screen, start and reset timer
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
     document.getElementById("abortedScreen").hidden = true;
-    console.log(checkboxes);
     document.getElementById("abort").onclick = () => {
         showAbortScreen();
     }
-    if (getCookie("tracker") != "timerOn") {
+    if (getCookie("tracker") != "timerOn") { // makes sure that the timer is only set once
         createTimer();
     }
     addCookie("tracker", "timerOn")
@@ -142,7 +141,7 @@ function addToBlockedList(inner, website=false) { // add known blocked website t
     let label = document.createElement("LABEL");
     label.innerText = inner + "\n";
     label.className = "boxes";
-    if (!website) {
+    if (!website) { // reuse function for multiple "test cases"
         label.name = "x";
     } else {
         label.name = inner;
@@ -151,7 +150,7 @@ function addToBlockedList(inner, website=false) { // add known blocked website t
     chooseBlocked.appendChild(label);
 }
 
-function setWebsites() {
+function setWebsites() { // creates the set websites GUI
     document.getElementById("MainMenu").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
@@ -176,7 +175,7 @@ function setWebsites() {
     }
 }
 
-function addNewSite(link) {
+function addNewSite(link) { // tries (if possible) to add a new cookie and site
     if (link == "") {
         return;
     } else if (link.substring(0, 5) != "https") {
@@ -192,7 +191,7 @@ function addNewSite(link) {
 
 function discardSites(instances) {
     var ind = instances.length - 2;
-    while (ind >= 0) {
+    while (ind >= 0) { // checks every instance of instances, and if the sites match, discard element from cookie and remove from list
         if (instances[ind].checked) {
             var arr = getCookie("banned").split(", ");
             for (let i = 0; i < arr.length; i += 1) {
@@ -218,6 +217,7 @@ function discardSites(instances) {
 
   var urlss = "";
   function checkUrls() {
+    alert("testingtesting");
   urlss = window.location.host.toString();
   for(let i = 0; i < addToBlockedList.length(); i++) {
     if(url == addToBlockedList[i]) {
