@@ -719,25 +719,6 @@ border: 3px solid rgb(234,201,215);
   padding-right: 15px;
 }
 
-#ent {
-  position: absolute;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 15px;
-  text-align: center; 
-  background-color: rgb(234,201,215);
-  border: 3px solid white;
-  color: white;
-  top: 81%;
-  left: 432.5px;
-  /*width: 20%;*/
-  transform: translate(-50%, -50%);
-  max-width: 80px;
-  min-width: 80px;
-  max-height: 45px;
-  min-height: 45px;
-  /*overflow: auto;*/
-}
-
 #todo-text {
   min-width: 423px;
   max-width: 423px;
