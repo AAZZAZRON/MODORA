@@ -52,6 +52,7 @@ function getToDoList() {
   if(s === "") {
     return;
   }
+  console.log(s);
   arr = s.split(",");
 }
 
