@@ -69,6 +69,7 @@ function setPomodoro() { // show pomodoro setup screen
 
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
     badLinks = [];
+    updateArray(badLinks);
     console.log(instances);
     var ind = instances.length - 2;
     while (ind >= 0) {
@@ -77,6 +78,7 @@ function sendBadSites(instances) { // creates a global array of the "bad arrays"
         }
         ind -= 2;
     }
+    updateArray(badLinks);
 }
 
 
@@ -104,6 +106,7 @@ function showAbortScreen() {
     document.getElementById("bb2").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
     badLinks = [];
+    updateArray(badLinks);
     abortTimer();
 }
 
@@ -114,6 +117,7 @@ function showCompletedScreen() {
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
     badLinks = [];
+    updateArray(badLinks);
     addCookie("tracker", "mainMenu");
 }
 
@@ -214,23 +218,5 @@ function discardSites(instances) {
     }
     return instances;
 }
-
-function checkUrls(link) {
-  alert("testingtesting");
-  links = "https://" + links
-  for (let i = 0; i < badLinks.length; i += 1) {
-    var found = true;
-    for (let j = 0; j < Math.min(link.length, badLinks[i].length); j += 1) {
-        if (badLinks[i][j] != link[j]) {
-            found = false;
-            break;
-        }
-    }
-    if (found) {
-      alert("bad boy")
-    }
-  }
-}
-
 
 
