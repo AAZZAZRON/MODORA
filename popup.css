@@ -43,7 +43,7 @@ button:hover {
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
-  top: 47%;
+  top: 42%;
   transform: translate(-50%, -50%);
 }
  #mainmenu-subtitle2 {
@@ -60,7 +60,7 @@ button:hover {
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
-  top: 40%;
+  top: 36%;
   transform: translate(-50%, -50%);
 } 
 #PomodoroButton {
