@@ -11,7 +11,6 @@ function display() {
     var label = document.createElement("label");
     myDiv.appendChild(label);
     label.appendChild(document.createTextNode(arr[arr.length-1]));
-    removeCookie("todolist");
     addCookie("todolist", arr.toString);
 }
 
@@ -25,7 +24,6 @@ function box() {
 			myDiv.removeChild(myDiv.getElementsByTagName('label')[i]);
 		}
 	}
-  removeCookie("todolist");
   addCookie("todolist", arr.toString);
 }
 
@@ -66,6 +64,7 @@ function startToDo() {
     myDiv.appendChild(label);
     label.appendChild(document.createTextNode(arr[i]));
     removeCookie("todolist");
-    addCookie("todolist", arr.toString);
+    var a = arr.toString();
+    addCookie("todolist", a);
   }
 }
