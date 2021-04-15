@@ -645,7 +645,7 @@ border: 3px solid rgb(234,201,215);
   max-height: 100px;
 }
 
-#todo-list{
+.todo-list{
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
