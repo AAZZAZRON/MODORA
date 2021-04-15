@@ -36,9 +36,9 @@ function box() {
 
 function setToDoList() {
   document.getElementById("MainMenu").hidden = true;
-    document.getElementById("SetupTimer").hidden = true;
-    document.getElementById("TimerOn").hidden = true;
-    document.getElementById("abortedScreen").hidden = true;
+  document.getElementById("SetupTimer").hidden = true;
+  document.getElementById("TimerOn").hidden = true;
+  document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
   if(!beenToToDo) {
     getToDoList();
