@@ -1,7 +1,7 @@
 console.log("New site");
 var badLinks;
 var found = false;
-var 
+var delay = 10000;
 
 chrome.tabs.onUpdated.addListener((tab) => {
   checkUrls(tab.url);
@@ -21,8 +21,13 @@ function checkUrls(link) {
       }
     }
     if (found) {
-      alert("bad boy or girl")
-
+      for(;;) {
+      alert("bad boy or girl");
+      alert("you have 10 seconds to exist this page");
+      setTimeout(function() {
+      alert("bad boy or girl");
+      }, delay);
+      }
     }
   }
 }

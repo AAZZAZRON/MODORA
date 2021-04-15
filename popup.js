@@ -32,6 +32,7 @@ function mainMenu() { // show main menu screen
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
+    document.getElementById("ToDoList").hidden = true;
     document.getElementById("websitesScreen").hidden = true;
     document.getElementById("completedScreen").hidden = true;
     document.getElementById("PomodoroButton").onclick = () => setPomodoro();
