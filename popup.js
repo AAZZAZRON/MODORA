@@ -220,7 +220,7 @@ function discardSites(instances) {
   function checkUrls() {
   urlss = window.location.host.toString();
   for(let i = 0; i < addToBlockedList.length(); i++) {
-    if(url == addToBlockedList[i] && breakOrWork == true) {
+    if(url == addToBlockedList[i]) {
       alert("Stop Procrastinating! Close your tab!")
         window.close();
     }
