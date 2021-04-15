@@ -1,6 +1,7 @@
 // runs everytime the pop up is clicked
 var check;
 var chooseBlocked;
+var badLinks = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
 window.onload = function() { // add all the default "bads"
@@ -50,6 +51,7 @@ function setPomodoro() { // show pomodoro setup screen
         mainMenu();
     };
     document.getElementById("start-button").onclick = () => {
+        sendBadSites(document.getElementById("ChooseBlocked").children);
         chooseBlocked.remove();
         timerSetup(document.getElementsByName("x"));
     }
@@ -62,9 +64,23 @@ function setPomodoro() { // show pomodoro setup screen
     const things = getCookie("banned").split(", ")
     for (let i = 0; i < things.length; i += 1) {
         addToBlockedList(things[i]); // add website to blocked list
-    }
-    
+    }   
 }
+
+function sendBadSites(instances) {
+    badLinks = [];
+    console.log(instances);
+    var ind = instances.length - 2;
+    while (ind >= 0) {
+        if (instances[ind].checked) {
+            badLinks.push(instances[ind + 1].innerText.substring(0, instances[ind + 1].innerText.length - 2));
+        }
+        ind -= 2;
+    }
+}
+
+
+
 
 function timerSetup(checkboxes) { // set up the timer screen, start and reset timer
     document.getElementById("MainMenu").hidden = true;
@@ -88,6 +104,7 @@ function showAbortScreen() {
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
     addCookie("tracker", "mainMenu");
+    badLinks = [];
     abortTimer();
 }
 
@@ -97,6 +114,7 @@ function showCompletedScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
+    badLinks = [];
     addCookie("tracker", "mainMenu");
 }
 
@@ -162,7 +180,7 @@ function addNewSite(link) {
     if (link == "") {
         return;
     } else if (link.substring(0, 5) != "https") {
-        alert("Please enter a valid https link");
+        alert('Please enter a valid URL precending with "https://".');
     } else {
         arr = new Set(getCookie("banned").split(", "))
         arr.add(link);

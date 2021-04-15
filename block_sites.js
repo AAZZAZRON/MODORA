@@ -18,7 +18,7 @@ function checkUrl() {
 }
 
 function spammer() {
-  for(int i = 0; i < 3; i++) {
+  for(let i = 0; i < 3; i++) {
     alert("It is Work Time Right Now Get Off!");
   }
   alert("You have 10 seconds to get off this website!");
