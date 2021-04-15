@@ -11,7 +11,7 @@ button:hover {
 }
 
 /* FOR MAIN MENU VV */
-#title {
+#title1 {
   position: absolute; /*
   top: 30%;*/
   top: 26%;
@@ -29,7 +29,25 @@ button:hover {
   font-family: 'Work Sans', sans-serif;
   /*border: 3px solid white;*/
 } 
-#mainmenu-subtitle1 {
+#title2 {
+  position: absolute; /*
+  top: 30%;*/
+  top: 23.5%;
+  left: 50%;
+  width: 69%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgb(234,201,215);
+  padding-top: 0%;
+  padding-bottom: 0%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Work Sans', sans-serif;
+  /*border: 3px solid white;*/
+} 
+#mainmenu-subtitle1 { 
   color: white;
   background-color: rgb(234,201,215);/*
   padding-top: 2.5%;*/
@@ -46,7 +64,8 @@ button:hover {
   top: 42%;
   transform: translate(-50%, -50%);
 }
- #mainmenu-subtitle2 {
+
+ #mainmenu-subtitle2 { /*ze text*/
   color: white;
   background-color: rgb(234,201,215);/*
   padding-top: 2.5%;*/
@@ -60,7 +79,7 @@ button:hover {
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
-  top: 36%;
+  top: 38.5%;
   transform: translate(-50%, -50%);
 } 
 #PomodoroButton {
