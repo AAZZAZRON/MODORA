@@ -530,7 +530,8 @@ border: 3px solid rgb(234,201,215);
 }
 
 #todo-remove-button{
-  left: 430px;
+  top: 348px;
+  left: 402px;
 }
 
 #discard-button{
@@ -652,7 +653,7 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 57%;
+  top: 150px;
   left: 50%;
   /*width: 82%;*/
   transform: translate(-50%, -50%); /*
