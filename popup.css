@@ -463,15 +463,15 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 58%;
+  top: 57%;
   left: 50%;
   /*width: 82%;*/
   transform: translate(-50%, -50%); /*
   border: 3px solid white; */
-  max-width: 446px;
-  min-width: 446px;
-  max-height: 180px;
-  min-height: 180px;
+  max-width: 450px;
+  min-width: 450px;
+  max-height: 190px;
+  min-height: 190px;
   overflow: auto;
   /*
   padding-left: 15px;
@@ -604,5 +604,5 @@ border: 3px solid rgb(234,201,215);
 #ToDoList {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
-  fontcol
+  color: purple;
 }
