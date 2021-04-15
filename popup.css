@@ -29,7 +29,7 @@ button:hover {
   font-family: 'Work Sans', sans-serif;
   /*border: 3px solid white;*/
 } 
-#title2 {
+#title2 { /*ze acc text*/
   position: absolute; /*
   top: 30%;*/
   top: 23.5%;
