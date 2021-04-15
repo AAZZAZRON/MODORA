@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "MODORA",
-    "description": "MODORA blocks distracting sites according to the Pomodoro Technique which is proven to increase productivity while preventing overworking and mandating breaks.",
+    "description": "MODORA blocks distracting sites according to the Pomodoro Technique which is proven to increase productivity while preventing overworking and encouraging breaks.",
     "version": "1.0",
     "icons": {
         "16": "./images/16.png",

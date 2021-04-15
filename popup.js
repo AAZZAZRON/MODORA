@@ -5,13 +5,11 @@ var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://w
 
 window.onload = function() { // add all the default "bads"
     var arr = getCookie("banned").split(", ");
-    console.log(arr, arr.length);
     if (arr.length == 1) {
         arr = [];
         for (let i = 0; i < defaultBad.length; i += 1) {
             arr.push(defaultBad[i]);
         }
-        console.log(arr);
         addCookie("banned", arr.join(", "));
     }
     var goTo = getCookie("tracker");
@@ -30,7 +28,6 @@ function mainMenu() { // show main menu screen
     check = false;
     addCookie("tracker", "mainMenu");
     document.getElementById("MainMenu").hidden = false;
-    document.getElementById("ToDoList").hidden = true;
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
@@ -106,7 +103,6 @@ function showCompletedScreen() {
 
 function toggle() { // check and uncheck all items
     var checkboxes = document.getElementsByName("x");
-    console.log(checkboxes);
     if (check) {
         check = false;
     } else {
@@ -133,9 +129,6 @@ function addToBlockedList(inner, website=false) { // add known blocked website t
     } else {
         label.name = inner;
     }
-
-    console.log(check);
-    console.log(label);
     chooseBlocked.appendChild(check);
     chooseBlocked.appendChild(label);
 }
@@ -159,7 +152,6 @@ function setWebsites() {
     chooseBlocked = document.createElement("div");
     chooseBlocked.id = "WebsiteBlocked";
     document.getElementById("websites-list").appendChild(chooseBlocked);
-    console.log(document.cookies);
     const things = getCookie("banned").split(", ")
     for (let i = 0; i < things.length; i += 1) {
         addToBlockedList(things[i]); // add website to blocked list
@@ -167,15 +159,14 @@ function setWebsites() {
 }
 
 function addNewSite(link) {
-    console.log(link.substring(0, 5))
     if (link == "") {
         return;
     } else if (link.substring(0, 5) != "https") {
         alert("Please enter a valid https link");
     } else {
-        arr = getCookie("banned").split(", ")
-        arr.push(link);
-        addCookie("banned", arr.join(", "));
+        arr = new Set(getCookie("banned").split(", "))
+        arr.add(link);
+        addCookie("banned", Array.from(arr).join(", "));
         addToBlockedList(link, true);
     }
 }
@@ -184,12 +175,16 @@ function addNewSite(link) {
 function discardSites(instances) {
     var ind = instances.length - 2;
     while (ind >= 0) {
-        console.log(ind, instances[ind].name, instances[ind].checked);
         if (instances[ind].checked) {
-            console.log(instances[ind + 1].innerText);
             var arr = getCookie("banned").split(", ");
-            for (let i = 0; i < arr.length; arr += 1) {
-                if (arr[i] == instances[ind + 1].innerText) {
+            for (let i = 0; i < arr.length; i += 1) {
+                var found = true;
+                for (let j = 0; j < arr[i].length; j += 1) {
+                    if (arr[i][j] != instances[ind + 1].innerText[j]) {
+                        found = false;
+                    }
+                }
+                if (found) {
                     arr.splice(i, 1);
                     addCookie("banned", arr.join(", "));
                     break;

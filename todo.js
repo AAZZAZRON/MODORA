@@ -35,7 +35,8 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-  getToDoList();
+  //getToDoList();
+  //startToDo();
 }
 
 function getToDoList() {
@@ -54,3 +55,17 @@ document.getElementById("rem").addEventListener("click", function() {
 document.getElementById("backfromtodo").addEventListener("click", function() {
   mainMenu();
 });
+
+function startToDo() {
+  for(var i = 0; i < arr.length; i++) {
+    var checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    checkBox.value = arr[i];
+    myDiv.appendChild(checkBox);
+    var label = document.createElement("label");
+    myDiv.appendChild(label);
+    label.appendChild(document.createTextNode(arr[i]));
+    removeCookie("todolist");
+    addCookie("todolist", arr.toString);
+  }
+}
