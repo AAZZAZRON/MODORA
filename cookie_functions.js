@@ -20,10 +20,11 @@ function getCookie(name) {
 function addCookie(name, value) {
     var expire = "expires=Fri, 3 Jan 3000 23:59:59 GMT";
     document.cookie = `${name}=${value}; ${expire};path=/`;
+
 }
 
 function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-    chrome.cookies.remove({"name": ${name}}, function(deleted_cookie) { console.log(deleted_cookie); });
+    // chrome.cookies.remove({"name": ${name}}, function(deleted_cookie) { console.log(deleted_cookie); });
 }
 
