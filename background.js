@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener(
         }
     }
 );
-
+ 
 function timerFunction() {
     if (timerStart) {
       breakOrWork = false;

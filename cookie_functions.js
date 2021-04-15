@@ -16,7 +16,7 @@ function getCookie(name) {
     }
     return "";
 }
-
+ 
 function addCookie(name, value) {
     var expire = "expires=Fri, 3 Jan 3000 23:59:59 GMT";
     document.cookie = `${name}=${value}; ${expire};path=/`;

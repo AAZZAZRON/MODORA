@@ -9,7 +9,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   }
 })
 
-
+ 
 function checkUrls(link) {
   console.log(link);
   for (let i = 0; i < badLinks.length; i += 1) {
