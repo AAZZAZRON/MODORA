@@ -473,11 +473,12 @@ border: 3px solid rgb(234,201,215);
   max-height: 155px;
   min-height: 155px;
   overflow: auto;
+  /*
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   padding-top: 15px;
-
+  */
 }
 
 #websites-add{
