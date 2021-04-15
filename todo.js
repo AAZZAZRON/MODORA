@@ -1,4 +1,5 @@
 var arr = [];
+var beenToToDo = false;
 
 var myDiv = document.getElementById("cboxes");
 
@@ -11,7 +12,10 @@ function display() {
     var label = document.createElement("label");
     myDiv.appendChild(label);
     label.appendChild(document.createTextNode(arr[arr.length-1]));
-    addCookie("todolist", arr.toString);
+    if(!getCookie("todolist") === "") {
+      removeCookie("todolist");
+    }
+    addCookie("todolist", arr.join(""));
 }
 
 function box() {
@@ -24,10 +28,14 @@ function box() {
 			myDiv.removeChild(myDiv.getElementsByTagName('label')[i]);
 		}
 	}
-  addCookie("todolist", arr.toString);
+  if(!getCookie("todolist") === "") {
+      removeCookie("todolist");
+    }
+  addCookie("todolist", arr.join(""));
 }
 
 function setToDoList() {
+  beenToToDo = true;
   document.getElementById("MainMenu").hidden = true;
   document.getElementById("SetupTimer").hidden = true;
   document.getElementById("TimerOn").hidden = true;
@@ -39,6 +47,9 @@ function setToDoList() {
 
 function getToDoList() {
   var s = getCookie("todolist");
+  if(s === "") {
+    return;
+  }
   arr = s.split(",");
 }
 
@@ -63,8 +74,10 @@ function startToDo() {
     var label = document.createElement("label");
     myDiv.appendChild(label);
     label.appendChild(document.createTextNode(arr[i]));
-    removeCookie("todolist");
-    var a = arr.toString();
-    addCookie("todolist", a);
   }
+  if(!getCookie("todolist") === "") {
+      removeCookie("todolist");
+    }
+    var a = arr.join("");
+    addCookie("todolist", a);
 }

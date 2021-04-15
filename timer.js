@@ -5,9 +5,6 @@ function createTimer() {
   chrome.runtime.sendMessage({message: "start stopwatch"})
 }
 
-function abortTimer() {
-  chrome.runtime.sendMessage({message: "abort"})
-}
 
 chrome.runtime.onMessage.addListener(
   function (request) {

@@ -9,6 +9,7 @@ var isTimerDone = false;
 aborted = false;
 var cycle = 1;
 var finish;
+var tmp = [];
 chrome.runtime.onMessage.addListener(
     function (request) {
         if (request == "begin") {
@@ -28,6 +29,7 @@ chrome.runtime.onMessage.addListener(
         } else if (request.message == "completed") {
             clearInterval(finish);
         } else if (request.message == "update badLinks") {
+          tmp = request.content;
           updateArray(request.content);
         }
     }
@@ -69,14 +71,15 @@ function timerFunction() {
         timerStart = false;
         alert("Back to Work!");
         chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
+        updateArray(tmp);
 
         // start stopwatch
         clearInterval(timer);
         stopwatchStart = true;
         aborted = false;
         hr = 0;
-        min = 25;
-        sec = 1;
+        min = 0;
+        sec = 0;
         stopwatch = setInterval(stopwatchFunction, 1000)
     } else {
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
@@ -117,7 +120,7 @@ function stopwatchFunction() {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
-  if (hr == "00" && min == "25" && sec == "01") {
+  if (hr == "00" && min == "01" && sec == "01") {
     if (!aborted && cycle == 4) {
         clearInterval(stopwatch);
         alert("You are done!");
@@ -127,13 +130,14 @@ function stopwatchFunction() {
         alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
         cycle += 1;
         chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
+        updateArray("null");
 
         clearInterval(stopwatch);
         // start timer
         timerStart = true;
         aborted = false;
         hr = 0;
-        min = 5;
+        min = 1;
         sec = 0;
 
         timer = setInterval(timerFunction, 500)
