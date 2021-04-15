@@ -196,7 +196,7 @@ function discardSites(instances) {
             var arr = getCookie("banned").split(", ");
             for (let i = 0; i < arr.length; i += 1) {
                 var found = true;
-                for (let j = 0; j < arr[i].length; j += 1) {
+                for (let j = 0; j < Math.min(instances[ind + 1].innerText.length, arr[i].length); j += 1) {
                     if (arr[i][j] != instances[ind + 1].innerText[j]) {
                         found = false;
                     }
@@ -215,14 +215,19 @@ function discardSites(instances) {
     return instances;
 }
 
-  var urlss = "";
-  function checkUrls() {
-    alert("testingtesting");
-  urlss = window.location.host.toString();
-  for(let i = 0; i < addToBlockedList.length(); i++) {
-    if(url == addToBlockedList[i]) {
-      alert("Stop Procrastinating! Close your tab!")
-      document.getElementsByTagName('html')[0].remove();
+function checkUrls(link) {
+  alert("testingtesting");
+  links = "https://" + links
+  for (let i = 0; i < badLinks.length; i += 1) {
+    var found = true;
+    for (let j = 0; j < Math.min(link.length, badLinks[i].length); j += 1) {
+        if (badLinks[i][j] != link[j]) {
+            found = false;
+            break;
+        }
+    }
+    if (found) {
+      alert("bad boy")
     }
   }
 }
