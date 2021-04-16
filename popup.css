@@ -321,7 +321,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 .boxes {
-  font-size: 15px;
+  font-size: 14px;
   text-align: left;
   font-family: 'Work Sans', sans-serif;
 }
@@ -348,11 +348,11 @@ border: 3px solid rgb(234,201,215);
   min-width: 221.5px;
   max-height: 260px;
   min-height: 260px; 
-  overflow: auto;
   padding-top: 5px;
   padding-bottom:5px;
   padding-left: 2px;
   padding-right: 2px;
+  overflow: auto;
 }
 
 
@@ -457,7 +457,6 @@ border: 3px solid rgb(234,201,215);
   min-width: 415px; 
   max-height: 220px;
   min-height: 220px; 
-  overflow: auto;
 }
 
 #websites-list{
