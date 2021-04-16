@@ -3,6 +3,7 @@ var check;
 var chooseBlocked;
 var badArray = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
+var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel"]
  
 window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
@@ -82,8 +83,6 @@ function sendBadSites(instances) { // creates a global array of the "bad arrays"
     }
     chrome.runtime.sendMessage({message: "update badLinks", content: `${badArray.join(", ")}`});
 }
-
-
 
 
 function timerSetup() { // set up the timer screen, start and reset timer
@@ -184,9 +183,21 @@ function setWebsites() { // creates the set websites GUI
 function addNewSite(link) { // tries (if possible) to add a new cookie and site
     if (link == "") {
         return;
-    } else if (link.substring(0, 5) != "https") {
+    } else if (link.substring(0, 8) != "https://") {
         alert('Please enter a valid URL precending with "https://".');
     } else {
+        var foundValid = false;
+        for (let i = 0; i < validEndings.length; i += 1) {
+            if (link.includes(validEndings[i])) {
+                link = link.split(validEndings[i])[0] + validEndings[i] + "/";
+                foundValid = true;
+                console.log(link);
+            }
+        }
+        if (!foundValid) {
+            alert("Please enter a valid URL with a proper domain.")
+            return;
+        }
         arr = new Set(getCookie("banned").split(", "))
         arr.add(link);
         addCookie("banned", Array.from(arr).join(", "));
