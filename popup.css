@@ -12,8 +12,7 @@ button:hover {
 
 /* FOR MAIN MENU VV */
 #title1 {
-  position: absolute; /*
-  top: 30%;*/
+  position: absolute; 
   top: 26%;
   left: 50%;
   width: 69%;
@@ -27,11 +26,9 @@ button:hover {
   text-align: center;
   font-size: 60px;
   font-family: 'Work Sans', sans-serif;
-  /*border: 3px solid white;*/
 } 
 #title2 { /*ze acc text*/
-  position: absolute; /*
-  top: 30%;*/
+  position: absolute; 
   top: 24.5%;
   left: 50%;
   width: 69%;
@@ -45,19 +42,16 @@ button:hover {
   text-align: center;
   font-size: 60px;
   font-family: 'Work Sans', sans-serif;
-  /*border: 3px solid white;*/
 } 
 #mainmenu-subtitle1 { 
   color: white;
-  background-color: rgb(234,201,215);/*
-  padding-top: 2.5%;*/
+  background-color: rgb(234,201,215);
   padding-bottom: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
   left: 50%;
   font-size: 18px;
   width: 69%;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
@@ -67,15 +61,13 @@ button:hover {
 
  #mainmenu-subtitle2 { /*ze text*/
   color: white;
-  background-color: rgb(234,201,215);/*
-  padding-top: 2.5%;*/
+  background-color: rgb(234,201,215);
   padding-bottom: 2.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
   left: 50%;
   font-size: 18px;
   width: 69%;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   position: absolute;
@@ -104,7 +96,6 @@ button:hover {
   left: 50%;
   font-size: 20px;
   width: 73%;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
@@ -114,7 +105,7 @@ button:hover {
   border: 3px solid white;
 }
 
-.main-menu-button1:hover { /*hallo morning ppl, this is just for when it uh hovers, it has a border :D*/
+.main-menu-button1:hover {
   border: 1px solid rgb(234,201,215);
 }
 
@@ -128,7 +119,6 @@ button:hover {
   padding-left: 2.5%;
   padding-right: 2.5%;
   left: 50%;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
@@ -188,7 +178,6 @@ button:hover {
   left: 50%;
   font-size: 20px;
   width: 73%;
-  /*border: none;*/
   text-align: left; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
@@ -225,7 +214,6 @@ border: 3px solid rgb(234,201,215);
   left: 28%;
   font-size: 20px;
   width: 40%;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
@@ -233,13 +221,6 @@ border: 3px solid rgb(234,201,215);
   top: 28.5%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  /*
-  position: absolute;
-  left: 25%;
-  top: 10%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  text-align: center;*/
 }
 
 #setup-title{ /*for the title for everything :?*/
@@ -287,7 +268,6 @@ border: 3px solid rgb(234,201,215);
 .timer-buttons {
   color: rgb(234,201,215);
   border-color:white;
-  /*border: none;*/
   text-align: center; 
   font-family: 'Work Sans', sans-serif;
   background-color: white;
@@ -304,7 +284,7 @@ border: 3px solid rgb(234,201,215);
 }
 
 #SelectAll {
-  left: 183px; /*(130)*/ 
+  left: 183px; 
   font-size: 18px;
   top: 91%;
   width: 141px;
@@ -336,12 +316,7 @@ border: 3px solid rgb(234,201,215);
   background-color: white;
   top: 60.5%;
   left: 28%;
-  width: 45%; /*
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  padding-left: 2.5%;
-  padding-right: 2.5%; */
-  /*margin: 3%;*/
+  width: 45%; 
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 221.5px;
@@ -366,9 +341,7 @@ border: 3px solid rgb(234,201,215);
   left: 50%;
   color: rgb(234,201,215);
   max-width: 350px;
-  min-width: 350px; /*
-  max-height: 125px;
-  min-height: 125px; */
+  min-width: 350px; 
   background-color: white;
 
 }
@@ -449,8 +422,7 @@ border: 3px solid rgb(234,201,215);
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 6px;
-  padding-right: 6px; /*
-  margin: 3%; */
+  padding-right: 6px; 
   transform: translate(-50%, -50%);
   border: 3px solid white;
   max-width: 415px;
@@ -468,20 +440,12 @@ border: 3px solid rgb(234,201,215);
   background-color: white;
   top: 57%;
   left: 50%;
-  /*width: 82%;*/
-  transform: translate(-50%, -50%); /*
-  border: 3px solid white; */
+  transform: translate(-50%, -50%); 
   max-width: 450px;
   min-width: 450px;
   max-height: 190px;
   min-height: 190px;
   overflow: auto;
-  /*
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  */
 }
 
 #websites-add{
@@ -523,13 +487,11 @@ border: 3px solid rgb(234,201,215);
   color: white;
   top: 81%;
   left: 432.5px;
-  /*width: 20%;*/
   transform: translate(-50%, -50%);
   max-width: 80px;
   min-width: 80px;
   max-height: 45px;
   min-height: 45px;
-  /*overflow: auto;*/
 }
 
 #todo-remove-button{
@@ -570,45 +532,20 @@ border: 3px solid rgb(234,201,215);
 }
 
 /* SCROLL BAR CSS */
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
 .div1 {
-  /*
-  position: absolute;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 15px;
-  text-align: left; 
-  color: rgb(234,201,215);
-  background-color: white;
-  top: 50%;
-  left: 50%;
-  width: 80%;
-  transform: translate(-50%, -50%);
-  border: 3px solid white;
-  max-width: 430px;
-  min-width: 430px;
-  max-height: 185px;
-  min-height: 185px;
-  overflow: auto;
-  */
   color: rgb(234,201,215);
   border-color:white;
   padding-top: 2.5%;
@@ -658,9 +595,7 @@ border: 3px solid rgb(234,201,215);
   background-color: white;
   top: 156px;
   left: 50%;
-  /*width: 82%;*/
-  transform: translate(-50%, -50%); /*
-  border: 3px solid white; */
+  transform: translate(-50%, -50%); 
   max-width: 436px;
   min-width: 436px;
   max-height: 190px;
