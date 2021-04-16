@@ -4,7 +4,7 @@ MODORA is a Chrome Extension that blocks distracting sites according to the Pomo
 
 Made by: Aaron Z., Chelsea W., Max S., Samuel H.
 
-# Instructions for downloading and how to use it
+# Instructions for Downloading and Usage + Pitch
 
-[LyonHacks2021 - MODORA [Instructions]](https://docs.google.com/presentation/d/1K0z6ao5I93ImoMHm0_CO-rXxebxTmLc81CVj-cx6Fpo/edit?usp=sharing) <-- shortened version of the pitch
+[LyonHacks2021 - MODORA [Pitch]](https://docs.google.com/presentation/d/1DHqMQLYiGRoJOVRQKanE_odrVQ2AQ8VPxmpOIqOyPTY/edit?usp=sharing)
  
