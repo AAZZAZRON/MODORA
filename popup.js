@@ -96,6 +96,7 @@ function timerSetup() { // set up the timer screen, start and reset timer
     }
     if (getCookie("tracker") != "timerOn") { // makes sure that the timer is only set once
         createTimer();
+        console.log("create timer");
     }
     addCookie("tracker", "timerOn")
 }

@@ -12,13 +12,11 @@ var finish;
 var tmp = [];
 chrome.runtime.onMessage.addListener(
     function (request) {
-        if (request == "begin") {
-            cycle = 1;
-        }
         if (request.message == "start stopwatch") {
             hr = 0;
             min = 0;
             sec = 0;
+            cycle = 1;
             stopwatchStart = true;
             aborted = false;
             stopwatch = setInterval(stopwatchFunction, 1000);
@@ -36,54 +34,54 @@ chrome.runtime.onMessage.addListener(
 );
  
 function timerFunction() {
-    if (timerStart) {
-      breakOrWork = false;
-        sec = parseInt(sec);
-        min = parseInt(min);
-        hr = parseInt(hr);
-        sec -= 1;
-        if (sec == -1) {
-            sec = 59;
-            min -= 1;
-        }
-        if (min == -1) {
-            min = 59;
-            hr -= 1;
-        }
-        if (sec < 10 || sec == 0) {
-            sec = '0' + sec;
-        }
-        if (min < 10 || min == 0) {
-            min = '0' + min;
-        }
-        if (hr < 10 || hr == 0) {
-            hr = '0' + hr;
-        }
-        console.log(hr, min, sec);
-        if (chrome.extension.getViews({type: "popup"}).length == 1) {
-            chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
-        }
-    } else {
-        console.log(hr, min, sec, aborted);
-        clearInterval(timer);
-    }
-    if (hr == "0-1") {
-        timerStart = false;
-        alert("Back to Work!");
-        chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
-        updateArray(tmp);
+  if (timerStart) {
+    breakOrWork = false;
+      sec = parseInt(sec);
+      min = parseInt(min);
+      hr = parseInt(hr);
+      sec -= 1;
+      if (sec == -1) {
+          sec = 59;
+          min -= 1;
+      }
+      if (min == -1) {
+          min = 59;
+          hr -= 1;
+      }
+      if (sec < 10 || sec == 0) {
+          sec = '0' + sec;
+      }
+      if (min < 10 || min == 0) {
+          min = '0' + min;
+      }
+      if (hr < 10 || hr == 0) {
+          hr = '0' + hr;
+      }
+      console.log(hr, min, sec);
+      if (chrome.extension.getViews({type: "popup"}).length == 1) {
+          chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
+      }
+  } else {
+      console.log(hr, min, sec, aborted);
+      clearInterval(timer);
+  }
+  if (hr == "0-1") {
+      timerStart = false;
+      alert("Back to Work!");
+      chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
+      updateArray(tmp);
 
-        // start stopwatch
-        clearInterval(timer);
-        stopwatchStart = true;
-        aborted = false;
-        hr = 0;
-        min = 0;
-        sec = 0;
-        stopwatch = setInterval(stopwatchFunction, 1000)
-    } else {
-    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
-    }
+      // start stopwatch
+      clearInterval(timer);
+      stopwatchStart = true;
+      aborted = false;
+      hr = 0;
+      min = 0;
+      sec = 0;
+      stopwatch = setInterval(stopwatchFunction, 1000)
+  } else {
+  chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
+  }
 }
 
 
