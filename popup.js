@@ -71,8 +71,7 @@ function setPomodoro() { // show pomodoro setup screen
 }
 
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
-    badArray = [];
-    chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
+    badArray = ["null"];
     console.log(instances);
     var ind = instances.length - 2;
     while (ind >= 0) {
