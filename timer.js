@@ -7,7 +7,6 @@ function createTimer() {
 
 chrome.runtime.onMessage.addListener(
   function (request) {
-    console.log(request);
       if (request.message == "done") {// if stopwatch is done
         showCompletedScreen();
         chrome.runtime.sendMessage({message: "completed"});

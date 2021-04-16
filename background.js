@@ -57,12 +57,10 @@ function timerFunction() {
       if (hr < 10 || hr == 0) {
           hr = '0' + hr;
       }
-      console.log(hr, min, sec);
       if (chrome.extension.getViews({type: "popup"}).length == 1) {
           chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
       }
   } else {
-      console.log(hr, min, sec, aborted);
       clearInterval(timer);
   }
   if (hr == "0-1") {
@@ -113,7 +111,6 @@ function stopwatchFunction() {
     if (hr < 10 || hr == 0) {
       hr = '0' + hr;
     }
-    console.log(hr, min, sec);
     if (chrome.extension.getViews({type: "popup"}).length == 1) {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
@@ -147,5 +144,5 @@ function stopwatchFunction() {
 
 function callPopup() {
   breakOrWork = false;
-    chrome.runtime.sendMessage({message: "done"});
+  chrome.runtime.sendMessage({message: "done"});
 }
