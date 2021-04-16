@@ -1,7 +1,6 @@
 function getCookie(name) {
     var find = name + "=";
     var things = document.cookie.split("; ");
-    console.log(things);
     for (let i = 0; i < things.length; i += 1) {
         var found = true;
         for (let j = 0; j < find.length; j += 1) {
@@ -16,14 +15,11 @@ function getCookie(name) {
     }
     return "";
 }
- 
+
 function addCookie(name, value) {
     var expire = "expires=Fri, 3 Jan 3000 23:59:59 GMT";
     document.cookie = `${name}=${value}; ${expire};path=/`;
 
 }
 
-function deleteCookie(name) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
-}
 
