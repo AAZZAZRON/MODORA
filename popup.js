@@ -71,9 +71,7 @@ function setPomodoro() { // show pomodoro setup screen
 }
 
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
-    badArray = [];
-    chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
-    console.log(instances);
+    badArray = ["null"];
     var ind = instances.length - 2;
     while (ind >= 0) {
         if (instances[ind].checked) {
@@ -95,7 +93,6 @@ function timerSetup() { // set up the timer screen, start and reset timer
     }
     if (getCookie("tracker") != "timerOn") { // makes sure that the timer is only set once
         createTimer();
-        console.log("create timer");
     }
     addCookie("tracker", "timerOn")
 }
@@ -109,6 +106,7 @@ function showAbortScreen() {
     badArray = [];
     chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
     chrome.runtime.sendMessage({message: "abort"})
+    addCookie("tracker", "mainMenu");
 }
 
 function showCompletedScreen() {
@@ -178,7 +176,6 @@ function setWebsites() { // creates the set websites GUI
     for (let i = 0; i < things.length; i += 1) {
         addToBlockedList(things[i]); // add website to blocked list
     }
-    console.log(chooseBlocked);
 }
 
 function addNewSite(link) { // tries (if possible) to add a new cookie and site
@@ -192,7 +189,6 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
             if (link.includes(validEndings[i])) {
                 link = link.split(validEndings[i])[0] + validEndings[i] + "/";
                 foundValid = true;
-                console.log(link);
             }
         }
         if (!foundValid) {
