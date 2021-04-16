@@ -195,7 +195,11 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
             }
         }
         if (!foundValid) {
-            alert("Please enter a valid URL with a proper domain.")
+            alert("Please enter a valid URL with a proper domain.");
+            return;
+        }
+        if (getCookie("banned").includes(link)) {
+            alert("This website is already blocked.")
             return;
         }
         arr = new Set(getCookie("banned").split(", "))
