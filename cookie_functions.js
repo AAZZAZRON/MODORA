@@ -1,6 +1,6 @@
 function getCookie(name) {
     var find = name + "=";
-    var things = decodeURIComponent(document.cookie).split("; ");
+    var things = document.cookie.split("; ");
     console.log(things);
     for (let i = 0; i < things.length; i += 1) {
         var found = true;

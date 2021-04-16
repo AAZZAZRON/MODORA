@@ -1,40 +1,43 @@
 var arr = [];
 var beenToToDo = false;
 
-var myDiv = document.getElementById("cboxes");
+var myDiv;
 
 function display() {
-	arr.push(document.getElementById("userName").value);
-	var checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-    checkBox.value = arr[arr.length-1];
-    myDiv.appendChild(checkBox);
-    var label = document.createElement("label");
-    myDiv.appendChild(label);
-    label.appendChild(document.createTextNode(arr[arr.length-1]));
-    if(!getCookie("todolist") === "") {
-      removeCookie("todolist");
-    }
-    addCookie("todolist", arr.join(","));
+	arr.push(document.getElementById("userName").value + "\n");
+  let checkBox = document.createElement("INPUT");
+  checkBox.setAttribute("type", "checkbox");
+  myDiv.appendChild(checkBox);
+  let label = document.createElement("LABEL");
+  label.innerText = arr[arr.length-1];
+  myDiv.appendChild(label);
+  if(!getCookie("todolist") === "") {
+    removeCookie("todolist");
+  }
+  addCookie("todolist", arr.join("!@#$%^&*"));
 }
 
 function box() {
-	var subarr = myDiv.getElementsByTagName('input');
+  console.log(myDiv);
+	var subarr = document.getElementById("cboxes");
+  console.log(subarr);
 	for(var i = 0; i < subarr.length; i++) {
 		if(subarr[i].checked) {
 			const index = arr.indexOf(subarr[i].value);
 			arr.splice(index, 1);
 			myDiv.removeChild(subarr[i]);
-			myDiv.removeChild(myDiv.getElementsByTagName('label')[i]);
+			myDiv.removeChild(subarr[i]);
 		}
 	}
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");
     }
-  addCookie("todolist", arr.join(","));
+  addCookie("todolist", arr.join("!@#$%^&*"));
 }
 
 function setToDoList() {
+  myDiv = document.createElement("div");
+  document.getElementById("cboxes").appendChild(myDiv);
   document.getElementById("MainMenu").hidden = true;
   document.getElementById("SetupTimer").hidden = true;
   document.getElementById("TimerOn").hidden = true;
@@ -53,7 +56,7 @@ function getToDoList() {
     return;
   }
   console.log(s);
-  arr = s.split(",");
+  arr = s.split("!@#$%^&*");
 }
 
 document.getElementById("ent").addEventListener("click", function() {
@@ -82,6 +85,6 @@ function startToDo() {
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");
     }
-    var a = arr.join(",");
+    var a = arr.join("!@#$%^&*");
     addCookie("todolist", a);
 }

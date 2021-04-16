@@ -178,6 +178,7 @@ function setWebsites() { // creates the set websites GUI
     for (let i = 0; i < things.length; i += 1) {
         addToBlockedList(things[i]); // add website to blocked list
     }
+    console.log(chooseBlocked);
 }
 
 function addNewSite(link) { // tries (if possible) to add a new cookie and site
