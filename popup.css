@@ -441,10 +441,8 @@ border: 3px solid rgb(234,201,215);
   top: 57%;
   left: 50%;
   transform: translate(-50%, -50%); 
-  max-width: 450px;
-  min-width: 450px;
-  max-height: 190px;
-  min-height: 190px;
+  width: 450px;
+  height: 190px;
   overflow: auto;
 }
 
@@ -529,20 +527,6 @@ border: 3px solid rgb(234,201,215);
   border: 2px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
-}
-
-/* SCROLL BAR CSS */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 .div1 {
