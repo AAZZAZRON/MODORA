@@ -409,6 +409,7 @@ border: 3px solid rgb(234,201,215);
   max-width: 420px;
   min-width: 420px;
 }
+
 #WebsiteBlocked {
   position: absolute;
   font-family: 'Work Sans', sans-serif;
@@ -416,19 +417,21 @@ border: 3px solid rgb(234,201,215);
   text-align: left; 
   color: rgb(234,201,215);
   background-color: white;
-  top: 65%;
+  top: 50%;
   left: 50%;
   width: 45%; 
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: 6px;
-  padding-right: 6px; 
+  padding-right: 6px; /*
+  margin: 3%; */
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 415px;
-  min-width: 415px; 
-  max-height: 220px;
-  min-height: 220px; 
+  max-width: 425px;
+  min-width: 425px; 
+  max-height: 160px;
+  min-height: 160px; 
+  overflow: auto;
 }
 
 #websites-list{
