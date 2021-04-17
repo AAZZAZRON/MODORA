@@ -3,10 +3,11 @@ var check;
 var chooseBlocked;
 var badArray = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
-var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel"]
+
 
 window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
+    console.log(arr);
     if (arr.length == 1) { // if no "bad apps", then add the defaultBad
         arr = [];
         for (let i = 0; i < defaultBad.length; i += 1) {
@@ -65,9 +66,12 @@ function setPomodoro() { // show pomodoro setup screen
     chooseBlocked.id = "ChooseBlocked";
     document.getElementById("choose-blocked-form").appendChild(chooseBlocked);
     const things = getCookie("banned").split(", ")
+    if (things.length == 1) {
+        return;
+    }
     for (let i = 0; i < things.length; i += 1) {
         addToBlockedList(things[i]); // add website to blocked list
-    }   
+    }
 }
 
 function timerSetup() { // set up the timer screen, start and reset timer

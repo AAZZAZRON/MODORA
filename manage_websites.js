@@ -1,5 +1,8 @@
 var websiteDiv;
 var built = false;
+var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel"]
+
+
 document.getElementById("bb4").onclick = () => mainMenu();
 document.getElementById("websites-submit").onclick = () => {
     addNewSite(document.getElementById("websites-add").value);
