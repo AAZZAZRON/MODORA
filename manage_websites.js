@@ -1,4 +1,11 @@
-var chooseBlocked;
+var websiteDiv;
+var built = false;
+document.getElementById("bb4").onclick = () => mainMenu();
+document.getElementById("websites-submit").onclick = () => {
+    addNewSite(document.getElementById("websites-add").value);
+    document.getElementById("websites-add").value = "";
+}
+document.getElementById("discard-button").onclick = () => document.getElementById("WebsiteBlocked").children = discardSites(document.getElementById("WebsiteBlocked").children);
 
 function setWebsites() { // creates the set websites GUI
     document.getElementById("MainMenu").hidden = true;
@@ -6,22 +13,15 @@ function setWebsites() { // creates the set websites GUI
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = false;
-    document.getElementById("bb4").onclick = () => {
-        chooseBlocked.remove();
-        mainMenu();
-    };
-    document.getElementById("websites-submit").onclick = () => {
-        addNewSite(document.getElementById("websites-add").value);
-        document.getElementById("websites-add").value = "";
-    }
-    document.getElementById("discard-button").onclick = () => document.getElementById("WebsiteBlocked").children = discardSites(document.getElementById("WebsiteBlocked").children);
-    
-    chooseBlocked = document.createElement("div");
-    chooseBlocked.id = "WebsiteBlocked";
-    document.getElementById("websites-list").appendChild(chooseBlocked);
-    const things = getCookie("banned").split(", ")
-    for (let i = 0; i < things.length; i += 1) {
-        addToBlockedWebsitesList(things[i]); // add website to blocked list
+    if (!built) {
+        websiteDiv = document.createElement("div");
+        websiteDiv.id = "WebsiteBlocked";
+        document.getElementById("websites-list").appendChild(websiteDiv);
+        const things = getCookie("banned").split(", ")
+        for (let i = 0; i < things.length; i += 1) {
+            addToBlockedWebsitesList(things[i]); // add website to blocked list
+        }
+        built = true;
     }
 }
 
@@ -33,8 +33,8 @@ function addToBlockedWebsitesList(inner) { // add known blocked website to the b
     label.innerText = inner + "\n";
     label.className = "boxes";
     label.name = inner;
-    chooseBlocked.appendChild(check);
-    chooseBlocked.appendChild(label);
+    websiteDiv.appendChild(check);
+    websiteDiv.appendChild(label);
 }
 
 function addNewSite(link) { // tries (if possible) to add a new cookie and site
@@ -61,7 +61,7 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
         arr = new Set(getCookie("banned").split(", "))
         arr.add(link);
         addCookie("banned", Array.from(arr).join(", "));
-        addToBlockedList(link, true);
+        addToBlockedWebsitesList(link, true);
     }
 }
 
