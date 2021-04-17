@@ -1,5 +1,9 @@
 var arr = [];
+var built = false;
 var myDiv;
+document.getElementById("ent").onclick = () => display();
+document.getElementById("todo-remove-button").onclick = () => box();
+document.getElementById("bb5").onclick = () => mainMenu();
 
 function display() {
 	arr.push(document.getElementById("userName").value + "\n");
@@ -36,11 +40,11 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-  document.getElementById("ent").onclick = () => display();
-  document.getElementById("todo-remove-button").onclick = () => box();
-  document.getElementById("bb5").onclick = () => mainMenu();
-  getToDoList();
-  startToDo();
+  if (!built) {
+    getToDoList();
+    startToDo();
+    built = true;
+  }
 }
 
 function getToDoList() {
