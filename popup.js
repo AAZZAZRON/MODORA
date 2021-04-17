@@ -4,7 +4,7 @@ var chooseBlocked;
 var badArray = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel"]
- 
+
 window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
     if (arr.length == 1) { // if no "bad apps", then add the defaultBad

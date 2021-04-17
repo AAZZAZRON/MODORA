@@ -1,6 +1,5 @@
 var arr = [];
 var beenToToDo = false;
-
 var myDiv;
 
 function display() {
@@ -19,15 +18,17 @@ function display() {
 
 function box() {
   console.log(myDiv);
-	var subarr = document.getElementById("cboxes");
+	var subarr = myDiv.children;
   console.log(subarr);
-	for(var i = 0; i < subarr.length; i++) {
+  var i = subarr.length - 2;
+	while (i >= 0) {
 		if(subarr[i].checked) {
 			const index = arr.indexOf(subarr[i].value);
 			arr.splice(index, 1);
 			myDiv.removeChild(subarr[i]);
 			myDiv.removeChild(subarr[i]);
 		}
+    i -= 2;
 	}
   if(!getCookie("todolist") === "") {
       removeCookie("todolist");
@@ -52,10 +53,9 @@ function setToDoList() {
 
 function getToDoList() {
   var s = getCookie("todolist");
-  if(s === "") {
+  if(s == "") {
     return;
   }
-  console.log(s);
   arr = s.split("!@#$%^&*");
 }
 
@@ -80,11 +80,7 @@ function startToDo() {
     myDiv.appendChild(checkBox2);
     var label2 = document.createElement("label");
     myDiv.appendChild(label2);
-    label2.appendChild(document.createTextNode(arr[i]));
+    label2.innerText = arr[i];
   }
-  if(!getCookie("todolist") === "") {
-      removeCookie("todolist");
-    }
-    var a = arr.join("!@#$%^&*");
-    addCookie("todolist", a);
+  addCookie("todolist", arr.join("!@#$%^&*"));
 }
