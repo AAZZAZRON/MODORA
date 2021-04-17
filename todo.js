@@ -17,7 +17,7 @@ function box() {
 	var subarr = myDiv.children;
   var i = subarr.length - 2;
 	while (i >= 0) {
-		if(subarr[i].checked) {
+		if (subarr[i].checked) {
 			const index = arr.indexOf(subarr[i].value);
 			arr.splice(index, 1);
 			myDiv.removeChild(subarr[i]);
