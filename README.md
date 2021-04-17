@@ -2,6 +2,8 @@
 
 MODORA is a Chrome Extension that blocks distracting sites and reminds the user to take breaks. It uses the Pomodoro Technique which is proven to increase productivity while preventing overworking and encouraging breaks. (Perfect for students and people with office jobs!)
 
+Made for our school's [hackathon](https://devpost.com/software/procrastination-t).
+
 Made by: Aaron Z., Chelsea W., Max S., Samuel H.
 
 # Instructions for Downloading and Usage + Pitch
