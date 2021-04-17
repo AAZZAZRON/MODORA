@@ -1,5 +1,4 @@
 var arr = [];
-var beenToToDo = false;
 var myDiv;
 
 function display() {
@@ -10,16 +9,12 @@ function display() {
   let label = document.createElement("LABEL");
   label.innerText = arr[arr.length-1];
   myDiv.appendChild(label);
-  if(!getCookie("todolist") === "") {
-    removeCookie("todolist");
-  }
   addCookie("todolist", arr.join("!@#$%^&*"));
+  document.getElementById("userName").value = "";
 }
 
 function box() {
-  console.log(myDiv);
 	var subarr = myDiv.children;
-  console.log(subarr);
   var i = subarr.length - 2;
 	while (i >= 0) {
 		if(subarr[i].checked) {
@@ -30,9 +25,6 @@ function box() {
 		}
     i -= 2;
 	}
-  if(!getCookie("todolist") === "") {
-      removeCookie("todolist");
-    }
   addCookie("todolist", arr.join("!@#$%^&*"));
 }
 
@@ -44,33 +36,20 @@ function setToDoList() {
   document.getElementById("TimerOn").hidden = true;
   document.getElementById("abortedScreen").hidden = true;
   document.getElementById("ToDoList").hidden = false;
-  if(!beenToToDo) {
-    getToDoList();
-    startToDo();
-    beenToToDo = true;
-  }
+  document.getElementById("ent").onclick = () => display();
+  document.getElementById("todo-remove-button").onclick = () => box();
+  document.getElementById("bb5").onclick = () => mainMenu();
+  getToDoList();
+  startToDo();
 }
 
 function getToDoList() {
   var s = getCookie("todolist");
-  if(s == "") {
+  if (s == "") {
     return;
   }
   arr = s.split("!@#$%^&*");
 }
-
-document.getElementById("ent").addEventListener("click", function() {
-  display();
-  document.getElementById("userName").value = "";
-});
-
-document.getElementById("todo-remove-button").addEventListener("click", function() {
-  box();
-});
-
-document.getElementById("bb5").addEventListener("click", function() {
-  mainMenu();
-});
 
 function startToDo() {
   for(var i = 0; i < arr.length; i++) {
