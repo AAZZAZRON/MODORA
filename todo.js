@@ -42,7 +42,7 @@ function setToDoList() {
     myDiv = document.createElement("div");
     document.getElementById("cboxes").appendChild(myDiv);
     const things = getCookie("todolist").split("!@#$%^&*");
-    for (let i = 1; i < things.length; i += 1) {
+    for (let i = 0; i < things.length; i += 1) {
       addToToDoList(things[i]);
     }
     built = true;
@@ -50,8 +50,8 @@ function setToDoList() {
 }
 
 function addToToDoList(inner) {
+  console.log(inner);
   if (inner == "") {
-    alert("You cannot add an empty to-do.")
     return;
   }
   let check = document.createElement("INPUT");
