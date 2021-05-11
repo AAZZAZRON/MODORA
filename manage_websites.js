@@ -1,6 +1,5 @@
 var websiteDiv;
-var built = false;
-var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel"]
+var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel", ".io"]
 
 
 document.getElementById("bb4").onclick = () => mainMenu();
@@ -16,15 +15,12 @@ function setWebsites() { // creates the set websites GUI
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = true;
     document.getElementById("websitesScreen").hidden = false;
-    if (!built) {
-        websiteDiv = document.createElement("div");
-        websiteDiv.id = "WebsiteBlocked";
-        document.getElementById("websites-list").appendChild(websiteDiv);
-        const things = getCookie("banned").split(", ")
-        for (let i = 0; i < things.length; i += 1) {
-            addToBlockedWebsitesList(things[i]); // add website to blocked list
-        }
-        built = true;
+    websiteDiv = document.createElement("div");
+    websiteDiv.id = "WebsiteBlocked";
+    document.getElementById("websites-list").appendChild(websiteDiv);
+    const things = getCookie("banned").split(", ")
+    for (let i = 0; i < things.length; i += 1) {
+        addToBlockedWebsitesList(things[i]); // add website to blocked list
     }
 }
 
