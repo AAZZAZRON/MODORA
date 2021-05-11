@@ -50,6 +50,10 @@ function setToDoList() {
 }
 
 function addToToDoList(inner) {
+  if (inner == "") {
+    alert("You cannot add an empty to-do.")
+    return;
+  }
   let check = document.createElement("INPUT");
   check.setAttribute("type", "checkbox");
   check.name = inner;
