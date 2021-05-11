@@ -5,7 +5,7 @@ document.getElementById("ent").onclick = () => {
   addNewToDo(document.getElementById("userName").value);
   document.getElementById("userName").value = "";
 }
-document.getElementById("todo-remove-button").onclick = () => box();
+document.getElementById("todo-remove-button").onclick = () => removeToDoListInstances();
 document.getElementById("bb5").onclick = () => mainMenu();
 
 
@@ -16,9 +16,10 @@ function addNewToDo(inner) {
   addToToDoList(inner);
 }
 
-function box() {
+function removeToDoListInstances() {
 	var subarr = myDiv.children;
   var i = subarr.length - 2;
+  var arr = getCookie("todolist").split("!@#$%^&*");
 	while (i >= 0) {
 		if (subarr[i].checked) {
 			const index = arr.indexOf(subarr[i].value);
@@ -41,11 +42,8 @@ function setToDoList() {
     myDiv = document.createElement("div");
     document.getElementById("cboxes").appendChild(myDiv);
     const things = getCookie("todolist").split("!@#$%^&*");
-    console.log(things);
-    if (things.length != 1) {
-      for (let i = 0; i < things.length; i += 1) {
-        addToToDoList(things[i]);
-      }
+    for (let i = 1; i < things.length; i += 1) {
+      addToToDoList(things[i]);
     }
     built = true;
   }
