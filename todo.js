@@ -1,11 +1,12 @@
 var myDiv;
 var built = false;
 
+// button initialization
 document.getElementById("ent").onclick = () => {
   addNewToDo(document.getElementById("userName").value);
   document.getElementById("userName").value = "";
 }
-document.getElementById("todo-remove-button").onclick = () => removeToDoListInstances();
+document.getElementById("todo-remove-button").onclick = () => removeToDoListInstances(myDiv.children);
 document.getElementById("bb5").onclick = () => mainMenu();
 
 
@@ -16,8 +17,7 @@ function addNewToDo(inner) {
   addToToDoList(inner);
 }
 
-function removeToDoListInstances() {
-	var subarr = myDiv.children;
+function removeToDoListInstances(subarr) {
   var i = subarr.length - 2;
   var arr = getCookie("todolist").split("!@#$%^&*");
 	while (i >= 0) {
