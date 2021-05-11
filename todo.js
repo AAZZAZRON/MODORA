@@ -41,8 +41,11 @@ function setToDoList() {
     myDiv = document.createElement("div");
     document.getElementById("cboxes").appendChild(myDiv);
     const things = getCookie("todolist").split("!@#$%^&*");
-    for (let i = 0; i < things.length; i += 1) {
-      addToToDoList(things[i]);
+    console.log(things);
+    if (things.length != 1) {
+      for (let i = 0; i < things.length; i += 1) {
+        addToToDoList(things[i]);
+      }
     }
     built = true;
   }
