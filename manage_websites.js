@@ -1,5 +1,5 @@
 var websiteDiv;
-var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel", ".io"]
+var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel", ".io", ".co", ".me"]
 
 
 document.getElementById("bb4").onclick = () => mainMenu();
