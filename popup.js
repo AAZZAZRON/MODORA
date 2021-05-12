@@ -7,7 +7,6 @@ var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://w
 
 window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
-    console.log(arr);
     if (arr.length == 1) { // if no "bad apps", then add the defaultBad
         arr = [];
         for (let i = 0; i < defaultBad.length; i += 1) {
