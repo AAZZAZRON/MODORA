@@ -452,31 +452,6 @@ border: 3px solid rgb(234,201,215);
   overflow: auto;
 }
 
-#websites-add{
-  position: absolute;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 15px;
-  text-align: left; 
-  color: rgb(234,201,215);
-  background-color: white;
-  top: 81%;
-  left: 41.7%;
-  width: 82%;
-  transform: translate(-50%, -50%);
-  border: 3px solid white;
-  max-width: 332px;
-  min-width: 332px;
-  max-height: 37px;
-  min-height: 37px;
-  overflow: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.websites-add-focus:focus{
-  border: 1px solid rgb(234,201,215);
-}
-
 #websites-submit{
   font-size: 15px;
 }
@@ -622,7 +597,7 @@ border: 3px solid rgb(234,201,215);
   vertical-align: middle;  
 }
 
-#userName{
+.input-bar {
   position: absolute;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
@@ -630,12 +605,11 @@ border: 3px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 81%;
-  left: 41.7%;
-  width: 82%;
+  left: 41.25%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 332px;
-  min-width: 332px;
+  max-width: 328px;
+  min-width: 328px;
   max-height: 37px;
   min-height: 37px;
   overflow: auto;
