@@ -6,6 +6,10 @@ body {
   background-color: rgb(249, 236, 239);
 }
 
+:focus {
+  outline: rgb(234,201,215) dashed 1px;
+}
+
 button:hover {
   cursor: pointer;
 }
