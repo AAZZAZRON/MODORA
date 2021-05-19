@@ -7,7 +7,7 @@ body {
 }
 
 :focus {
-  outline: rgb(234,201,215) dashed 1px;
+  outline: none; /*rgb(234,201,215) dashed 1px;*/
 }
 
 button:hover {
@@ -605,11 +605,11 @@ border: 3px solid rgb(234,201,215);
   color: rgb(234,201,215);
   background-color: white;
   top: 81%;
-  left: 41.25%;
+  left: 41.7%;
   transform: translate(-50%, -50%);
   border: 3px solid white;
-  max-width: 328px;
-  min-width: 328px;
+  max-width: 332px;
+  min-width: 332px;
   max-height: 37px;
   min-height: 37px;
   overflow: auto;
