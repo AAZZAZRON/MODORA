@@ -4,7 +4,7 @@ MODORA is a Chrome Extension that blocks distracting sites and reminds the user 
 
 Made for our school's [hackathon](https://devpost.com/software/procrastination-t).
 
-Made by: Aaron Z., Chelsea W., Max S., Samuel H.
+Made by: [Aaron Z.](https://github.com/AAZZAZRON), [Chelsea W.](https://github.com/cheollie), [Max S.](https://github.com/pingu15), Samuel H.
 
 # Instructions for Downloading and Usage + Pitch
 
