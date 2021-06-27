@@ -26,7 +26,12 @@
         "debugger", 
         "webRequestBlocking", 
         "notifications", 
-        "tts"
+        "tts",
+
+     	"webRequest",
+   	    "activeTab",
+        "http://*/*",
+        "https://*/*"
     ]
 }
 
