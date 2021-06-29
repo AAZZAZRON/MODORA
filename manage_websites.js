@@ -1,6 +1,4 @@
 var websiteDiv;
-var validEndings = [".com", ".ca", ".org", ".net", ".edu", ".gov", ".info", ".jobs", ".mil", ".name", ".pro", ".me", ".xyz", ".tel", ".io", ".co", ".me"]
-
 
 document.getElementById("bb4").onclick = () => mainMenu();
 document.getElementById("websites-submit").onclick = () => {
@@ -39,16 +37,17 @@ function addToBlockedWebsitesList(inner) { // add known blocked website to the b
 function addNewSite(link) { // tries (if possible) to add a new cookie and site
     if (link == "") {
         return;
-    } else if (link.substring(0, 8) != "https://") {
-        alert('Please enter a valid URL precending with "https://".');
+    } else if (link.substring(0, 8) != "https://" && link.substring(0, 7) != "http://") {
+        alert('Please enter a valid URL precending with "https://" or "http://".');
+    } else if (link.includes(" ")) {
+        alert('Please remove any whitespace.');
     } else {
-        var foundValid = false;
-        for (let i = 0; i < validEndings.length; i += 1) {
-            if (link.includes(validEndings[i])) {
-                link = link.split(validEndings[i])[0] + validEndings[i] + "/";
-                foundValid = true;
-                break;
-            }
+	try {
+	   var url = new URL(link);
+	   url = String(url.origin)+"/";
+	   foundValid = true;
+	} catch (_){
+	   foundValid = false;
         }
         if (!foundValid) {
             alert("Please enter a valid URL with a proper domain.");
