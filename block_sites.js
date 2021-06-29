@@ -21,30 +21,24 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
    var rawr = localStorage.getItem("nyaa");
    rawr = rawr.split(',').slice(1);
    console.log(rawr);
-   console.log(rawr)
+   for (let i = 0; i < rawr.length; i += 1){
+      console.log(rawr[i]);
+      var url = new URL(rawr[i]);
+      url = String(url.hostname);
+      url = url.split(".")
+      if (url.length-1 == 2){
+      url = url.slice(1).join(".");
+      } else {
+         url = url.join(".");
+      }
+      rawr[i] = "*://*."+url+"/*";
+   }
+   console.log(rawr);
    chrome.webRequest.onBeforeRequest.addListener(blockRequest, {urls: rawr }, ['blocking']);
    if (rawr.includes(link) == true && (changeInfo.status == "complete" && tab.status == "complete" && tab.url != undefined)){
      alert("You are currently in a Pomodoro Session!\nPlease focus.");
    }
 })
-
- 
-function checkUrls(link) {
-  console.log(link);
-  for (let i = 0; i < badLinks.length; i += 1) {
-    found = true;
-    for (let j = 0; j < Math.min(link.length, badLinks[i].length); j += 1) {
-      if (badLinks[i][j] != link[j]) {
-          found = false;
-          break;
-      }
-    }
-    if (found) {
-      alert("You are currently in a Pomodoro Session!\nPlease focus.")
-
-    }
-  }
-}
 
 
 function updateArray(arr) {
