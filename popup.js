@@ -140,4 +140,3 @@ function addToBlockedList(inner) { // add known blocked website to the blocked w
 }
 //new bugs w the new blocking thing- 
 // - the first refresh doesnt block but the refreshes after do
-// - will get spammed with alerts :monkey:
