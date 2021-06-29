@@ -47,6 +47,7 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
             if (link.includes(validEndings[i])) {
                 link = link.split(validEndings[i])[0] + validEndings[i] + "/";
                 foundValid = true;
+                break;
             }
         }
         if (!foundValid) {
