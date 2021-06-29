@@ -643,3 +643,18 @@ border: 3px solid rgb(234,201,215);
   padding-right: 0.25%;
   vertical-align: middle;  
 }  
+
+.setup-customize-input-bar{
+  position: absolute;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  text-align: left; 
+  color: rgb(234,201,215);
+  transform: translate(0, 15%);
+  background-color: white;
+  border: 1px solid darkgray;
+  max-width: 190px;
+  min-width: 190px;
+  overflow: auto;
+  padding: 3px;
+}
