@@ -8,7 +8,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
    var url = new URL(tab.url);
    url = String(url.hostname);
    url = url.split(".")
-   if (url.length-1 == 2){
+   if (url.length-1 == 2 && url[0].startsWith("www")){
       url = url.slice(1).join(".");
    } else {
       url = url.join(".");
@@ -26,8 +26,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       var url = new URL(rawr[i]);
       url = String(url.hostname);
       url = url.split(".")
-      if (url.length-1 == 2){
-      url = url.slice(1).join(".");
+      if (url.length-1 == 2 && url[0].startsWith("www")){
+         url = url.slice(1).join(".");
       } else {
          url = url.join(".");
       }
