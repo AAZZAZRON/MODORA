@@ -56,22 +56,9 @@ function setPomodoro() { // show pomodoro setup screen
     };
     document.getElementById("start-button").onclick = () => {
         badArray = sendBadSites(document.getElementById("ChooseBlocked").children); 
-	console.log(badArray);
-
-	newBadArray = badArray;
-	for (let i = 1; i < newBadArray.length; i += 1){
-		newBadArray[i] = newBadArray[i].replace("https://www", "*://*");
-		newBadArray[i] = newBadArray[i].replace("http://www", "*://*");
-		newBadArray[i] = newBadArray[i].replace("https://", "*://*.");
-		newBadArray[i] = newBadArray[i].replace("http://", "*://*.");
-		newBadArray[i] = newBadArray[i]+"/*"
-	}
-	badArray = newBadArray;
-	console.log(badArray);
+	localStorage.setItem("nyaa",badArray);
         chooseBlocked.remove();
         timerSetup();
-	var nyaa=badArray;
-	localStorage.setItem("nyaa",nyaa);
     }
 
 
@@ -109,8 +96,7 @@ function showAbortScreen() {
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
     badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
-    var nyaa=badArray;
-    localStorage.setItem("nyaa",nyaa);
+    localStorage.setItem("nyaa",badArray);
     chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
     chrome.runtime.sendMessage({message: "abort"})
     addCookie("tracker", "mainMenu");
@@ -122,7 +108,8 @@ function showCompletedScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
-    badArray = [];
+    badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
+    localStorage.setItem("nyaa",badArray);
     chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
     addCookie("tracker", "mainMenu");
 }
@@ -138,5 +125,3 @@ function addToBlockedList(inner) { // add known blocked website to the blocked w
     chooseBlocked.appendChild(check);
     chooseBlocked.appendChild(label);
 }
-//new bugs w the new blocking thing- 
-// - the first refresh doesnt block but the refreshes after do
