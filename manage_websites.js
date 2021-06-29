@@ -44,7 +44,7 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
     } else {
 	try {
 	   var url = new URL(link);
-	   url = String(url.origin)+"/";
+	   link = String(url.origin)+"/";
 	   foundValid = true;
 	} catch (_){
 	   foundValid = false;
