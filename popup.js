@@ -7,6 +7,7 @@ var newBadArray = [];
 var defaultBad = ["https://twitter.com/", "https://www.youtube.com/", "https://www.reddit.com/", "https://www.netflix.com/ca/", "https://www.disneyplus.com/", "https://www.instagram.com/", "https://www.facebook.com/", "https://discord.com/"]
 
 window.onload = function() { // runs everytime the popup extension is opened
+
     var arr = getCookie("banned").split(", ");
     if (arr.length == 1) { // if no "bad apps", then add the defaultBad
         arr = [];
@@ -16,6 +17,14 @@ window.onload = function() { // runs everytime the popup extension is opened
         addCookie("banned", arr.join(", "));
     }
     var goTo = getCookie("tracker"); // tracker cookie shows where the user last left off
+    if (goTo != "timerOn") addCookie("timer-on", "off");
+
+    if (getCookie("timer-on") == "on") {
+        console.log("timer-on");
+        document.getElementById("timer").innerText = getCookie("time");
+        document.getElementById("subtitle").innerText = getCookie("subtitle");
+    }
+
     if (goTo == "") {
         addCookie("tracker", "mainMenu");
         goTo = "mainMenu";

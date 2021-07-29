@@ -2,6 +2,7 @@ function createTimer() {
   document.getElementById("timer").innerText = "00:00:00";
   document.getElementById("subtitle").innerText = "Pomodoro Cycle 1";
   chrome.runtime.sendMessage({message: "start stopwatch"})
+  addCookie("timer-on", "on");
 }
 
 
@@ -10,9 +11,10 @@ chrome.runtime.onMessage.addListener(
       if (request.message == "done") {// if stopwatch is done
         showCompletedScreen();
         chrome.runtime.sendMessage({message: "completed"});
+        addCookie("timer-on", "off");
       } else { // if it is not done
-      document.getElementById("timer").innerText = request.time;
-      document.getElementById("subtitle").innerText = request.subtitle;
+        document.getElementById("timer").innerText = request.time;
+        document.getElementById("subtitle").innerText = request.subtitle;
       }
   }
 );

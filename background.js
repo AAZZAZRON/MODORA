@@ -78,7 +78,9 @@ function timerFunction() {
       sec = 0;
       stopwatch = setInterval(stopwatchFunction, 1000)
   } else {
-  chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
+    addCookie("time", `${hr}:${min}:${sec}`);
+    addCookie("subtitle", "Take a Break!");
+    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: "Take a Break!"})
   }
 }
 
@@ -86,11 +88,9 @@ function timerFunction() {
 function stopwatchFunction() {
   breakOrWork = true;
   if (stopwatchStart) {
-    sec = parseInt(sec);
+    sec = parseInt(sec) + 1;
     min = parseInt(min);
     hr = parseInt(hr);
-
-    sec += 1;
 
     if (sec == 60) {
       min += 1;
@@ -138,6 +138,8 @@ function stopwatchFunction() {
         timer = setInterval(timerFunction, 1000)
     }
   } else {
+    addCookie("time", `${hr}:${min}:${sec}`);
+    addCookie("subtitle", `Pomodoro Cycle ${cycle}`);
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
   }
 }
