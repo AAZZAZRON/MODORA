@@ -68,6 +68,7 @@ function timerFunction() {
       alert("Back to Work!");
       chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
       updateArray(tmp);
+      localStorage.setItem("nyaa",localStorage.getItem("TEMP"));
 
       // start stopwatch
       clearInterval(timer);
@@ -126,6 +127,9 @@ function stopwatchFunction() {
         cycle += 1;
         chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
         updateArray("null");
+        badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
+        localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
+        localStorage.setItem("nyaa",badArray);
 
         clearInterval(stopwatch);
         // start timer
