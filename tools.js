@@ -1,5 +1,5 @@
 function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
-    arr = ["https://monkey.ca/"];
+    arr = ["https://monkeybananamonkeybananamonkeyandsomekeyboardsmashLKSDFJ.ca/"];
     var ind = instances.length - 2;
     while (ind >= 0) {
         if (instances[ind].checked) {
