@@ -1,6 +1,6 @@
 function createTimer() {
   document.getElementById("timer").innerText = "00:00:00";
-  document.getElementById("subtitle").innerText = "Pomodoro Cycle 1";
+  document.getElementById("subtitle").innerText = "Pomodoro Round 1 Cycle 1";
   chrome.runtime.sendMessage({message: "start stopwatch"})
   addCookie("timer-on", "on");
 }
