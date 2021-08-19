@@ -64,6 +64,15 @@ function setPomodoro() { // show pomodoro setup screen
         mainMenu();
     };
     document.getElementById("start-button").onclick = () => {
+
+        var roundNum = document.getElementById("round_num").value;
+        var restNum = document.getElementById("lbreak_num").value;
+        addCookie("roundNum", roundNum);
+        addCookie("restNum", restNum);
+        console.log(roundNum, restNum);
+
+
+
         badArray = sendBadSites(document.getElementById("ChooseBlocked").children); 
 	localStorage.setItem("nyaa",badArray);
         chooseBlocked.remove();

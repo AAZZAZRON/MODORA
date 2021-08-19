@@ -1,13 +1,17 @@
 var hr = 0;
 var min = 0;
 var sec = 0;
+var round = 1;
+var cycle = 1;
+
+var totalRounds, longBreak;
+
 var stopwatchStart = false;
 var breakOrWork = false;
 var timerStart = false;
 var stopwatch, timer;
 var isTimerDone = false;
 aborted = false;
-var cycle = 1;
 var finish;
 var tmp = [];
 chrome.runtime.onMessage.addListener(
@@ -17,6 +21,12 @@ chrome.runtime.onMessage.addListener(
             min = 0;
             sec = 0;
             cycle = 1;
+            round = 1;
+
+            totalRounds = getCookie("roundNum");
+            longBreak = getCookie("restNum");
+            console.log(totalRounds, longBreak);
+
             stopwatchStart = true;
             aborted = false;
             stopwatch = setInterval(stopwatchFunction, 1000);
@@ -32,7 +42,7 @@ chrome.runtime.onMessage.addListener(
         }
     }
 );
- 
+
 function timerFunction() {
   if (timerStart) {
     breakOrWork = false;
@@ -66,7 +76,7 @@ function timerFunction() {
   if (hr == "0-1") {
       timerStart = false;
       alert("Back to Work!");
-      chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
+      chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Round ${round} Cycle ${cycle}`});
       updateArray(tmp);
       localStorage.setItem("nyaa",localStorage.getItem("TEMP"));
 
@@ -117,10 +127,42 @@ function stopwatchFunction() {
     }
   }
   if (hr == "00" && min == "25" && sec == "01") {
+    clearInterval(stopwatch);
     if (!aborted && cycle == 4) {
-        clearInterval(stopwatch);
-        alert("You are done!");
-        finish = setInterval(callPopup, 1000);
+        if (round == totalRounds) {
+          alert("You are done!");
+          finish = setInterval(callPopup, 1000);
+        } else {
+          hr = parseInt(longBreak / 60);
+          min = parseInt(longBreak % 60);
+          sec = 0;
+          stopwatchStart = false;
+
+          round += 1;
+          cycle = 1;
+
+          alert(`You have completed Round ${round - 1} of the Pomodoro!\nPlease take a long break.`);
+
+          var t = "";
+          if (hr < 10) t += `0${hr}:`;
+          else t += `${hr}:`;
+          if (min < 10) t += `0${min}`;
+          else t += `${min}`;
+          t += ":00";
+
+
+          chrome.runtime.sendMessage({message: "text", time: t, subtitle: "Take a Break!"});
+          updateArray("null");
+          badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
+          localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
+          localStorage.setItem("nyaa",badArray);
+
+          // start timer
+          timerStart = true;
+          aborted = false;
+
+          timer = setInterval(timerFunction, 1000)
+        }
     } else {
         stopwatchStart = false;
         alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
@@ -131,7 +173,6 @@ function stopwatchFunction() {
         localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
         localStorage.setItem("nyaa",badArray);
 
-        clearInterval(stopwatch);
         // start timer
         timerStart = true;
         aborted = false;
@@ -143,8 +184,8 @@ function stopwatchFunction() {
     }
   } else {
     addCookie("time", `${hr}:${min}:${sec}`);
-    addCookie("subtitle", `Pomodoro Cycle ${cycle}`);
-    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
+    addCookie("subtitle", `Pomodoro Round ${round} Cycle ${cycle}`);
+    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Round ${round} Cycle ${cycle}`})
   }
 }
 
