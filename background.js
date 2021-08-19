@@ -124,7 +124,7 @@ function stopwatchFunction() {
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
-  if (hr == "00" && min == "01" && sec == "01") {
+  if (hr == "00" && min == "25" && sec == "01") {
     clearInterval(stopwatch);
     if (!aborted && cycle == totalRounds) {
       alert("You are done!");
