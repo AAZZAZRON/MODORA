@@ -121,6 +121,7 @@ function stopwatchFunction() {
       hr = '0' + hr;
     }
     if (chrome.extension.getViews({type: "popup"}).length == 1) {
+      console.log("HI");
         chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
@@ -179,8 +180,8 @@ function stopwatchFunction() {
     }
   } else {
     addCookie("time", `${hr}:${min}:${sec}`);
-    addCookie("subtitle", `Pomodoro Round ${round} Cycle ${cycle}`);
-    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Round ${round} Cycle ${cycle}`})
+    addCookie("subtitle", `Pomodoro Cycle ${cycle}`);
+    chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
   }
 }
 
