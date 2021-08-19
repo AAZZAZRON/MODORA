@@ -13,8 +13,8 @@ chrome.runtime.onMessage.addListener(
         chrome.runtime.sendMessage({message: "completed"});
         addCookie("timer-on", "off");
       } else { // if it is not done
-        document.getElementById("timer").innerText = request.time;
-        document.getElementById("subtitle").innerText = request.subtitle;
+        document.getElementById("timer").innerText = getCookie("time");
+        document.getElementById("subtitle").innerText = getCookie("subtitle");
       }
   }
 );
