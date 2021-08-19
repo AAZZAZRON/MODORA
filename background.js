@@ -65,9 +65,6 @@ function timerFunction() {
       if (hr < 10 || hr == 0) {
           hr = '0' + hr;
       }
-      if (chrome.extension.getViews({type: "popup"}).length == 1) {
-          chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
-      }
   } else {
       clearInterval(timer);
   }
@@ -119,10 +116,6 @@ function stopwatchFunction() {
     }
     if (hr < 10 || hr == 0) {
       hr = '0' + hr;
-    }
-    if (chrome.extension.getViews({type: "popup"}).length == 1) {
-      console.log("HI");
-        chrome.runtime.sendMessage({message: `${hr}:${min}:${sec}`});
     }
   }
   if (hr == "00" && min == "25" && sec == "01") {
