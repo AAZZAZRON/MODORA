@@ -10,6 +10,10 @@ body {
   outline: none; /*rgb(234,201,215) dashed 1px;*/
 }
 
+::placeholder {
+  color: rgb(234,201,215);
+}
+
 button:hover {
   cursor: pointer;
 }
