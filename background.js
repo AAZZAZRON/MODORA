@@ -118,12 +118,13 @@ function stopwatchFunction() {
       hr = '0' + hr;
     }
   }
-  if (hr == "00" && min == "01" && sec == "01") {
+  if (hr == "00" && min == "25" && sec == "01") {
     clearInterval(stopwatch);
     resetArray();
     if (!aborted && cycle == totalRounds) {
       alert("You are done!");
-      finish = setInterval(callPopup, 1000);
+      breakOrWork = false;
+      addCookie("timer-on", "done");
     }
     else if (!aborted && cycle % 4 == 0) {
       hr = parseInt(longBreak / 60);
@@ -169,11 +170,6 @@ function stopwatchFunction() {
     addCookie("subtitle", `Pomodoro Cycle ${cycle}`);
     chrome.runtime.sendMessage({message: "text", time: `${hr}:${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
   }
-}
-
-function callPopup() {
-  breakOrWork = false;
-  chrome.runtime.sendMessage({message: "done"});
 }
 
 function resetArray() {
