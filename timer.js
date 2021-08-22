@@ -5,11 +5,9 @@ function createTimer() {
   addCookie("timer-on", "on");
 }
 
-
 chrome.runtime.onMessage.addListener(
   function (request) {
     document.getElementById("timer").innerText = request.time;
     document.getElementById("subtitle").innerText = request.subtitle;
   }
 );
-

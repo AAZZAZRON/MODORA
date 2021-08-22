@@ -8,11 +8,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
    var url = new URL(tab.url);
    url = String(url.hostname);
    url = url.split(".")
-   if (url.length-1 == 2 && url[0].startsWith("www")){
-      url = url.slice(1).join(".");
-   } else {
-      url = url.join(".");
-   }
+   if (url.length-1 == 2 && url[0].startsWith("www"))url = url.slice(1).join(".");
+   else url = url.join(".");
    link = "*://*."+url+"/*";
    console.log(link);
 
@@ -26,18 +23,13 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       var url = new URL(rawr[i]);
       url = String(url.hostname);
       url = url.split(".")
-      if (url.length-1 == 2 && url[0].startsWith("www")){
-         url = url.slice(1).join(".");
-      } else {
-         url = url.join(".");
-      }
+      if (url.length-1 == 2 && url[0].startsWith("www"))url = url.slice(1).join(".");
+      else url = url.join(".");
       rawr[i] = "*://*."+url+"/*";
    }
    console.log(rawr);
    chrome.webRequest.onBeforeRequest.addListener(blockRequest, {urls: rawr }, ['blocking']);
-   if (rawr.includes(link) == true && (changeInfo.status == "complete" && tab.status == "complete" && tab.url != undefined)){
-     alert("You are currently in a Pomodoro Session!\nPlease focus.");
-   }
+   if (rawr.includes(link) == true && (changeInfo.status == "complete" && tab.status == "complete" && tab.url != undefined)) alert("You are currently in a Pomodoro Session!\nPlease focus.");
 })
 
 

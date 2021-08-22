@@ -2,9 +2,7 @@ var hr = 0;
 var min = 0;
 var sec = 0;
 var cycle = 1;
-
 var totalRounds, longBreak;
-
 var stopwatchStart = false;
 var breakOrWork = false;
 var timerStart = false;
@@ -20,11 +18,8 @@ chrome.runtime.onMessage.addListener(
       min = 0;
       sec = 0;
       cycle = 1;
-
       totalRounds = getCookie("roundNum");
       longBreak = getCookie("restNum");
-      console.log(totalRounds, longBreak);
-
       stopwatchStart = true;
       aborted = false;
       stopwatch = setInterval(stopwatchFunction, 1000);
@@ -32,9 +27,8 @@ chrome.runtime.onMessage.addListener(
       clearInterval(stopwatch);
       clearInterval(timer);
       aborted = true;
-    } else if (request.message == "completed") {
-      clearInterval(finish);
-    } else if (request.message == "update badLinks") {
+    } else if (request.message == "completed") clearInterval(finish);
+    else if (request.message == "update badLinks") {
       tmp = request.content;
       updateArray(request.content);
     }
@@ -56,18 +50,10 @@ function timerFunction() {
       min = 59;
       hr -= 1;
     }
-    if (sec < 10 || sec == 0) {
-      sec = '0' + sec;
-    }
-    if (min < 10 || min == 0) {
-      min = '0' + min;
-    }
-    if (hr < 10 || hr == 0) {
-      hr = '0' + hr;
-    }
-  } else {
-      clearInterval(timer);
-  }
+    if (sec < 10 || sec == 0) sec = '0' + sec;
+    if (min < 10 || min == 0) min = '0' + min;
+    if (hr < 10 || hr == 0) hr = '0' + hr;
+  } else clearInterval(timer);
   if (hr == "0-1") {
     timerStart = false;
     alert("Back to Work!");
@@ -90,7 +76,6 @@ function timerFunction() {
   }
 }
 
-
 function stopwatchFunction() {
   breakOrWork = true;
   if (stopwatchStart) {
@@ -108,15 +93,9 @@ function stopwatchFunction() {
       sec = 0;
     }
 
-    if (sec < 10 || sec == 0) {
-      sec = '0' + sec;
-    }
-    if (min < 10 || min == 0) {
-      min = '0' + min;
-    }
-    if (hr < 10 || hr == 0) {
-      hr = '0' + hr;
-    }
+    if (sec < 10 || sec == 0) sec = '0' + sec;
+    if (min < 10 || min == 0) min = '0' + min;
+    if (hr < 10 || hr == 0) hr = '0' + hr;
   }
   if (hr == "00" && min == "25" && sec == "01") {
     clearInterval(stopwatch);
@@ -132,8 +111,8 @@ function stopwatchFunction() {
       sec = 0;
       stopwatchStart = false;
       cycle += 1;
-
       alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a longer break.`);
+      chrome.runtime.sendMessage({message: "text", time: t, subtitle: "Take a Break!"});
 
       var t = "";
       if (hr < 10) t += `0${hr}:`;
@@ -142,13 +121,8 @@ function stopwatchFunction() {
       else t += `${min}`;
       t += ":00";
 
-
-      chrome.runtime.sendMessage({message: "text", time: t, subtitle: "Take a Break!"});
-
-      // start timer
       timerStart = true;
       aborted = false;
-
       timer = setInterval(timerFunction, 1000)
     } else {
       stopwatchStart = false;
@@ -156,13 +130,11 @@ function stopwatchFunction() {
       cycle += 1;
       chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
 
-      // start timer
       timerStart = true;
       aborted = false;
       hr = 0;
       min = 5;
       sec = 0;
-
       timer = setInterval(timerFunction, 1000)
     }
   } else {

@@ -1,4 +1,4 @@
-function sendBadSites(instances) { // creates a global array of the "bad arrays", which is then used by the background to check the websites
+function sendBadSites(instances) {
     arr = ["https://JEOGIYONOONAHOKSHINAMJACHINGUISSEOYOstanskzand3rachaguyslmao.ca/","https://alsothisisaplaceholderorelsethiswillerroranditwillblockeverythinglul.ca/"];
     var ind = instances.length - 2;
     while (ind >= 0) {
@@ -13,12 +13,7 @@ function sendBadSites(instances) { // creates a global array of the "bad arrays"
 
 function toggle() { // check and uncheck all items
     var checkboxes = document.getElementsByName("x");
-    if (check) {
-        check = false;
-    } else {
-        check = true;
-    }
-    for (let i = 0; i < checkboxes.length; i += 1) {
-        checkboxes[i].checked = check;
-    }
+    if (check) check = false;
+    else check = true;
+    for (let i = 0; i < checkboxes.length; i += 1) checkboxes[i].checked = check;
 }

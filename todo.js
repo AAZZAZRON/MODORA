@@ -9,7 +9,6 @@ document.getElementById("ent").onclick = () => {
 document.getElementById("todo-remove-button").onclick = () => removeToDoListInstances(myDiv.children);
 document.getElementById("bb5").onclick = () => mainMenu();
 
-
 function addNewToDo(inner) {
   let arr = getCookie("todolist").split("!@#$%^&*");
   arr.push(inner);
@@ -42,18 +41,13 @@ function setToDoList() {
     myDiv = document.createElement("div");
     document.getElementById("cboxes").appendChild(myDiv);
     const things = getCookie("todolist").split("!@#$%^&*");
-    for (let i = 0; i < things.length; i += 1) {
-      addToToDoList(things[i]);
-    }
+    for (let i = 0; i < things.length; i += 1) addToToDoList(things[i]);
     built = true;
   }
 }
 
 function addToToDoList(inner) {
-  console.log(inner);
-  if (inner == "") {
-    return;
-  }
+  if (inner == "") return;
   let check = document.createElement("INPUT");
   check.setAttribute("type", "checkbox");
   check.name = inner;

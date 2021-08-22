@@ -10,9 +10,7 @@ window.onload = function() { // runs everytime the popup extension is opened
     var arr = getCookie("banned").split(", ");
     if (arr.length == 1) { // if no "bad apps", then add the defaultBad
         arr = [];
-        for (let i = 0; i < defaultBad.length; i += 1) {
-            arr.push(defaultBad[i]);
-        }
+        for (let i = 0; i < defaultBad.length; i += 1) arr.push(defaultBad[i]);
         addCookie("banned", arr.join(", "));
     }
     var goTo = getCookie("tracker"); // tracker cookie shows where the user last left off
@@ -21,14 +19,10 @@ window.onload = function() { // runs everytime the popup extension is opened
         addCookie("tracker", "mainMenu");
         goTo = "mainMenu";
     }
-    if (goTo == "mainMenu") {
-        mainMenu();
-    } else if (goTo == "timerOn") {
-        timerSetup();
-    }
+    if (goTo == "mainMenu") mainMenu();
+    else if (goTo == "timerOn") timerSetup();
 
     if (getCookie("timer-on") == "on") {
-        console.log("timer-on");
         document.getElementById("timer").innerText = getCookie("time");
         document.getElementById("subtitle").innerText = getCookie("subtitle");
     } else if (getCookie("timer-on") == "done") {
@@ -36,7 +30,6 @@ window.onload = function() { // runs everytime the popup extension is opened
         addCookie("timer-on", "off");
     }
 }
-
 
 function mainMenu() { // show main menu screen
     check = false;
@@ -65,14 +58,10 @@ function setPomodoro() { // show pomodoro setup screen
         mainMenu();
     };
     document.getElementById("start-button").onclick = () => {
-
         var roundNum = document.getElementById("round_num").value;
         var restNum = document.getElementById("lbreak_num").value;
         addCookie("roundNum", roundNum);
         addCookie("restNum", restNum);
-        console.log(roundNum, restNum);
-
-
 
         badArray = sendBadSites(document.getElementById("ChooseBlocked").children); 
 	    localStorage.setItem("nyaa",badArray);
@@ -80,18 +69,13 @@ function setPomodoro() { // show pomodoro setup screen
         timerSetup();
     }
 
-
     // build list based on "banned" list of user
     chooseBlocked = document.createElement("div");
     chooseBlocked.id = "ChooseBlocked";
     document.getElementById("choose-blocked-form").appendChild(chooseBlocked);
     const things = getCookie("banned").split(", ")
-    if (things.length == 1) {
-        return;
-    }
-    for (let i = 0; i < things.length; i += 1) {
-        addToBlockedList(things[i]); // add website to blocked list
-    }
+    if (things.length == 1) return;
+    for (let i = 0; i < things.length; i += 1) addToBlockedList(things[i]);
 }
 
 function timerSetup() { // set up the timer screen, start and reset timer
@@ -99,12 +83,10 @@ function timerSetup() { // set up the timer screen, start and reset timer
     document.getElementById("SetupTimer").hidden = true;
     document.getElementById("TimerOn").hidden = false;
     document.getElementById("abortedScreen").hidden = true;
-    document.getElementById("abort").onclick = () => {
-        showAbortScreen();
-    }
-    if (getCookie("tracker") != "timerOn") { // makes sure that the timer is only set once
-        createTimer();
-    }
+    document.getElementById("abort").onclick = () => showAbortScreen();
+    
+    // makes sure that the timer is only set once
+    if (getCookie("tracker") != "timerOn") createTimer();
     addCookie("tracker", "timerOn")
 }
 
