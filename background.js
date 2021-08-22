@@ -123,7 +123,6 @@ function stopwatchFunction() {
     resetArray();
     if (!aborted && cycle == totalRounds) {
       alert("You are done!");
-      
       finish = setInterval(callPopup, 1000);
     }
     else if (!aborted && cycle % 4 == 0) {

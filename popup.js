@@ -123,7 +123,6 @@ function showCompletedScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
-    chrome.runtime.sendMessage({message: "completed"});
     addCookie("tracker", "mainMenu");
 }
 
