@@ -8,14 +8,14 @@ function createTimer() {
 
 chrome.runtime.onMessage.addListener(
   function (request) {
-      if (request.message == "done") {// if stopwatch is done
-        showCompletedScreen();
-        chrome.runtime.sendMessage({message: "completed"});
-        addCookie("timer-on", "off");
-      } else { // if it is not done
-        document.getElementById("timer").innerText = request.time;
-        document.getElementById("subtitle").innerText = request.subtitle;
-      }
+    if (request.message == "done") {// if stopwatch is done
+      showCompletedScreen();
+      chrome.runtime.sendMessage({message: "completed"});
+      addCookie("timer-on", "off");
+    } else { // if it is not done
+      document.getElementById("timer").innerText = request.time;
+      document.getElementById("subtitle").innerText = request.subtitle;
+    }
   }
 );
 

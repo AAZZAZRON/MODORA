@@ -74,7 +74,7 @@ function setPomodoro() { // show pomodoro setup screen
 
 
         badArray = sendBadSites(document.getElementById("ChooseBlocked").children); 
-	localStorage.setItem("nyaa",badArray);
+	    localStorage.setItem("nyaa",badArray);
         chooseBlocked.remove();
         timerSetup();
     }

@@ -42,13 +42,13 @@ function addNewSite(link) { // tries (if possible) to add a new cookie and site
     } else if (link.includes(" ")) {
         alert('Please remove any whitespace.');
     } else {
-	try {
-	   var url = new URL(link);
-	   link = String(url.origin)+"/";
-	   foundValid = true;
-	} catch (_){
-	   foundValid = false;
-        }
+        try {
+            var url = new URL(link);
+            link = String(url.origin)+"/";
+            foundValid = true;
+        } catch (_){
+            foundValid = false;
+    }
         if (!foundValid) {
             alert("Please enter a valid URL with a proper domain.");
             return;

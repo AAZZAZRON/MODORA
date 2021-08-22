@@ -14,75 +14,75 @@ aborted = false;
 var finish;
 var tmp = [];
 chrome.runtime.onMessage.addListener(
-    function (request) {
-        if (request.message == "start stopwatch") {
-            hr = 0;
-            min = 0;
-            sec = 0;
-            cycle = 1;
+  function (request) {
+    if (request.message == "start stopwatch") {
+      hr = 0;
+      min = 0;
+      sec = 0;
+      cycle = 1;
 
-            totalRounds = getCookie("roundNum");
-            longBreak = getCookie("restNum");
-            console.log(totalRounds, longBreak);
+      totalRounds = getCookie("roundNum");
+      longBreak = getCookie("restNum");
+      console.log(totalRounds, longBreak);
 
-            stopwatchStart = true;
-            aborted = false;
-            stopwatch = setInterval(stopwatchFunction, 1000);
-        } else if (request.message == "abort") {
-            clearInterval(stopwatch);
-            clearInterval(timer);
-            aborted = true;
-        } else if (request.message == "completed") {
-          clearInterval(finish);
-        } else if (request.message == "update badLinks") {
-          tmp = request.content;
-          updateArray(request.content);
-        }
+      stopwatchStart = true;
+      aborted = false;
+      stopwatch = setInterval(stopwatchFunction, 1000);
+    } else if (request.message == "abort") {
+      clearInterval(stopwatch);
+      clearInterval(timer);
+      aborted = true;
+    } else if (request.message == "completed") {
+      clearInterval(finish);
+    } else if (request.message == "update badLinks") {
+      tmp = request.content;
+      updateArray(request.content);
     }
+  }
 );
 
 function timerFunction() {
   if (timerStart) {
     breakOrWork = false;
-      sec = parseInt(sec);
-      min = parseInt(min);
-      hr = parseInt(hr);
-      sec -= 1;
-      if (sec == -1) {
-          sec = 59;
-          min -= 1;
-      }
-      if (min == -1) {
-          min = 59;
-          hr -= 1;
-      }
-      if (sec < 10 || sec == 0) {
-          sec = '0' + sec;
-      }
-      if (min < 10 || min == 0) {
-          min = '0' + min;
-      }
-      if (hr < 10 || hr == 0) {
-          hr = '0' + hr;
-      }
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+    sec -= 1;
+    if (sec == -1) {
+      sec = 59;
+      min -= 1;
+    }
+    if (min == -1) {
+      min = 59;
+      hr -= 1;
+    }
+    if (sec < 10 || sec == 0) {
+      sec = '0' + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = '0' + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = '0' + hr;
+    }
   } else {
       clearInterval(timer);
   }
   if (hr == "0-1") {
-      timerStart = false;
-      alert("Back to Work!");
-      chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
-      updateArray(tmp);
-      localStorage.setItem("nyaa",localStorage.getItem("TEMP"));
+    timerStart = false;
+    alert("Back to Work!");
+    chrome.runtime.sendMessage({message: "text", time: "00:00:00", subtitle: `Pomodoro Cycle ${cycle}`});
+    updateArray(tmp);
+    localStorage.setItem("nyaa",localStorage.getItem("TEMP"));
 
-      // start stopwatch
-      clearInterval(timer);
-      stopwatchStart = true;
-      aborted = false;
-      hr = 0;
-      min = 0;
-      sec = 0;
-      stopwatch = setInterval(stopwatchFunction, 1000)
+    // start stopwatch
+    clearInterval(timer);
+    stopwatchStart = true;
+    aborted = false;
+    hr = 0;
+    min = 0;
+    sec = 0;
+    stopwatch = setInterval(stopwatchFunction, 1000)
   } else {
     addCookie("time", `${hr}:${min}:${sec}`);
     addCookie("subtitle", "Take a Break!");
@@ -150,19 +150,19 @@ function stopwatchFunction() {
 
       timer = setInterval(timerFunction, 1000)
     } else {
-        stopwatchStart = false;
-        alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
-        cycle += 1;
-        chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
+      stopwatchStart = false;
+      alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
+      cycle += 1;
+      chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
 
-        // start timer
-        timerStart = true;
-        aborted = false;
-        hr = 0;
-        min = 5;
-        sec = 0;
+      // start timer
+      timerStart = true;
+      aborted = false;
+      hr = 0;
+      min = 5;
+      sec = 0;
 
-        timer = setInterval(timerFunction, 1000)
+      timer = setInterval(timerFunction, 1000)
     }
   } else {
     addCookie("time", `${hr}:${min}:${sec}`);
