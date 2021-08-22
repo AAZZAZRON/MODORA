@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener(
             clearInterval(timer);
             aborted = true;
         } else if (request.message == "completed") {
-            clearInterval(finish);
+          clearInterval(finish);
         } else if (request.message == "update badLinks") {
           tmp = request.content;
           updateArray(request.content);
@@ -118,10 +118,12 @@ function stopwatchFunction() {
       hr = '0' + hr;
     }
   }
-  if (hr == "00" && min == "25" && sec == "01") {
+  if (hr == "00" && min == "01" && sec == "01") {
     clearInterval(stopwatch);
+    resetArray();
     if (!aborted && cycle == totalRounds) {
       alert("You are done!");
+      
       finish = setInterval(callPopup, 1000);
     }
     else if (!aborted && cycle % 4 == 0) {
@@ -142,10 +144,6 @@ function stopwatchFunction() {
 
 
       chrome.runtime.sendMessage({message: "text", time: t, subtitle: "Take a Break!"});
-      updateArray("null");
-      badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
-      localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
-      localStorage.setItem("nyaa",badArray);
 
       // start timer
       timerStart = true;
@@ -157,10 +155,6 @@ function stopwatchFunction() {
         alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
         cycle += 1;
         chrome.runtime.sendMessage({message: "text", time: "00:05:00", subtitle: "Take a Break!"});
-        updateArray("null");
-        badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
-        localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
-        localStorage.setItem("nyaa",badArray);
 
         // start timer
         timerStart = true;
@@ -181,4 +175,11 @@ function stopwatchFunction() {
 function callPopup() {
   breakOrWork = false;
   chrome.runtime.sendMessage({message: "done"});
+}
+
+function resetArray() {
+  updateArray("null");
+  badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
+  localStorage.setItem("TEMP",localStorage.getItem("nyaa"));
+  localStorage.setItem("nyaa",badArray);
 }

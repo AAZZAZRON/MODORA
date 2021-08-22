@@ -113,9 +113,6 @@ function showAbortScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("abortedScreen").hidden = false;
     document.getElementById("bb2").onclick = () => mainMenu();
-    badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
-    localStorage.setItem("nyaa",badArray);
-    chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
     chrome.runtime.sendMessage({message: "abort"})
     addCookie("tracker", "mainMenu");
 }
@@ -126,9 +123,7 @@ function showCompletedScreen() {
     document.getElementById("TimerOn").hidden = true;
     document.getElementById("completedScreen").hidden = false;
     document.getElementById("bb3").onclick = () => mainMenu();
-    badArray = ["*://*.thisisnotarealwebsite.com/*","*://*.ijustneedaplaceholderorelsethiswillerror.com/*"];
-    localStorage.setItem("nyaa",badArray);
-    chrome.runtime.sendMessage({message: "update badLinks", content: "null"});
+    chrome.runtime.sendMessage({message: "completed"});
     addCookie("tracker", "mainMenu");
 }
 
