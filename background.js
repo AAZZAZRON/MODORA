@@ -93,8 +93,8 @@ function stopwatchFunction() {
       min = longBreak;
       sec = 0;
       stopwatchStart = false;
-      cycle += 1;
       alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a longer break.`);
+      cycle += 1;
       chrome.runtime.sendMessage({message: "text", time: t, subtitle: "Take a Break!"});
 
       var t;
