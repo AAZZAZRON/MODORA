@@ -36,9 +36,8 @@ chrome.runtime.onMessage.addListener(
 function timerFunction() {
   if (timerStart) {
     breakOrWork = false;
-    sec = parseInt(sec);
+    sec = parseInt(sec) - 1;
     min = parseInt(min);
-    sec -= 1;
     if (sec == -1) {
       sec = 59;
       min -= 1;
@@ -63,7 +62,7 @@ function timerFunction() {
   } else {
     addCookie("time", `${min}:${sec}`);
     addCookie("subtitle", "Take a Break!");
-    chrome.runtime.sendMessage({message: "text", time: `${min}:${sec}`, subtitle: "Take a Break!"})
+    chrome.runtime.sendMessage({message: "text", time: `${min}:${sec}`, subtitle: "Take a Break!"});
   }
 }
 
@@ -101,7 +100,7 @@ function stopwatchFunction() {
 
       timerStart = true;
       aborted = false;
-      timer = setInterval(timerFunction, 1000)
+      timer = setInterval(timerFunction, 1000);
     } else {
       stopwatchStart = false;
       alert(`You have completed Cycle ${cycle} of the Pomodoro!\nPlease take a five minute break.`);
@@ -112,12 +111,12 @@ function stopwatchFunction() {
       aborted = false;
       min = 5;
       sec = 0;
-      timer = setInterval(timerFunction, 1000)
+      timer = setInterval(timerFunction, 1000);
     }
   } else {
     addCookie("time", `${min}:${sec}`);
     addCookie("subtitle", `Pomodoro Cycle ${cycle}`);
-    chrome.runtime.sendMessage({message: "text", time: `${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`})
+    chrome.runtime.sendMessage({message: "text", time: `${min}:${sec}`, subtitle: `Pomodoro Cycle ${cycle}`});
   }
 }
 
