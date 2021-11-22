@@ -98,6 +98,7 @@ function showAbortScreen() {
     document.getElementById("bb2").onclick = () => mainMenu();
     chrome.runtime.sendMessage({message: "abort"})
     addCookie("tracker", "mainMenu");
+    localStorage.clear();
 }
 
 function showCompletedScreen() {
